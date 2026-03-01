@@ -255,6 +255,76 @@
   text-decoration: none;
 }
 
+/* ── Donate Section ──────────────────────────────────────── */
+
+.donate {
+  padding: 4rem 2rem;
+  background: var(--bv-hero-bg);
+  color: #ffffff;
+}
+
+.donateInner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.donateTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.donateText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.donateButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.donateCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bv-accent-dark);
+  background: #ffffff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donateCta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  color: var(--bv-accent-dark);
+  text-decoration: none;
+}
+
+.donateCtaSecondary {
+  composes: donateCta;
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.donateCtaSecondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
 /* ── Contribute Section ───────────────────────────────────── */
 
 .contribute {
@@ -352,6 +422,7 @@
 
   .sectionTitle,
   .crossRefTitle,
+  .donateTitle,
   .contributeTitle {
     font-size: 1.6rem;
   }
@@ -388,6 +459,7 @@
 
   .categories,
   .crossRef,
+  .donate,
   .contribute {
     padding: 2.5rem 1rem;
   }

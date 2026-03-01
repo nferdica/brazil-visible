@@ -165,6 +165,41 @@ function CrossRefSection(): ReactNode {
   );
 }
 
+/* ── Donate Section ────────────────────────────────────────── */
+
+function DonateSection(): ReactNode {
+  return (
+    <section className={styles.donate}>
+      <div className={styles.donateInner}>
+        <Heading as="h2" className={styles.donateTitle}>
+          Apoie o Projeto
+        </Heading>
+        <p className={styles.donateText}>
+          Brazil Visible é mantido de forma independente. Sua doação ajuda a
+          cobrir custos de servidor, domínio e dedicação ao desenvolvimento.
+          Qualquer valor faz diferença para manter o projeto no ar.
+        </p>
+        <div className={styles.donateButtons}>
+          <a
+            href="https://github.com/sponsors/nferdica"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.donateCta}>
+            GitHub Sponsors
+          </a>
+          <a
+            href="https://buymeacoffee.com/nferdica"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.donateCtaSecondary}>
+            Buy Me a Coffee
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── Contribute Section ────────────────────────────────────── */
 
 function ContributeSection(): ReactNode {
@@ -208,6 +243,7 @@ export default function Home(): ReactNode {
         <StatsSection />
         <CategoriesSection />
         <CrossRefSection />
+        <DonateSection />
         <ContributeSection />
       </main>
     </Layout>
