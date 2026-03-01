@@ -1,0 +1,10 @@
+{
+  "label": "Dados Geoespaciais",
+  "position": 18,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/dados-geoespaciais"
+  }
+}

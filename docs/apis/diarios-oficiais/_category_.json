@@ -1,0 +1,10 @@
+{
+  "label": "Diários Oficiais",
+  "position": 19,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/diarios-oficiais"
+  }
+}

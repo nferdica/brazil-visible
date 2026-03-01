@@ -1,0 +1,9 @@
+{
+  "label": "APIs e Fontes de Dados",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis",
+    "description": "Catálogo completo de APIs e fontes de dados públicos brasileiros organizados por órgão."
+  }
+}

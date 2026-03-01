@@ -1,0 +1,10 @@
+{
+  "label": "Agências Reguladoras",
+  "position": 17,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/agencias-reguladoras"
+  }
+}

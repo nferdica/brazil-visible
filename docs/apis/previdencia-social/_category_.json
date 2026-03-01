@@ -1,0 +1,10 @@
+{
+  "label": "Previdência e Assistência Social",
+  "position": 12,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/previdencia-social"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "label": "IBGE - Estatísticas Nacionais",
+  "position": 14,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/ibge-estatisticas"
+  }
+}

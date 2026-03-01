@@ -1,0 +1,10 @@
+{
+  "label": "Trabalho e Emprego",
+  "position": 11,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/trabalho-emprego"
+  }
+}

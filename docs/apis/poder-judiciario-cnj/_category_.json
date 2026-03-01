@@ -1,0 +1,10 @@
+{
+  "label": "Poder Judiciário - CNJ",
+  "position": 9,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/poder-judiciario-cnj"
+  }
+}

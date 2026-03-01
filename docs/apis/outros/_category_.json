@@ -1,0 +1,10 @@
+{
+  "label": "Outros",
+  "position": 22,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/outros"
+  }
+}

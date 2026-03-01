@@ -1,0 +1,10 @@
+{
+  "label": "Mercado Financeiro",
+  "position": 13,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "slug": "apis/mercado-financeiro"
+  }
+}
