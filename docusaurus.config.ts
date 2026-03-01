@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Brazil Visible',
-  tagline: 'Cataloging 93+ Brazilian public data sources',
+  tagline: 'Catálogo de dados públicos brasileiros para fiscalização governamental',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -15,23 +15,19 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://nferdica.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/brazil-visible/',
 
   // GitHub pages deployment config.
   organizationName: 'nferdica',
   projectName: 'brazil-visible',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'pt-BR',
+    locales: ['pt-BR', 'en'],
   },
 
   presets: [
@@ -40,6 +36,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          exclude: ['**/plans/**'],
         },
         blog: false,
         theme: {
@@ -50,7 +47,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
@@ -63,10 +59,19 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          to: '/docs/apis',
           position: 'left',
-          label: 'Docs',
+          label: 'APIs',
+        },
+        {
+          to: '/docs/cruzamentos',
+          position: 'left',
+          label: 'Cruzamentos',
+        },
+        {
+          to: '/docs/como-contribuir',
+          position: 'left',
+          label: 'Como Contribuir',
         },
         {
           href: 'https://github.com/nferdica/brazil-visible',
@@ -77,8 +82,52 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [],
-      copyright: `Copyright \u00a9 ${new Date().getFullYear()} Brazil Visible. Built with Docusaurus.`,
+      links: [
+        {
+          title: 'Documentação',
+          items: [
+            {
+              label: 'Início',
+              to: '/docs/',
+            },
+            {
+              label: 'APIs e Fontes de Dados',
+              to: '/docs/apis',
+            },
+            {
+              label: 'Receitas de Cruzamento',
+              to: '/docs/cruzamentos',
+            },
+          ],
+        },
+        {
+          title: 'Comunidade',
+          items: [
+            {
+              label: 'GitHub Discussions',
+              href: 'https://github.com/nferdica/brazil-visible/discussions',
+            },
+            {
+              label: 'Issues',
+              href: 'https://github.com/nferdica/brazil-visible/issues',
+            },
+          ],
+        },
+        {
+          title: 'Mais',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/nferdica/brazil-visible',
+            },
+            {
+              label: 'Licença',
+              href: 'https://github.com/nferdica/brazil-visible/blob/main/LICENSE',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Brazil Visible. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
