@@ -15,13 +15,9 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://nferdica.github.io',
+  url: 'https://brazilvisible.com',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/brazil-visible/',
-
-  // GitHub pages deployment config.
-  organizationName: 'nferdica',
-  projectName: 'brazil-visible',
+  baseUrl: '/',
 
   onBrokenLinks: 'warn',
 
