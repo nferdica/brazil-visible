@@ -2,5 +2,8 @@
   "label": "IPEA",
   "position": 15,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

@@ -2,5 +2,8 @@
   "label": "Receitas de Cruzamento",
   "position": 1,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

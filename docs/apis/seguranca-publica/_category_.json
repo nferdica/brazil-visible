@@ -2,5 +2,8 @@
   "label": "Segurança Pública",
   "position": 21,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

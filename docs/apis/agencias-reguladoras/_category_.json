@@ -2,5 +2,8 @@
   "label": "Agências Reguladoras",
   "position": 17,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

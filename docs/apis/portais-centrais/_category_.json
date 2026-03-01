@@ -2,5 +2,8 @@
   "label": "Portais Centrais de Dados Abertos",
   "position": 1,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

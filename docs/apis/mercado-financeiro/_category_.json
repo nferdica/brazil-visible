@@ -2,5 +2,8 @@
   "label": "Mercado Financeiro",
   "position": 13,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

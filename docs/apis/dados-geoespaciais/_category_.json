@@ -2,5 +2,8 @@
   "label": "Dados Geoespaciais",
   "position": 18,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

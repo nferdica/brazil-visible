@@ -2,5 +2,8 @@
   "label": "Tesouro Nacional / Finanças Públicas",
   "position": 5,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

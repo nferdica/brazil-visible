@@ -2,5 +2,8 @@
   "label": "Meio Ambiente",
   "position": 10,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "link": {
+    "type": "generated-index"
+  }
 }
