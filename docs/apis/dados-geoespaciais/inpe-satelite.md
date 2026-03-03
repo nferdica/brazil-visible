@@ -29,7 +29,7 @@ tags:
 cruzamento_com:
   - dados-geoespaciais/ibge-geociencias
   - dados-geoespaciais/inde
-  - meio-ambiente/ibama-prodes
+  - meio-ambiente/prodes
 status: parcial
 ---
 

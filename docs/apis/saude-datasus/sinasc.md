@@ -27,7 +27,7 @@ cruzamento_com:
   - saude-datasus/sih
   - saude-datasus/cnes
   - saude-datasus/tabnet
-  - ibge-estatisticas/populacao
+  - ibge-estatisticas/censo-demografico
 status: documentado
 ---
 

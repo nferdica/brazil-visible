@@ -23,7 +23,7 @@ cruzamento_com:
   - censo-educacao-superior
   - fnde-repasses
   - ibge-estatisticas/censo-demografico
-  - ibge-estatisticas/pib-municipios
+  - ibge-estatisticas/pib-municipal
 status: documentado
 ---
 

@@ -25,7 +25,7 @@ cruzamento_com:
   - censo-educacao-superior
   - transparencia-cgu/emendas-parlamentares
   - tesouro-nacional/siafi
-  - ibge-estatisticas/pib-municipios
+  - ibge-estatisticas/pib-municipal
 status: documentado
 ---
 

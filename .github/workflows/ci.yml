@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Docusaurus
+      - name: Build Next.js
         run: npm run build
 
   validate-frontmatter:

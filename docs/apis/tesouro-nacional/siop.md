@@ -2,7 +2,7 @@
 title: SIOP (Planejamento e Orçamento Federal)
 slug: siop
 orgao: Tesouro Nacional
-url_base: https://www.siop.planejamento.gov.br/
+url_base: https://www.gov.br/planejamento/pt-br/assuntos/orcamento
 tipo_acesso: Web Interface
 autenticacao: Não requerida
 formato_dados: CSV, XLSX, PDF

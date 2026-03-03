@@ -12,7 +12,7 @@ tags: [bancos, instituições financeiras, balanços, demonstrações financeira
 cruzamento_com:
   - sgs-juros
   - sgs-credito
-  - receita-federal/cnpj
+  - receita-federal/cnpj-completa
   - transparencia-cgu/ceis
 status: parcial
 ---

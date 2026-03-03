@@ -1,0 +1,37 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build outputs
+.next
+out
+build
+
+# Version control
+.git
+.gitignore
+
+# Environment files
+.env
+.env.*
+
+# Editor / IDE
+.vscode
+.idea
+*.swp
+*.swo
+.DS_Store
+
+# Documentation & meta
+AGENTS.md
+CONTRIBUTING.md
+LICENSE
+.claude/
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Playwright
+.playwright-mcp/

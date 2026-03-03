@@ -28,7 +28,7 @@ cruzamento_com:
   - saude-datasus/sim
   - saude-datasus/sinan
   - saude-datasus/tabnet
-  - ibge-estatisticas/populacao
+  - ibge-estatisticas/censo-demografico
 status: documentado
 ---
 

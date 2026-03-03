@@ -2,7 +2,7 @@
 title: CVM Fatos Relevantes — Comunicados ao Mercado
 slug: cvm-fatos-relevantes
 orgao: CVM
-url_base: https://dados.cvm.gov.br/dataset/cia_aberta-doc-fato_relevante
+url_base: https://dados.cvm.gov.br/dataset/cia_aberta-doc-ipe
 tipo_acesso: CSV Download
 autenticacao: Não requerida
 formato_dados: [CSV]

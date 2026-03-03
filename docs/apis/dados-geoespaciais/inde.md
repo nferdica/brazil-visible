@@ -2,7 +2,7 @@
 title: INDE — Infraestrutura Nacional de Dados Espaciais
 slug: inde
 orgao: Governo Federal
-url_base: https://inde.gov.br/
+url_base: https://visualizador.inde.gov.br/
 tipo_acesso: Web Interface
 autenticacao: Não requerida
 formato_dados: [WMS, WFS, SHP, GeoJSON]

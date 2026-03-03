@@ -2,7 +2,7 @@
 title: Focos de Calor / Queimadas — INPE (BDQUEIMADAS)
 slug: focos-calor
 orgao: INPE
-url_base: https://queimadas.dgi.inpe.br/queimadas/bdqueimadas
+url_base: https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/
 tipo_acesso: API REST / CSV Download
 autenticacao: Não requerida
 formato_dados: [CSV, JSON, Shapefile, KML]

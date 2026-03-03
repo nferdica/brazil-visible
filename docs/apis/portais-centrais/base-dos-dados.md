@@ -2,7 +2,7 @@
 title: Base dos Dados
 slug: base-dos-dados
 orgao: Base dos Dados (Iniciativa Privada / ONG)
-url_base: https://basedosdados.org/api/3/action
+url_base: https://basedosdados.org/
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON, CSV
@@ -25,7 +25,7 @@ tags:
   - SQL
   - iniciativa privada
 cruzamento_com:
-  - ibge-estatisticas/agregados
+  - ibge-estatisticas/censo-demografico
   - receita-federal/cnpj-completa
   - justica-eleitoral-tse/candidaturas
   - saude-datasus/cnes
@@ -289,7 +289,7 @@ A Base dos Dados é especialmente projetada para cruzamentos, pois padroniza cha
 |------------|-------------------|------------------|------------|
 | CNPJ × Eleições | [TSE — Candidaturas](/docs/apis/justica-eleitoral-tse/candidaturas) | `CPF` via tabela de sócios | Identificar empresários-candidatos |
 | RAIS × CNPJ | [Receita Federal — CNPJ](/docs/apis/receita-federal/cnpj-completa) | `CNPJ` | Cruzar vínculos com dados da empresa |
-| Censo Escolar × Municípios | [IBGE — Agregados](/docs/apis/ibge-estatisticas/agregados) | `id_municipio` | Contextualizar dados educacionais |
+| Censo Escolar × Municípios | [IBGE — Censo Demográfico](/docs/apis/ibge-estatisticas/censo-demografico) | `id_municipio` | Contextualizar dados educacionais |
 | SINASC × Saúde | [DATASUS — CNES](/docs/apis/saude-datasus/cnes) | `Código CNES` | Relacionar nascimentos com estabelecimentos de saúde |
 | FINBRA × SIAFI | [Tesouro Nacional — SIAFI](/docs/apis/tesouro-nacional/siafi) | `id_municipio` | Comparar finanças municipais com execução federal |
 | Diretórios × Qualquer base | Todas | `id_municipio`, `sigla_uf` | Tabela de ligação universal entre códigos |

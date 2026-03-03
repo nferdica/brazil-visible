@@ -2,7 +2,7 @@
 title: Contratos Federais
 slug: contratos-federais
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/api-de-dados/
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON

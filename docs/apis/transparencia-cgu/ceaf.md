@@ -2,7 +2,7 @@
 title: CEAF — Cadastro de Expulsões da Administração Federal
 slug: ceaf
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/api-de-dados/
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -25,7 +25,7 @@ cruzamento_com:
   - transparencia-cgu/servidores-federais
   - receita-federal/cnpj-completa
   - justica-eleitoral-tse/candidaturas
-  - poder-judiciario-cnj/processos
+  - poder-judiciario-cnj/datajud
   - transparencia-cgu/ceis
 status: documentado
 ---
@@ -251,7 +251,7 @@ Inclui todos os campos da listagem, mais:
 | CEAF x Servidores | [Servidores Federais](/docs/apis/transparencia-cgu/servidores-federais) | `CPF` | Verificar histórico funcional do servidor antes da expulsão |
 | CEAF x CNPJ | [Receita Federal — CNPJ](/docs/apis/receita-federal/cnpj-completa) | `CPF` | Verificar se servidores expulsos são sócios de empresas fornecedoras do governo |
 | CEAF x Candidaturas | [TSE — Candidaturas](/docs/apis/justica-eleitoral-tse/candidaturas) | `CPF` | Verificar se servidores expulsos se candidataram a cargos eletivos |
-| CEAF x Processos | [CNJ — Processos](/docs/apis/poder-judiciario-cnj/processos) | `CPF` | Verificar processos judiciais relacionados à expulsão |
+| CEAF x Processos | [CNJ — DataJud](/docs/apis/poder-judiciario-cnj/datajud) | `CPF` | Verificar processos judiciais relacionados à expulsão |
 | CEAF x CEIS | [CEIS](/docs/apis/transparencia-cgu/ceis) | `CPF` | Verificar se o servidor expulso também está registrado como pessoa sancionada no CEIS |
 | CEAF x Órgãos | Portal da Transparência | `Código órgão` | Analisar padrões de expulsões por órgão |
 
