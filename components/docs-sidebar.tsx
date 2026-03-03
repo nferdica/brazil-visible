@@ -63,7 +63,7 @@ export function DocsSidebar({ categories }: DocsSidebarProps) {
                   onClick={() => toggle(cat.meta.dir)}
                   aria-expanded={isOpen}
                   aria-controls={`sidebar-cat-${cat.meta.dir}`}
-                  className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-green ${
+                  className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-blue ${
                     isCategoryActive
                       ? 'text-neutral-900 dark:text-white'
                       : 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white'

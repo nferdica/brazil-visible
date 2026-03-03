@@ -76,7 +76,7 @@ export default async function CruzamentoPage({ params }: Props) {
               href={`https://github.com/nferdica/brazil-visible/raw/develop/${doc.frontmatter.notebook_path}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-brazil-green px-5 py-2.5 text-sm font-medium text-white hover:bg-brazil-green-dark transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-brazil-blue px-5 py-2.5 text-sm font-medium text-white hover:bg-brazil-blue-dark transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />

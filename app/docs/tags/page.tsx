@@ -37,7 +37,7 @@ export default function TagsIndexPage() {
           <Link
             key={tag}
             href={`/docs/tags/${encodeURIComponent(tag)}/`}
-            className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800/50 px-3.5 py-1.5 text-sm transition-all hover:border-brazil-green dark:hover:border-brazil-green-light hover:shadow-sm"
+            className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800/50 px-3.5 py-1.5 text-sm transition-all hover:border-brazil-blue dark:hover:border-brazil-blue-light hover:shadow-sm"
           >
             <span className="font-medium text-neutral-900 dark:text-white">
               {tag}

@@ -99,7 +99,7 @@ export function Navbar() {
               type="button"
               onClick={toggleTheme}
               aria-label="Alternar tema"
-              className="ml-2 rounded-lg p-2 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-green"
+              className="ml-2 rounded-lg p-2 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-blue"
             >
               {mounted && resolvedTheme === 'dark' ? (
                 <Sun size={18} />
@@ -110,7 +110,7 @@ export function Navbar() {
 
             <Link
               href="/docs/"
-              className="ml-3 inline-flex items-center rounded-full bg-neutral-900 dark:bg-white px-5 py-2 text-sm font-semibold text-white dark:text-neutral-900 transition-all hover:bg-neutral-700 dark:hover:bg-neutral-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-green"
+              className="ml-3 inline-flex items-center rounded-full bg-neutral-900 dark:bg-white px-5 py-2 text-sm font-semibold text-white dark:text-neutral-900 transition-all hover:bg-neutral-700 dark:hover:bg-neutral-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-blue"
             >
               Explorar
             </Link>
@@ -121,7 +121,7 @@ export function Navbar() {
               type="button"
               onClick={toggleTheme}
               aria-label="Alternar tema"
-              className="rounded-lg p-2 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-green"
+              className="rounded-lg p-2 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-blue"
             >
               {mounted && resolvedTheme === 'dark' ? (
                 <Sun size={18} />
@@ -136,7 +136,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? 'Fechar menu' : 'Abrir menu'}
               aria-expanded={mobileOpen}
-              className="rounded-lg p-2 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-green"
+              className="rounded-lg p-2 text-neutral-500 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brazil-blue"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

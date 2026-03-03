@@ -135,7 +135,7 @@ export default async function ApiDocPage({ params }: Props) {
               <Link
                 key={tag}
                 href={`/docs/tags/${encodeURIComponent(tag)}/`}
-                className="rounded-full border border-neutral-200 dark:border-neutral-800 px-2.5 py-0.5 text-xs text-neutral-500 dark:text-neutral-400 hover:border-brazil-green hover:text-brazil-green dark:hover:border-brazil-green-light dark:hover:text-brazil-green-light transition-colors"
+                className="rounded-full border border-neutral-200 dark:border-neutral-800 px-2.5 py-0.5 text-xs text-neutral-500 dark:text-neutral-400 hover:border-brazil-blue hover:text-brazil-blue dark:hover:border-brazil-blue-light dark:hover:text-brazil-blue-light transition-colors"
               >
                 {tag}
               </Link>

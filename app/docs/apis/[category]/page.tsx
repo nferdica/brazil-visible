@@ -78,7 +78,7 @@ export default async function CategoryPage({ params }: Props) {
                     <span>·</span>
                     <span className={
                       doc.frontmatter.status === 'documentado'
-                        ? 'text-brazil-green dark:text-brazil-green-light'
+                        ? 'text-brazil-blue dark:text-brazil-blue-light'
                         : doc.frontmatter.status === 'parcial'
                           ? 'text-yellow-600 dark:text-yellow-400'
                           : 'text-neutral-400'

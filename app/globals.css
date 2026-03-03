@@ -14,7 +14,7 @@
 .doc-content ul { @apply mb-4 pl-6 list-disc; }
 .doc-content ol { @apply mb-4 pl-6 list-decimal; }
 .doc-content li { @apply mb-1.5 leading-relaxed text-neutral-600 dark:text-neutral-400; }
-.doc-content a { @apply text-brazil-green dark:text-brazil-green-light underline hover:no-underline; }
+.doc-content a { @apply text-brazil-blue dark:text-brazil-blue-light underline hover:no-underline; }
 .doc-content blockquote { @apply border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 italic text-neutral-500 dark:text-neutral-400 my-4; }
 .doc-content code:not(pre code) { @apply bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded text-[0.9em] font-mono; }
 .doc-content pre { @apply rounded-xl border border-neutral-200 dark:border-neutral-800 my-6 overflow-x-auto text-sm; }
@@ -23,7 +23,7 @@
 /* Admonitions */
 .admonition { @apply border-l-4 p-4 rounded-r-lg my-6; }
 .admonition-warning { @apply border-yellow-500 bg-yellow-50 dark:bg-yellow-900/10 text-yellow-800 dark:text-yellow-300; }
-.admonition-tip { @apply border-brazil-green bg-green-50 dark:bg-green-900/10 text-green-800 dark:text-green-300; }
+.admonition-tip { @apply border-brazil-blue bg-blue-50 dark:bg-blue-900/10 text-blue-800 dark:text-blue-300; }
 .admonition-note { @apply border-blue-500 bg-blue-50 dark:bg-blue-900/10 text-blue-800 dark:text-blue-300; }
 
 /* Theme transition (View Transitions API) */

@@ -60,7 +60,7 @@ export default async function TagDetailPage({ params }: Props) {
           <Link
             key={`${doc.category}/${doc.frontmatter.slug}`}
             href={`/docs/apis/${doc.category}/${doc.frontmatter.slug}/`}
-            className="flex items-center justify-between rounded-lg border border-neutral-200 dark:border-neutral-700 p-3 text-sm transition-all hover:border-brazil-green dark:hover:border-brazil-green-light hover:shadow-sm"
+            className="flex items-center justify-between rounded-lg border border-neutral-200 dark:border-neutral-700 p-3 text-sm transition-all hover:border-brazil-blue dark:hover:border-brazil-blue-light hover:shadow-sm"
           >
             <span className="font-medium text-neutral-900 dark:text-white">
               {doc.frontmatter.title}

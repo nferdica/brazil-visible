@@ -216,24 +216,22 @@ function CategoryCard({ category, index }: { category: Category; index: number }
   const Icon = category.icon;
 
   return (
-    <ScrollReveal delay={index * 30}>
+    <ScrollReveal delay={index * 20}>
       <Link
         href={`/docs/apis/${category.slug}/`}
-        className="group flex flex-col gap-3 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-dark-bg p-5 no-underline text-neutral-900 dark:text-white transition-all hover:no-underline hover:text-neutral-900 dark:hover:text-white hover:-translate-y-1 hover:shadow-lg hover:border-brazil-blue dark:hover:border-brazil-blue"
+        className="group flex items-center gap-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-dark-bg px-4 py-3 no-underline text-neutral-900 dark:text-white transition-all hover:no-underline hover:text-neutral-900 dark:hover:text-white hover:border-brazil-blue dark:hover:border-brazil-blue hover:shadow-sm"
       >
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brazil-blue/10 text-brazil-blue transition-colors group-hover:bg-brazil-blue/20">
-          <Icon size={24} strokeWidth={1.75} />
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brazil-blue/10 text-brazil-blue">
+          <Icon size={18} strokeWidth={1.75} />
         </span>
-        <div className="flex flex-col gap-0.5 min-w-0">
-          <span className="text-sm font-semibold leading-tight">
-            {category.name}
-          </span>
+        <span className="text-sm font-medium leading-tight truncate min-w-0">
+          {category.name}
+        </span>
+        <span className="ml-auto flex items-center gap-1.5 shrink-0">
           <span className="text-xs text-neutral-400 dark:text-neutral-500">
-            {category.count} {category.count === 1 ? 'fonte' : 'fontes'}
+            {category.count}
           </span>
-        </div>
-        <span className="mt-auto self-end text-neutral-300 dark:text-neutral-700 transition-colors group-hover:text-brazil-blue">
-          <ArrowRight size={16} />
+          <ArrowRight size={14} className="text-neutral-300 dark:text-neutral-700 transition-colors group-hover:text-brazil-blue" />
         </span>
       </Link>
     </ScrollReveal>
@@ -256,7 +254,7 @@ function CategoriesSection(): ReactNode {
           </p>
         </div>
       </ScrollReveal>
-      <div className="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {cats.map((cat, i) => (
           <CategoryCard key={cat.slug} category={cat} index={i} />
         ))}
