@@ -1,24 +1,36 @@
 # Brazil Visible — Claude Code Instructions
 
+> Para arquitetura completa, estrutura de diretórios e convenções detalhadas, consulte [AGENTS.md](./AGENTS.md).
+
 ## Project Overview
-Documentation site (Docusaurus 3.x) cataloging 93+ Brazilian public data sources for government oversight. PT-BR primary language with English i18n support.
+Documentation site (Next.js 15, App Router, static export) cataloging 92 Brazilian public data sources for government oversight. PT-BR primary language.
 
 ## Key Commands
 - `npm install` — install dependencies
-- `npm run start` — local dev server (http://localhost:3000/brazil-visible/)
-- `npm run build` — production build
+- `npm run dev` — local dev server (http://localhost:3000)
+- `npm run build` — production build (static export to `out/`)
 - `node scripts/validate-frontmatter.mjs` — validate API page frontmatter
+- `node scripts/health-check.mjs` — check API availability (generates `public/health.json`)
+
+## Tech Stack
+- **Framework**: Next.js 15 (App Router, `output: 'export'`)
+- **Styling**: Tailwind CSS 3.4 with Brazilian flag color palette
+- **MDX**: `next-mdx-remote/rsc` with remark/rehype plugins
+- **Themes**: `next-themes` (class-based dark mode)
+- **Deploy**: Docker (node:20-alpine build + nginx:alpine) for EasyPanel
 
 ## Project Structure
-- `docs/apis/<category>/<source>.md` — API documentation pages (93 sources across 22 categories)
-- `docs/cruzamentos/<recipe>.md` — cross-referencing recipes
-- `docs/intro.md` — homepage content
-- `docs/como-contribuir.md` — contribution guide
-- `src/pages/index.tsx` — custom landing page
-- `src/pages/index.module.css` — landing page styles
-- `i18n/en/` — English translations
+- `app/` — Next.js App Router pages and layouts
+- `components/` — 12 React components (navbar, sidebar, search, status-badge, etc.)
+- `lib/content.ts` — filesystem-based content utilities (memoized)
+- `lib/mdx.tsx` — MDX rendering pipeline with remark/rehype plugins
+- `lib/remark-admonitions.ts` — custom remark plugin for :::warning/:::tip/:::note
+- `docs/apis/<category>/<source>.md` — API documentation pages (92 sources across 22 categories)
+- `docs/cruzamentos/<recipe>.md` — cross-referencing recipes (5 recipes)
+- `recipes/<name>/` — Jupyter notebooks (3 notebooks)
+- `scripts/health-check.mjs` — API availability checker (WAF-bypass, 3-tier strategy)
 - `scripts/validate-frontmatter.mjs` — frontmatter validation
-- `docs/plans/` — design documents (excluded from site build)
+- `public/health.json` — health check results (generated, committed by CI)
 
 ## Conventions
 
@@ -26,8 +38,9 @@ Documentation site (Docusaurus 3.x) cataloging 93+ Brazilian public data sources
 - Every API page MUST have required frontmatter: title, slug, orgao, url_base, tipo_acesso, status
 - Optional frontmatter: autenticacao, formato_dados, frequencia_atualizacao, campos_chave, tags, cruzamento_com
 - Body sections: O que é, Como acessar, Endpoints/recursos principais, Exemplo de uso, Campos disponíveis, Cruzamentos possíveis, Limitações conhecidas
-- Content in PT-BR first, English translations in i18n/en/
+- Content in PT-BR
 - Status values: documentado (fully documented), parcial (partial info), stub (metadata only)
+- url_base MUST be a URL that returns HTTP 200 (for health check accuracy)
 
 ### Cross-Reference Recipes
 - Frontmatter: title, dificuldade, fontes_utilizadas, campos_ponte, tags
@@ -36,10 +49,10 @@ Documentation site (Docusaurus 3.x) cataloging 93+ Brazilian public data sources
 ### General
 - Commit messages follow conventional commits (feat:, docs:, ci:, fix:)
 - Branch from `develop`, PR to `develop`, merge `develop` to `main` for releases
-- `main` = production (auto-deploy to GitHub Pages)
-- `develop` = development branch
+- `main` = production, `develop` = development branch
 - Always run `npm run build` before committing to verify no build errors
 - Run `node scripts/validate-frontmatter.mjs` when modifying API pages
+- Run `node scripts/health-check.mjs` when modifying url_base values
 
 ## Adding a New API Source
 1. Create `docs/apis/<category>/<slug>.md`
@@ -47,7 +60,8 @@ Documentation site (Docusaurus 3.x) cataloging 93+ Brazilian public data sources
 3. Write content following the template sections
 4. Run `node scripts/validate-frontmatter.mjs` to validate
 5. Run `npm run build` to verify
-6. Commit with `docs: add <source name> to <category>`
+6. Run `node scripts/health-check.mjs` to verify url_base
+7. Commit with `docs: add <source name> to <category>`
 
 ## Adding a Cross-Reference Recipe
 1. Create `docs/cruzamentos/<slug>.md`

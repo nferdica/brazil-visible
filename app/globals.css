@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prose styles for doc content */
+.doc-content h1 { @apply text-4xl font-extrabold tracking-tight mb-6; }
+.doc-content h2 { @apply text-2xl font-bold mt-10 mb-4 pb-2 border-b border-neutral-200 dark:border-neutral-800; }
+.doc-content h3 { @apply text-xl font-semibold mt-8 mb-3; }
+.doc-content h4 { @apply text-lg font-semibold mt-6 mb-2; }
+.doc-content p { @apply leading-relaxed mb-4 text-neutral-600 dark:text-neutral-400; }
+.doc-content table { @apply w-full border-collapse mb-6 text-sm; }
+.doc-content th { @apply text-left font-semibold p-3 border-b-2 border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900; }
+.doc-content td { @apply p-3 border-b border-neutral-100 dark:border-neutral-800; }
+.doc-content ul { @apply mb-4 pl-6 list-disc; }
+.doc-content ol { @apply mb-4 pl-6 list-decimal; }
+.doc-content li { @apply mb-1.5 leading-relaxed text-neutral-600 dark:text-neutral-400; }
+.doc-content a { @apply text-brazil-green dark:text-brazil-green-light underline hover:no-underline; }
+.doc-content blockquote { @apply border-l-4 border-neutral-300 dark:border-neutral-700 pl-4 italic text-neutral-500 dark:text-neutral-400 my-4; }
+.doc-content code:not(pre code) { @apply bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded text-[0.9em] font-mono; }
+.doc-content pre { @apply rounded-xl border border-neutral-200 dark:border-neutral-800 my-6 overflow-x-auto text-sm; }
+.doc-content hr { @apply my-8 border-neutral-200 dark:border-neutral-800; }
+
+/* Admonitions */
+.admonition { @apply border-l-4 p-4 rounded-r-lg my-6; }
+.admonition-warning { @apply border-yellow-500 bg-yellow-50 dark:bg-yellow-900/10 text-yellow-800 dark:text-yellow-300; }
+.admonition-tip { @apply border-brazil-green bg-green-50 dark:bg-green-900/10 text-green-800 dark:text-green-300; }
+.admonition-note { @apply border-blue-500 bg-blue-50 dark:bg-blue-900/10 text-blue-800 dark:text-blue-300; }
+
+/* Theme transition (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
+}
+
+/* rehype-pretty-code overrides */
+[data-rehype-pretty-code-fragment] pre { @apply !rounded-xl !border !border-neutral-200 dark:!border-neutral-800; }
+[data-rehype-pretty-code-fragment] code { @apply !bg-transparent; }

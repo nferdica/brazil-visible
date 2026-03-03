@@ -2,7 +2,7 @@
 title: Servidores Federais
 slug: servidores-federais
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/api-de-dados/
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -22,9 +22,9 @@ tags:
 cruzamento_com:
   - receita-federal/cnpj-completa
   - justica-eleitoral-tse/candidaturas
-  - poder-judiciario-cnj/processos
+  - poder-judiciario-cnj/datajud
   - transparencia-cgu/viagens-servico
-  - previdencia-social/beneficios
+  - previdencia-social/beneficios-inss
 status: documentado
 ---
 
@@ -247,9 +247,9 @@ if not df_rem.empty:
 |------------|-------------------|------------------|------------|
 | Servidores x Candidaturas | [TSE — Candidaturas](/docs/apis/justica-eleitoral-tse/candidaturas) | `CPF` | Verificar se servidores foram candidatos ou doadores de campanha |
 | Servidores x CNPJ | [Receita Federal — CNPJ](/docs/apis/receita-federal/cnpj-completa) | `CPF` | Identificar se servidores são sócios de empresas fornecedoras do governo |
-| Servidores x Processos | [CNJ — Processos](/docs/apis/poder-judiciario-cnj/processos) | `CPF` | Cruzar servidores com processos judiciais |
+| Servidores x Processos | [CNJ — DataJud](/docs/apis/poder-judiciario-cnj/datajud) | `CPF` | Cruzar servidores com processos judiciais |
 | Servidores x Viagens | [Viagens a Serviço](/docs/apis/transparencia-cgu/viagens-servico) | `CPF / ID servidor` | Verificar gastos com diárias e passagens por servidor |
-| Servidores x Previdência | [Previdência Social](/docs/apis/previdencia-social/beneficios) | `CPF / NIS` | Verificar acúmulo irregular de benefícios previdenciários |
+| Servidores x Previdência | [Benefícios INSS](/docs/apis/previdencia-social/beneficios-inss) | `CPF / NIS` | Verificar acúmulo irregular de benefícios previdenciários |
 | Servidores x Contratos | [Contratos Federais](/docs/apis/transparencia-cgu/contratos-federais) | `Código órgão` | Identificar relações entre servidores e fornecedores do mesmo órgão |
 
 ### Receita: detectar servidores que são sócios de empresas fornecedoras

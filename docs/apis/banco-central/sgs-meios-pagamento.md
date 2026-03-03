@@ -2,7 +2,7 @@
 title: SGS/API BCB - Meios de Pagamento
 slug: sgs-meios-pagamento
 orgao: BCB
-url_base: https://api.bcb.gov.br/dados/serie/bcdata.sgs.{SERIE}/dados?formato=json
+url_base: https://dadosabertos.bcb.gov.br/
 tipo_acesso: API REST
 autenticacao: Não requerida
 formato_dados: [JSON, CSV, XML]

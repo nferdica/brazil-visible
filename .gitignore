@@ -1,12 +1,16 @@
 # Dependencies
 /node_modules
 
-# Production
-/build
+# Next.js
+/.next
+/out
+next-env.d.ts
 
-# Generated files
-.docusaurus
-.cache-loader
+# TypeScript
+tsconfig.tsbuildinfo
+
+# Playwright MCP
+.playwright-mcp/
 
 # Misc
 .DS_Store

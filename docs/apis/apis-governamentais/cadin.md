@@ -2,7 +2,7 @@
 title: CADIN — Cadastro de Devedores do Governo Federal
 slug: cadin
 orgao: Gov.br Conecta
-url_base: https://conecta.gov.br/
+url_base: https://www.gov.br/conecta/catalogo/
 tipo_acesso: API REST
 autenticacao: OAuth
 formato_dados: [JSON]

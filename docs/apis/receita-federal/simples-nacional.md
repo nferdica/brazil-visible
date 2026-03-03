@@ -2,7 +2,7 @@
 title: Simples Nacional / MEI
 slug: simples-nacional
 orgao: Receita Federal
-url_base: https://dados.rfb.gov.br/CNPJ/
+url_base: https://www.gov.br/receitafederal/dados
 tipo_acesso: CSV Download
 autenticacao: Não requerida
 formato_dados: [CSV]

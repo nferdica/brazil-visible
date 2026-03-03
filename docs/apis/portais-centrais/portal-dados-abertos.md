@@ -2,7 +2,7 @@
 title: Portal Brasileiro de Dados Abertos
 slug: portal-dados-abertos
 orgao: Governo Federal (CGU / Secretaria de Governo Digital)
-url_base: https://dados.gov.br/dados/api/publico
+url_base: https://dados.gov.br/swagger-ui/index.html
 tipo_acesso: CKAN
 autenticacao: Não requerida
 formato_dados: JSON, CSV, XML
@@ -21,7 +21,7 @@ tags:
   - open data
 cruzamento_com:
   - receita-federal/cnpj-completa
-  - ibge-estatisticas/agregados
+  - ibge-estatisticas/censo-demografico
   - tesouro-nacional/siafi
   - justica-eleitoral-tse/candidaturas
 status: parcial
@@ -219,7 +219,7 @@ O Portal de Dados Abertos é essencialmente um **catálogo de metadados**. Os cr
 | Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
 |------------|-------------------|------------------|------------|
 | Conjuntos de dados × CNPJ | [Receita Federal — CNPJ](/docs/apis/receita-federal/cnpj-completa) | `CNPJ` | Identificar dados sobre empresas em conjuntos abertos |
-| Conjuntos de dados × IBGE | [IBGE — Agregados](/docs/apis/ibge-estatisticas/agregados) | `Código IBGE` | Contextualizar dados com informações geográficas |
+| Conjuntos de dados × IBGE | [IBGE — Censo Demográfico](/docs/apis/ibge-estatisticas/censo-demografico) | `Código IBGE` | Contextualizar dados com informações geográficas |
 | Conjuntos de dados × Transparência | [Portal da Transparência](/docs/apis/portais-centrais/portal-transparencia) | Variável | Complementar dados de gastos e servidores |
 | Conjuntos de dados × TSE | [TSE — Candidaturas](/docs/apis/justica-eleitoral-tse/candidaturas) | `CPF` | Cruzar dados eleitorais com bases abertas |
 

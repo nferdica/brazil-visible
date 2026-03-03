@@ -2,7 +2,7 @@
 title: Tesouro Transparente
 slug: tesouro-transparente
 orgao: Secretaria do Tesouro Nacional (STN)
-url_base: https://apidatalake.tesouro.gov.br/ords/sadipem/tt
+url_base: https://apidatalake.tesouro.gov.br/docs/sadipem/
 tipo_acesso: API REST
 autenticacao: Não requerida
 formato_dados: JSON, CSV
@@ -24,7 +24,7 @@ tags:
   - despesas municipais
   - SICONFI
 cruzamento_com:
-  - ibge-estatisticas/agregados
+  - ibge-estatisticas/censo-demografico
   - receita-federal/cnpj-completa
   - justica-eleitoral-tse/candidaturas
   - tesouro-nacional/siafi
@@ -270,11 +270,11 @@ print(df_fpm.head())
 
 | Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
 |------------|-------------------|------------------|------------|
-| RREO × Municípios | [IBGE — Agregados](/docs/apis/ibge-estatisticas/agregados) | `Código IBGE` | Contextualizar finanças municipais com dados demográficos |
+| RREO × Municípios | [IBGE — Censo Demográfico](/docs/apis/ibge-estatisticas/censo-demografico) | `Código IBGE` | Contextualizar finanças municipais com dados demográficos |
 | Transferências × Transparência | [Portal da Transparência](/docs/apis/portais-centrais/portal-transparencia) | `Código SIAFI / IBGE` | Complementar dados de transferências com execução de despesas |
 | SICONFI × SIAFI | [Tesouro Nacional — SIAFI](/docs/apis/tesouro-nacional/siafi) | `Código SIAFI` | Detalhar execução orçamentária federal vs. subnacional |
 | FPM × Eleições | [TSE — Candidaturas](/docs/apis/justica-eleitoral-tse/candidaturas) | `Código IBGE` | Analisar finanças municipais vs. resultado eleitoral |
-| Dívida Pública × Mercado | [CVM — Dados de mercado](/docs/apis/mercado-financeiro/cvm) | `Código do título` | Relacionar títulos da dívida com mercado financeiro |
+| Dívida Pública × Mercado | [CVM — DFP/ITR](/docs/apis/mercado-financeiro/cvm-dfp-itr) | `Código do título` | Relacionar títulos da dívida com mercado financeiro |
 
 ## Limitações conhecidas
 

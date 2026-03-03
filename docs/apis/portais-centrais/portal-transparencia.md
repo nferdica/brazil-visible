@@ -2,7 +2,7 @@
 title: Portal da Transparência
 slug: portal-transparencia
 orgao: Controladoria-Geral da União (CGU)
-url_base: https://api.portaldatransparencia.gov.br/api-de-dados
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON, CSV
@@ -30,8 +30,8 @@ cruzamento_com:
   - receita-federal/cnpj-completa
   - justica-eleitoral-tse/candidaturas
   - tesouro-nacional/siafi
-  - previdencia-social/beneficios
-  - poder-judiciario-cnj/processos
+  - previdencia-social/beneficios-inss
+  - poder-judiciario-cnj/datajud
 status: documentado
 ---
 
@@ -391,11 +391,11 @@ O Portal da Transparência é uma das fontes mais ricas para cruzamento de dados
 |------------|-------------------|------------------|------------|
 | Despesas × CNPJ | [Receita Federal — CNPJ](/docs/apis/receita-federal/cnpj-completa) | `CNPJ` | Identificar sócios e natureza jurídica de favorecidos |
 | Servidores × Candidaturas | [TSE — Candidaturas](/docs/apis/justica-eleitoral-tse/candidaturas) | `CPF` | Verificar se servidores foram candidatos |
-| Servidores × Processos | [CNJ — Processos](/docs/apis/poder-judiciario-cnj/processos) | `CPF` | Cruzar servidores com processos judiciais |
+| Servidores × Processos | [CNJ — DataJud](/docs/apis/poder-judiciario-cnj/datajud) | `CPF` | Cruzar servidores com processos judiciais |
 | Sanções (CEIS) × CNPJ | [Receita Federal — CNPJ](/docs/apis/receita-federal/cnpj-completa) | `CNPJ` | Verificar quadro societário de empresas sancionadas |
-| Transferências × Municípios | [IBGE — Municípios](/docs/apis/ibge-estatisticas/agregados) | `Código IBGE` | Contextualizar transferências com dados demográficos |
+| Transferências × Municípios | [IBGE — Censo Demográfico](/docs/apis/ibge-estatisticas/censo-demografico) | `Código IBGE` | Contextualizar transferências com dados demográficos |
 | Despesas × SIAFI | [Tesouro Nacional — SIAFI](/docs/apis/tesouro-nacional/siafi) | `Código SIAFI` | Detalhar execução orçamentária |
-| Bolsa Família × Previdência | [Previdência Social](/docs/apis/previdencia-social/beneficios) | `CPF / NIS` | Verificar acúmulo de benefícios |
+| Bolsa Família × Previdência | [Benefícios INSS](/docs/apis/previdencia-social/beneficios-inss) | `CPF / NIS` | Verificar acúmulo de benefícios |
 
 ### Receita para cruzamento: Empresas sancionadas vs. licitações ativas
 

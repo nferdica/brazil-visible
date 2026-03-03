@@ -2,7 +2,7 @@
 title: DENATRAN/RENAVAM — Frota de Veículos
 slug: denatran-renavam
 orgao: DENATRAN / SENATRAN
-url_base: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/frota-de-veiculos
+url_base: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran
 tipo_acesso: CSV Download
 autenticacao: Não requerida
 formato_dados: [CSV, XLSX]

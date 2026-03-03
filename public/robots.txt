@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /docs/plans/
+
+Sitemap: https://brazilvisible.com/sitemap.xml

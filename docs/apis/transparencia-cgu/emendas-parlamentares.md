@@ -2,7 +2,7 @@
 title: Emendas Parlamentares
 slug: emendas-parlamentares
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/api-de-dados/
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -252,7 +252,7 @@ Inclui todos os campos da listagem, mais:
 | Emendas x CNPJ | [Receita Federal — CNPJ](/docs/apis/receita-federal/cnpj-completa) | `CNPJ` | Analisar empresas beneficiadas por emendas (sócios, natureza jurídica) |
 | Emendas x Contratos | [Contratos Federais](/docs/apis/transparencia-cgu/contratos-federais) | `Código órgão` | Rastrear contratos gerados a partir de recursos de emendas |
 | Emendas x SIAFI | [Tesouro Nacional — SIAFI](/docs/apis/tesouro-nacional/siafi) | `Código ação / programa` | Detalhar a execução orçamentária da emenda |
-| Emendas x Municípios | [IBGE — Municípios](/docs/apis/ibge-estatisticas/agregados) | `Código IBGE` | Contextualizar com dados socioeconômicos do município beneficiado |
+| Emendas x Municípios | [IBGE — Censo Demográfico](/docs/apis/ibge-estatisticas/censo-demografico) | `Código IBGE` | Contextualizar com dados socioeconômicos do município beneficiado |
 
 ### Receita: rastrear emendas de um parlamentar e seus doadores
 

@@ -1,0 +1,48 @@
+name: Health Check
+
+on:
+  schedule:
+    # Every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: health-check
+  cancel-in-progress: true
+
+jobs:
+  health-check:
+    name: Check API Health
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run health check
+        run: node scripts/health-check.mjs
+
+      - name: Commit health.json if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/health.json
+          if ! git diff --cached --quiet; then
+            git commit -m "ci: update health.json [skip ci]"
+            git push
+          else
+            echo "No changes to health.json — skipping commit."
+          fi

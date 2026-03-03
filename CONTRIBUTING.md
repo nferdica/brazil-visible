@@ -1,26 +1,26 @@
 # Como Contribuir
 
-Obrigado pelo interesse em contribuir com o **Brazil Visible**! Este projeto e um catalogo colaborativo de APIs e fontes de dados publicos brasileiros, voltado para fiscalizacao governamental e transparencia.
+Obrigado pelo interesse em contribuir com o **Brazil Visible**! Este projeto é um catálogo colaborativo de APIs e fontes de dados públicos brasileiros, voltado para fiscalização governamental e transparência.
 
-Toda contribuicao e bem-vinda, seja adicionando novas fontes de dados, criando receitas de cruzamento, melhorando a documentacao existente ou reportando problemas.
+Toda contribuição é bem-vinda, seja adicionando novas fontes de dados, criando receitas de cruzamento, melhorando a documentação existente ou reportando problemas.
 
-## Sumario
+## Sumário
 
 - [Adicionando uma nova API](#adicionando-uma-nova-api)
 - [Adicionando uma receita de cruzamento](#adicionando-uma-receita-de-cruzamento)
-- [Melhorando documentacao existente](#melhorando-documentacao-existente)
+- [Melhorando documentação existente](#melhorando-documentação-existente)
 - [Setup local para desenvolvimento](#setup-local-para-desenvolvimento)
-- [Padroes de commit](#padroes-de-commit)
+- [Padrões de commit](#padrões-de-commit)
 
 ---
 
 ## Adicionando uma nova API
 
-Para adicionar uma nova fonte de dados ao catalogo, siga os passos abaixo:
+Para adicionar uma nova fonte de dados ao catálogo, siga os passos abaixo:
 
 ### 1. Identifique a categoria
 
-As APIs sao organizadas por orgao/tema dentro de `docs/apis/`. Veja as categorias existentes:
+As APIs são organizadas por órgão/tema dentro de `docs/apis/`. Veja as categorias existentes:
 
 ```
 docs/apis/
@@ -35,7 +35,7 @@ docs/apis/
   ...
 ```
 
-Se nenhuma categoria existente se aplica, crie uma nova pasta com nome em kebab-case.
+Se nenhuma categoria existente se aplica, crie uma nova pasta com nome em kebab-case e adicione um `category.json` com `label` e `position`.
 
 ### 2. Crie o arquivo Markdown
 
@@ -43,47 +43,45 @@ Crie um arquivo `.md` dentro da categoria apropriada. O nome do arquivo deve usa
 
 ### 3. Preencha o frontmatter
 
-Toda pagina de API **deve** conter o seguinte frontmatter YAML no inicio do arquivo. Este schema e obrigatorio:
+Toda página de API **deve** conter o seguinte frontmatter YAML no início do arquivo. Este schema é obrigatório:
 
 ```yaml
 ---
-title: "Nome da API ou Fonte de Dados"    # Titulo exibido na pagina
-slug: nome-em-kebab-case                  # Slug para a URL (deve ser unico na categoria)
-orgao: "SIGLA"                            # Sigla do orgao responsavel (ex: BCB, CGU, IBGE)
+title: "Nome da API ou Fonte de Dados"    # Título exibido na página
+slug: nome-em-kebab-case                  # Slug para a URL (deve ser único na categoria)
+orgao: "SIGLA"                            # Sigla do órgão responsável (ex: BCB, CGU, IBGE)
 url_base: "https://..."                   # URL base da API ou portal de dados
 tipo_acesso: "API REST"                   # Tipo de acesso (API REST, Download CSV, Web Scraping, etc.)
-autenticacao: "Nao requerida"             # Tipo de autenticacao (Nao requerida, API Key, OAuth, etc.)
-formato_dados: [JSON, CSV]                # Formatos de dados disponiveis (lista YAML)
-frequencia_atualizacao: "Diaria"          # Frequencia de atualizacao (Diaria, Mensal, Anual, etc.)
+autenticacao: "Não requerida"             # Tipo de autenticação (Não requerida, API Key, OAuth, etc.)
+formato_dados: [JSON, CSV]                # Formatos de dados disponíveis (lista YAML)
+frequencia_atualizacao: "Diária"          # Frequência de atualização (Diária, Mensal, Anual, etc.)
 campos_chave:                             # Lista dos campos mais importantes
   - campo1
   - campo2
-  - campo3
-tags:                                     # Tags para busca e categorizacao
+tags:                                     # Tags para busca e categorização
   - tag1
   - tag2
 cruzamento_com:                           # Slugs de outras APIs para cruzamento
   - categoria/slug-da-api
-  - outra-categoria/slug
-status: documentado                       # Status da documentacao (documentado, em-progresso, rascunho)
+status: documentado                       # Status da documentação (documentado, parcial, stub)
 ---
 ```
 
-### 4. Escreva o conteudo
+### 4. Escreva o conteúdo
 
-Apos o frontmatter, escreva o conteudo da pagina seguindo esta estrutura:
+Após o frontmatter, escreva o conteúdo da página seguindo esta estrutura:
 
-1. **O que e** -- descricao da fonte de dados e sua relevancia
-2. **Como acessar** -- tabela com URL, autenticacao, rate limits, formatos
-3. **Endpoints/recursos principais** -- tabela com endpoints ou recursos disponiveis
-4. **Exemplo de uso** -- codigo Python funcional demonstrando como consumir a API
-5. **Campos disponiveis** -- tabela com nome, tipo e descricao de cada campo
-6. **Cruzamentos possiveis** -- links para outras fontes de dados que podem ser cruzadas
-7. **Limitacoes conhecidas** -- problemas, limites e cuidados ao usar a fonte
+1. **O que é** — descrição da fonte de dados e sua relevância
+2. **Como acessar** — tabela com URL, autenticação, rate limits, formatos
+3. **Endpoints/recursos principais** — tabela com endpoints ou recursos disponíveis
+4. **Exemplo de uso** — código Python funcional demonstrando como consumir a API
+5. **Campos disponíveis** — tabela com nome, tipo e descrição de cada campo
+6. **Cruzamentos possíveis** — links para outras fontes de dados que podem ser cruzadas
+7. **Limitações conhecidas** — problemas, limites e cuidados ao usar a fonte
 
 ### 5. Abra um Pull Request
 
-Abra um PR com o titulo descritivo e preencha o template. Verifique se o build passa antes de submeter.
+Abra um PR com título descritivo e preencha o template. Verifique se o build passa antes de submeter.
 
 ---
 
@@ -99,13 +97,13 @@ Crie o arquivo em `docs/cruzamentos/` com nome descritivo em kebab-case. Exemplo
 
 A receita deve conter:
 
-1. **Objetivo** -- o que a analise busca responder
-2. **Fontes utilizadas** -- lista das APIs/fontes envolvidas com links
-3. **Campos de ligacao** -- quais campos conectam as bases (ex: CNPJ, CPF, codigo IBGE)
-4. **Passo a passo** -- instrucoes detalhadas de como realizar o cruzamento
-5. **Codigo de exemplo** -- script Python funcional que demonstra o cruzamento
-6. **Resultado esperado** -- o que o usuario deve encontrar ao executar a receita
-7. **Cuidados e limitacoes** -- problemas de qualidade de dados, gaps temporais, etc.
+1. **Objetivo** — o que a análise busca responder
+2. **Fontes utilizadas** — lista das APIs/fontes envolvidas com links
+3. **Campos de ligação** — quais campos conectam as bases (ex: CNPJ, CPF, código IBGE)
+4. **Passo a passo** — instruções detalhadas de como realizar o cruzamento
+5. **Código de exemplo** — script Python funcional que demonstra o cruzamento
+6. **Resultado esperado** — o que o usuário deve encontrar ao executar a receita
+7. **Cuidados e limitações** — problemas de qualidade de dados, gaps temporais, etc.
 
 ### 3. Abra um Pull Request
 
@@ -113,21 +111,21 @@ Abra um PR referenciando as APIs utilizadas na receita.
 
 ---
 
-## Melhorando documentacao existente
+## Melhorando documentação existente
 
-Melhorias na documentacao existente sao muito bem-vindas! Alguns exemplos:
+Melhorias na documentação existente são muito bem-vindas! Alguns exemplos:
 
-- **Corrigir informacoes desatualizadas** -- URLs que mudaram, endpoints descontinuados
-- **Adicionar exemplos de uso** -- novos exemplos de codigo em Python ou outras linguagens
-- **Completar campos faltantes** -- preencher campos do frontmatter que estejam vazios
-- **Melhorar descricoes** -- tornar explicacoes mais claras e detalhadas
-- **Adicionar cruzamentos** -- sugerir novos cruzamentos entre fontes de dados
-- **Corrigir erros** -- erros de portugues, formatacao, links quebrados
+- **Corrigir informações desatualizadas** — URLs que mudaram, endpoints descontinuados
+- **Adicionar exemplos de uso** — novos exemplos de código em Python ou outras linguagens
+- **Completar campos faltantes** — preencher campos do frontmatter que estejam vazios
+- **Melhorar descrições** — tornar explicações mais claras e detalhadas
+- **Adicionar cruzamentos** — sugerir novos cruzamentos entre fontes de dados
+- **Corrigir erros** — erros de português, formatação, links quebrados
 
 Para fazer melhorias:
 
 1. Encontre o arquivo correspondente em `docs/`
-2. Faca as alteracoes necessarias
+2. Faça as alterações necessárias
 3. Verifique se o build continua passando (`npm run build`)
 4. Abra um Pull Request descrevendo o que foi alterado
 
@@ -135,19 +133,19 @@ Para fazer melhorias:
 
 ## Setup local para desenvolvimento
 
-### Pre-requisitos
+### Pré-requisitos
 
-- [Node.js](https://nodejs.org/) versao 20 ou superior
-- npm (incluido com o Node.js)
+- [Node.js](https://nodejs.org/) versão 20 ou superior
+- npm (incluído com o Node.js)
 
-### Instalacao
+### Instalação
 
 ```bash
 # Clone o repositorio
 git clone https://github.com/nferdica/brazil-visible.git
 cd brazil-visible
 
-# Instale as dependencias
+# Instale as dependências
 npm install
 ```
 
@@ -155,44 +153,35 @@ npm install
 
 ```bash
 # Inicia o servidor de desenvolvimento com hot-reload
-npm run start
+npm run dev
 ```
 
-O site estara disponivel em `http://localhost:3000/brazil-visible/`.
+O site estará disponível em `http://localhost:3000`.
 
-### Build de producao
+### Build de produção
 
 ```bash
-# Gera o build estatico
+# Gera o build estático
 npm run build
-
-# Serve o build localmente para verificacao
-npm run serve
-```
-
-### Verificacao de tipos
-
-```bash
-npm run typecheck
 ```
 
 ---
 
-## Padroes de commit
+## Padrões de commit
 
-Este projeto segue a convencao de [Conventional Commits](https://www.conventionalcommits.org/pt-br/). Use os seguintes prefixos nas mensagens de commit:
+Este projeto segue a convenção de [Conventional Commits](https://www.conventionalcommits.org/pt-br/). Use os seguintes prefixos nas mensagens de commit:
 
 | Prefixo  | Quando usar                                              | Exemplo                                          |
 |----------|----------------------------------------------------------|--------------------------------------------------|
 | `feat:`  | Adicionar nova API, receita de cruzamento ou recurso     | `feat: add API page for CNES/DATASUS`            |
-| `docs:`  | Melhorar documentacao existente, corrigir textos         | `docs: fix broken link in portal-transparencia`  |
+| `docs:`  | Melhorar documentação existente, corrigir textos         | `docs: fix broken link in portal-transparencia`  |
 | `fix:`   | Corrigir erros no build, links quebrados, dados errados  | `fix: correct endpoint URL for SGS series`       |
-| `ci:`    | Alteracoes em CI/CD, GitHub Actions, deploy              | `ci: add build check on pull requests`           |
+| `ci:`    | Alterações em CI/CD, GitHub Actions, deploy              | `ci: add build check on pull requests`           |
 
 ### Formato da mensagem
 
 ```
-<tipo>: <descricao curta em ingles>
+<tipo>: <descrição curta em inglês>
 
 [corpo opcional com mais detalhes]
 ```
@@ -208,12 +197,12 @@ git commit -m "ci: add deploy workflow for GitHub Pages"
 
 ---
 
-## Codigo de Conduta
+## Código de Conduta
 
-Este projeto adota o [Contributor Covenant v2.1](CODE_OF_CONDUCT.md) como codigo de conduta. Ao participar, espera-se que voce siga este codigo. Reporte comportamentos inaceitaveis para **brazil-visible@proton.me**.
+Este projeto adota o [Contributor Covenant v2.1](CODE_OF_CONDUCT.md) como código de conduta. Ao participar, espera-se que você siga este código. Reporte comportamentos inaceitáveis para **brazil-visible@proton.me**.
 
 ---
 
-## Duvidas?
+## Dúvidas?
 
-Abra uma [Discussion](https://github.com/nferdica/brazil-visible/discussions) no GitHub ou entre em contato via issues. Toda contribuicao e valorizada!
+Abra uma [Discussion](https://github.com/nferdica/brazil-visible/discussions) no GitHub ou entre em contato via issues. Toda contribuição é valorizada!

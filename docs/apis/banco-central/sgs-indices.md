@@ -2,7 +2,7 @@
 title: SGS/API BCB - Índices
 slug: sgs-indices
 orgao: BCB
-url_base: https://api.bcb.gov.br/dados/serie/bcdata.sgs.{SERIE}/dados?formato=json
+url_base: https://dadosabertos.bcb.gov.br/
 tipo_acesso: API REST
 autenticacao: Não requerida
 formato_dados: [JSON, CSV, XML]
@@ -13,7 +13,7 @@ cruzamento_com:
   - sgs-cambio
   - sgs-juros
   - sgs-credito
-  - ibge-estatisticas/ipca
+  - ibge-estatisticas/ipca-inflacao
 status: documentado
 ---
 

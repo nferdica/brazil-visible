@@ -2,7 +2,7 @@
 title: IBGE Geociências — Limites Territoriais e Malhas Digitais
 slug: ibge-geociencias
 orgao: IBGE
-url_base: https://servicodados.ibge.gov.br/api/v3/malhas/
+url_base: https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR
 tipo_acesso: API REST
 autenticacao: Não requerida
 formato_dados: [GeoJSON, TopoJSON, SVG, SHP]

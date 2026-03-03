@@ -2,7 +2,7 @@
 title: SICONFI (Finanças de Estados e Municípios)
 slug: siconfi
 orgao: Tesouro Nacional
-url_base: https://apidatalake.tesouro.gov.br/ords/siconfi/tt/
+url_base: https://apidatalake.tesouro.gov.br/ords/siconfi/tt/entes
 tipo_acesso: API REST
 autenticacao: Não requerida
 formato_dados: JSON, CSV

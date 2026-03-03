@@ -2,7 +2,7 @@
 title: SIAFI (Execução Orçamentária da União)
 slug: siafi
 orgao: Tesouro Nacional
-url_base: https://apidatalake.tesouro.gov.br/ords/sadipem/tt
+url_base: https://apidatalake.tesouro.gov.br/docs/sadipem/
 tipo_acesso: API REST
 autenticacao: Não requerida
 formato_dados: JSON, CSV
