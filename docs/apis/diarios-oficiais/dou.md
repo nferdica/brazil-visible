@@ -28,7 +28,7 @@ cruzamento_com:
   - transparencia-cgu/servidores-federais
   - transparencia-cgu/contratos-federais
   - apis-governamentais/siape
-status: parcial
+status: documentado
 ---
 
 # DOU — Diário Oficial da União
@@ -75,10 +75,12 @@ https://www.in.gov.br/consulta/-/buscar/dou?q={termo}&s=todos&exactDate=personal
 
 | Endpoint | Descrição |
 |---|---|
-| `https://queridodiario.ok.org.br/api/gazettes` | Busca em diários oficiais |
-| `?territory_id={id}` | Filtrar por município/UF |
+| `https://api.queridodiario.ok.org.br/gazettes` | Busca em diários oficiais |
+| `?territory_ids={id}` | Filtrar por município (código IBGE) |
 | `&since={data}&until={data}` | Filtrar por período |
 | `&querystring={termo}` | Busca textual |
+| `&excerpt_size=500` | Tamanho do trecho destacado |
+| `&number_of_excerpts=3` | Número de trechos por resultado |
 
 ## Exemplo de uso
 
@@ -114,9 +116,9 @@ import requests
 import pandas as pd
 
 # Buscar publicações no DOU via Querido Diário
-url = "https://queridodiario.ok.org.br/api/gazettes"
+url = "https://api.queridodiario.ok.org.br/gazettes"
 params = {
-    "territory_id": "5300108",  # Brasília (código IBGE)
+    "territory_ids": "5300108",  # Brasília (código IBGE)
     "since": "2025-01-01",
     "until": "2025-01-31",
     "querystring": "licitação",

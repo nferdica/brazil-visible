@@ -28,7 +28,7 @@ cruzamento_com:
   - receita-federal/cnpj-completa
   - justica-eleitoral-tse/candidaturas
   - tesouro-nacional/siafi
-status: parcial
+status: documentado
 ---
 
 # Tesouro Transparente

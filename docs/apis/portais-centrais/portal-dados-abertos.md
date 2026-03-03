@@ -24,7 +24,7 @@ cruzamento_com:
   - ibge-estatisticas/censo-demografico
   - tesouro-nacional/siafi
   - justica-eleitoral-tse/candidaturas
-status: parcial
+status: documentado
 ---
 
 # Portal Brasileiro de Dados Abertos

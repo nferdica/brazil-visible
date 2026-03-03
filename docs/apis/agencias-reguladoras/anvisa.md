@@ -26,7 +26,7 @@ cruzamento_com:
   - saude-datasus/sih
   - saude-datasus/cnes
   - receita-federal/cnpj-completa
-status: parcial
+status: documentado
 ---
 
 # ANVISA Saúde — Registros de Medicamentos e Alimentos

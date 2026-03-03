@@ -28,7 +28,7 @@ cruzamento_com:
   - ibge-estatisticas/pib-municipal
   - infraestrutura-transportes/prf-acidentes
   - ipea/ipeadata
-status: parcial
+status: documentado
 ---
 
 # SINESP — Estatísticas de Criminalidade

@@ -28,7 +28,7 @@ cruzamento_com:
   - tesouro-nacional/siop
   - tesouro-nacional/siconfi
   - portais-centrais/portal-dados-abertos
-status: parcial
+status: documentado
 ---
 
 # Justiça em Números

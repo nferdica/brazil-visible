@@ -14,7 +14,7 @@ cruzamento_com:
   - sgs-credito
   - receita-federal/cnpj-completa
   - transparencia-cgu/ceis
-status: parcial
+status: documentado
 ---
 
 # IFData
@@ -184,18 +184,22 @@ print(df.sort_values("AtivoTotal_BRL_Bi", ascending=False).to_string(index=False
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - Juros](sgs-juros)** — comparar taxas cobradas por instituição com a Selic e o CDI
-- **[SGS/API BCB - Crédito](sgs-credito)** — cruzar dados de crédito agregados com informações por instituição
-- **Receita Federal (CNPJ)** — obter dados cadastrais complementares das instituições via CNPJ
-- **CGU (CEIS/CNEP)** — verificar se instituições financeiras constam em cadastros de punições
-- **CVM** — cruzar com dados de companhias abertas (para bancos listados em bolsa)
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| IFData x Juros | [SGS/API BCB — Juros](/docs/apis/banco-central/sgs-juros) | Instituição | Comparar taxas cobradas por instituição com a Selic e o CDI |
+| IFData x Crédito | [SGS/API BCB — Crédito](/docs/apis/banco-central/sgs-credito) | Instituição | Cruzar dados de crédito agregados com informações por instituição |
+| IFData x Empresas | [CNPJ Completa](/docs/apis/receita-federal/cnpj-completa) | CNPJ | Obter dados cadastrais complementares das instituições |
+| IFData x Punições | [CEIS](/docs/apis/transparencia-cgu/ceis) | CNPJ | Verificar se instituições financeiras constam em cadastros de sanções |
+| IFData x Bolsa | [CVM DFP/ITR](/docs/apis/mercado-financeiro/cvm-dfp-itr) | CNPJ | Cruzar com dados de companhias abertas (bancos listados em bolsa) |
 
 ## Limitações conhecidas
 
-- **Não é API REST**: o IFData é uma interface web; não há endpoint REST documentado para consulta direta
-- **Atualização trimestral**: dados são publicados com defasagem de aproximadamente 90 dias após o encerramento do trimestre
-- **Download manual**: a exportação CSV requer navegação manual no portal; automação via scraping é frágil e pode quebrar com alterações no site
-- **Formato inconsistente**: os CSVs exportados podem ter variações de formato (encoding, separadores) entre versões
-- **Dados consolidados vs. individuais**: dados de conglomerados bancários podem ser apresentados de forma consolidada, dificultando a análise de entidades individuais
-- **Cobertura**: apenas instituições autorizadas pelo BCB; não inclui fintechs não reguladas ou instituições de pagamento menores
-- **Sem API de séries temporais**: para acompanhar a evolução ao longo do tempo, é necessário baixar manualmente os dados de cada trimestre
+| Limitação | Detalhes |
+|---|---|
+| **Não é API REST** | O IFData é uma interface web; não há endpoint REST documentado para consulta direta. |
+| **Atualização trimestral** | Dados são publicados com defasagem de aproximadamente 90 dias após o encerramento do trimestre. |
+| **Download manual** | A exportação CSV requer navegação manual no portal; automação via scraping é frágil e pode quebrar com alterações no site. |
+| **Formato inconsistente** | Os CSVs exportados podem ter variações de formato (encoding, separadores) entre versões. |
+| **Dados consolidados vs. individuais** | Dados de conglomerados bancários podem ser apresentados de forma consolidada, dificultando a análise de entidades individuais. |
+| **Cobertura** | Apenas instituições autorizadas pelo BCB; não inclui fintechs não reguladas ou instituições de pagamento menores. |
+| **Sem API de séries temporais** | Para acompanhar a evolução ao longo do tempo, é necessário baixar manualmente os dados de cada trimestre. |

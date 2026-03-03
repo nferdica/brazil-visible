@@ -25,7 +25,7 @@ cruzamento_com:
   - apis-governamentais/siape
   - transparencia-cgu/servidores-federais
   - transparencia-cgu/contratos-federais
-status: parcial
+status: documentado
 ---
 
 # SIORG — Estrutura Organizacional do Governo Federal

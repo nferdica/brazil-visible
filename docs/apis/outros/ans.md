@@ -27,7 +27,7 @@ cruzamento_com:
   - saude-datasus/cnes
   - ibge-estatisticas/censo-demografico
   - receita-federal/cnpj-completa
-status: parcial
+status: documentado
 ---
 
 # ANS Saúde Suplementar — Planos de Saúde e Operadoras

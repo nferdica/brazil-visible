@@ -30,7 +30,7 @@ cruzamento_com:
   - justica-eleitoral-tse/candidaturas
   - saude-datasus/cnes
   - tesouro-nacional/siafi
-status: parcial
+status: documentado
 ---
 
 # Base dos Dados

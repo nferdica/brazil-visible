@@ -30,7 +30,7 @@ cruzamento_com:
   - dados-geoespaciais/ibge-geociencias
   - dados-geoespaciais/inde
   - meio-ambiente/prodes
-status: parcial
+status: documentado
 ---
 
 # INPE Imagens de Satélite — Landsat, Sentinel, CBERS

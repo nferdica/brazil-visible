@@ -28,7 +28,7 @@ cruzamento_com:
   - ibge-estatisticas/pib-municipal
   - infraestrutura-transportes/prf-acidentes
   - agencias-reguladoras/anp
-status: parcial
+status: documentado
 ---
 
 # DENATRAN/RENAVAM — Frota de Veículos

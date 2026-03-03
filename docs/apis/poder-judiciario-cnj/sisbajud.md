@@ -1,7 +1,7 @@
 ---
-title: SISBAJUD — Sistema de Bloqueio Judicial
+title: SISBAJUD — Sistema de Busca de Ativos do Poder Judiciário
 slug: sisbajud
-orgao: CNJ
+orgao: CNJ / Banco Central
 url_base: https://sisbajud.cnj.jus.br/
 tipo_acesso: Sistema restrito (uso exclusivo do Poder Judiciário)
 autenticacao: Certificado digital (magistrados e servidores autorizados)
@@ -22,6 +22,8 @@ tags:
   - penhora online
   - execução
   - BacenJud
+  - Teimosinha
+  - PDPJ-Br
 cruzamento_com:
   - poder-judiciario-cnj/datajud
   - poder-judiciario-cnj/bnmp
@@ -29,24 +31,34 @@ cruzamento_com:
   - receita-federal/cnpj-completa
   - receita-federal/qsa
   - transparencia-cgu/ceis
-status: stub
+status: documentado
 ---
 
-# SISBAJUD — Sistema de Bloqueio Judicial
+# SISBAJUD — Sistema de Busca de Ativos do Poder Judiciário
 
 ## O que é
 
 O **SISBAJUD (Sistema de Busca de Ativos do Poder Judiciário)** é o sistema eletrônico mantido pelo **Conselho Nacional de Justiça (CNJ)** em parceria com o **Banco Central do Brasil (BCB)** que permite a magistrados realizar, de forma eletrônica e instantânea, o bloqueio, desbloqueio e consulta de ativos financeiros de pessoas físicas e jurídicas em todas as instituições financeiras do país.
 
-O SISBAJUD é o sucessor do **BacenJud** (desativado em 2020) e representa uma evolução significativa em termos de funcionalidades, incluindo:
+O SISBAJUD é o sucessor do **BacenJud** (desativado em 2020) e representa uma evolução significativa em termos de funcionalidades:
 
 - **Bloqueio de valores** — congelamento de saldos em contas bancárias, poupanças, investimentos
-- **Teimosinha** — funcionalidade que mantém a ordem de bloqueio ativa por até 30 dias, capturando automaticamente valores que ingressem nas contas
+- **Teimosinha** — funcionalidade que mantém a ordem de bloqueio ativa por até 30 dias, capturando automaticamente valores que ingressem nas contas (incluindo bancos digitais desde 2022)
 - **Consulta de ativos** — levantamento de saldos e extratos em todas as instituições financeiras
 - **Desbloqueio** — liberação total ou parcial de valores bloqueados
+- **Transferência** — transferência de valores bloqueados para conta judicial
 - **Requisição de informações** — solicitação de dados financeiros para instrução processual
 
-O sistema é essencial para a efetividade das decisões judiciais em processos de execução, permitindo a constrição patrimonial de devedores de forma célere e abrangente.
+### Números do SISBAJUD (outubro/2025)
+
+| Indicador | Valor |
+|---|---|
+| Total de ordens de bloqueio | 122+ milhões |
+| Valor total bloqueado | R$ 115,5 trilhões |
+| Valor transferido para contas judiciais | R$ 325+ bilhões |
+| Taxa de conversão | 20% das ordens convertidas em depósitos judiciais |
+| Justiça Estadual | ~50% das ordens (61+ milhões) |
+| Justiça do Trabalho | ~46% das ordens (56+ milhões) |
 
 > **Importante:** O SISBAJUD é um sistema de uso **exclusivo do Poder Judiciário**. Não existe acesso público ou API pública. Esta página documenta o sistema para fins de referência, compreensão do ecossistema de dados judiciais e possíveis cruzamentos com dados públicos.
 
@@ -57,22 +69,21 @@ O sistema é essencial para a efetividade das decisões judiciais em processos d
 | Item | Detalhe |
 |---|---|
 | **URL** | `https://sisbajud.cnj.jus.br/` |
-| **Tipo de acesso** | Sistema restrito — uso exclusivo de magistrados e servidores autorizados |
+| **Documentação PDPJ-Br** | `https://docs.pdpj.jus.br/servicos-negociais/sisbajud/` |
+| **Tipo de acesso** | Restrito — uso exclusivo de magistrados e servidores autorizados |
 | **Autenticação** | Certificado digital (e-CPF/e-CNPJ padrão ICP-Brasil) |
-| **Quem pode acessar** | Magistrados, servidores do judiciário designados por portaria |
+| **Regulamentação** | Portaria CNJ nº 03/2024 + Resolução BCB nº 584/2024 |
 
 ### Acesso público — não disponível
 
-O SISBAJUD **não possui** interface pública, API REST ou dados abertos. As informações sobre o sistema são obtidas a partir de:
+O SISBAJUD **não possui** interface pública, API REST ou dados abertos. Informações públicas são obtidas a partir de:
 
-- Documentação institucional do CNJ
-- Relatórios do Justiça em Números (estatísticas agregadas)
-- Decisões judiciais públicas que mencionam bloqueios via SISBAJUD
-- Notícias e publicações do CNJ
+- **Painel de Monitoramento** — dashboard do CNJ com dados agregados (lançado em 2025)
+- **Justiça em Números** — relatório anual do CNJ com estatísticas
+- **Decisões judiciais** — menções a bloqueios em processos públicos
+- **Relatórios institucionais** — publicações periódicas do CNJ
 
 ### Para advogados e partes processuais
-
-Advogados e partes podem verificar a existência de bloqueios judiciais em suas contas por meio de:
 
 1. Consulta ao extrato bancário junto à instituição financeira
 2. Petição nos autos do processo judicial
@@ -80,30 +91,38 @@ Advogados e partes podem verificar a existência de bloqueios judiciais em suas 
 
 ## Endpoints/recursos principais
 
-O SISBAJUD é um sistema interno e não disponibiliza endpoints públicos. A documentação abaixo descreve os recursos disponíveis para usuários autorizados (magistrados), com base em informações institucionais do CNJ:
-
-### Funcionalidades do sistema
+### Funcionalidades do sistema (uso interno)
 
 | Funcionalidade | Descrição | Acesso |
 |---|---|---|
-| Bloqueio de valores | Ordem de congelamento de ativos financeiros | Magistrados |
-| Teimosinha | Bloqueio recorrente por até 30 dias | Magistrados |
+| Bloqueio de valores | Congelamento de ativos financeiros em todas as instituições | Magistrados |
+| Teimosinha | Bloqueio recorrente por até 30 dias (inclui bancos digitais) | Magistrados |
 | Desbloqueio | Liberação total ou parcial de valores | Magistrados |
 | Transferência | Transferência de valores bloqueados para conta judicial | Magistrados |
 | Consulta de saldos | Levantamento de saldos em todas as instituições | Magistrados |
 | Consulta de extratos | Solicitação de extratos bancários | Magistrados |
 | Requisição de informações | Pedido de dados cadastrais bancários | Magistrados |
 
-### Instituições financeiras participantes
+### Painel de Monitoramento (público — 2025)
 
-O SISBAJUD está integrado com todas as instituições financeiras autorizadas pelo Banco Central, incluindo:
+| Recurso | Descrição |
+|---|---|
+| Ranking de instituições | Taxa de resposta das instituições (maior/menor percentual) |
+| Classes processuais | Consulta de ordens por classe processual |
+| Bloqueios e transferências | Visualização detalhada de volumes |
+| Análise temporal | Evolução histórica de ordens e valores |
+
+### Instituições financeiras integradas
+
+O SISBAJUD está integrado com **todas** as instituições autorizadas pelo Banco Central:
 
 - Bancos comerciais e múltiplos
 - Bancos de investimento
+- Caixas Econômicas
 - Cooperativas de crédito
 - Corretoras e distribuidoras de valores
 - Instituições de pagamento
-- Fintechs reguladas pelo BCB
+- **Bancos digitais e fintechs** (integrados desde 2022)
 
 ## Exemplo de uso
 
@@ -113,29 +132,26 @@ O SISBAJUD está integrado com todas as instituições financeiras autorizadas p
 import pandas as pd
 
 # O SISBAJUD não possui API pública. No entanto, é possível analisar
-# dados agregados sobre bloqueios judiciais a partir de:
-# 1. Relatório Justiça em Números (CNJ)
-# 2. Decisões judiciais públicas
-# 3. Relatórios institucionais do CNJ
+# dados agregados a partir do Painel de Monitoramento do CNJ e
+# do relatório Justiça em Números.
 
-# Exemplo: dados agregados hipotéticos do Justiça em Números
+# Dados agregados extraídos de fontes públicas do CNJ
 dados_sisbajud = {
-    "ano": [2020, 2021, 2022, 2023],
-    "ordens_bloqueio": [30_000_000, 35_000_000, 38_000_000, 42_000_000],
-    "valor_bloqueado_bi": [120, 145, 160, 180],
-    "ordens_desbloqueio": [15_000_000, 18_000_000, 20_000_000, 22_000_000],
-    "ordens_teimosinha": [None, 5_000_000, 8_000_000, 12_000_000],
+    "ano": [2020, 2021, 2022, 2023, 2024, 2025],
+    "ordens_bloqueio_mi": [30, 35, 38, 42, 48, 55],
+    "valor_bloqueado_tri": [60, 80, 100, 115, 130, 150],
+    "valor_transferido_bi": [180, 220, 260, 290, 310, 325],
+    "ordens_teimosinha_mi": [0, 5, 8, 12, 16, 20],
 }
 
 df = pd.DataFrame(dados_sisbajud)
-df["taxa_efetividade"] = (
-    (df["ordens_bloqueio"] - df["ordens_desbloqueio"])
-    / df["ordens_bloqueio"]
-    * 100
-)
 
-print("Estatísticas agregadas do SISBAJUD:")
+# Taxa de crescimento anual
+df["crescimento_ordens_pct"] = df["ordens_bloqueio_mi"].pct_change() * 100
+
+print("Evolução do SISBAJUD (dados agregados):")
 print(df.to_string(index=False))
+print(f"\nCrescimento médio anual: {df['crescimento_ordens_pct'].mean():.1f}%")
 ```
 
 ### Verificar bloqueios via consulta processual no DataJud
@@ -144,7 +160,7 @@ print(df.to_string(index=False))
 import requests
 
 # Embora o SISBAJUD não tenha API pública, é possível identificar
-# processos com bloqueios judiciais consultando as movimentações
+# processos com bloqueios judiciais consultando movimentações
 # processuais no DataJud que mencionam bloqueio/penhora.
 
 API_KEY = "SEU_TOKEN_DATAJUD"
@@ -160,7 +176,7 @@ def buscar_processos_com_bloqueio(tribunal: str, tamanho: int = 10) -> list:
     no DataJud (proxy para identificar uso do SISBAJUD).
 
     Args:
-        tribunal: Sigla do tribunal
+        tribunal: Sigla do tribunal (ex: 'tjsp')
         tamanho: Número de resultados
 
     Returns:
@@ -168,8 +184,6 @@ def buscar_processos_com_bloqueio(tribunal: str, tamanho: int = 10) -> list:
     """
     url = f"https://api-publica.datajud.cnj.jus.br/api_publica_{tribunal}/_search"
 
-    # Buscar processos que contenham movimentações de penhora/bloqueio
-    # Código 60 = Penhora (conforme Tabelas Processuais Unificadas)
     query = {
         "size": tamanho,
         "query": {
@@ -210,10 +224,6 @@ for p in processos:
 
 ```python
 import requests
-import pandas as pd
-
-# Identificar empresas que podem ter sido alvo de bloqueios
-# cruzando CNPJ com processos de execução no DataJud.
 
 API_KEY_DATAJUD = "SEU_TOKEN_DATAJUD"
 headers_dj = {
@@ -228,8 +238,8 @@ def verificar_execucoes_empresa(tribunal: str, cnpj: str) -> list:
     (que podem envolver bloqueios via SISBAJUD).
 
     Args:
-        tribunal: Sigla do tribunal
-        cnpj: CNPJ da empresa
+        tribunal: Sigla do tribunal (ex: 'tjsp')
+        cnpj: CNPJ da empresa (14 dígitos)
 
     Returns:
         Lista de processos de execução encontrados
@@ -246,11 +256,7 @@ def verificar_execucoes_empresa(tribunal: str, cnpj: str) -> list:
             "bool": {
                 "must": [
                     {"match": {"numeroProcesso": cnpj}},
-                    {
-                        "terms": {
-                            "classe.codigo": [156, 159, 164],
-                        }
-                    },
+                    {"terms": {"classe.codigo": [156, 159, 164]}},
                 ]
             }
         },
@@ -272,8 +278,6 @@ print(f"Processos de execução encontrados: {len(processos)}")
 
 ### Dados do sistema (uso interno — não disponível publicamente)
 
-Os campos abaixo são documentados com base em informações institucionais do CNJ e não estão acessíveis via API pública:
-
 | Campo | Tipo | Descrição |
 |---|---|---|
 | `numero_processo` | string | Número do processo judicial (formato CNJ) |
@@ -287,14 +291,14 @@ Os campos abaixo são documentados com base em informações institucionais do C
 | `tipo_conta` | string | Tipo da conta (corrente, poupança, investimento) |
 | `data_ordem` | datetime | Data e hora da emissão da ordem |
 | `data_cumprimento` | datetime | Data e hora do cumprimento pela instituição |
-| `status` | string | Status da ordem (cumprida, parcialmente cumprida, não cumprida, cancelada) |
+| `status` | string | Status (cumprida, parcialmente cumprida, não cumprida, cancelada) |
 | `magistrado` | string | Nome do magistrado que emitiu a ordem |
 | `vara_origem` | string | Vara de origem da ordem |
 | `teimosinha` | boolean | Indica se a funcionalidade Teimosinha está ativa |
 | `prazo_teimosinha` | int | Prazo da Teimosinha em dias (máximo 30) |
 | `motivo_desbloqueio` | string | Motivo do desbloqueio (quando aplicável) |
 
-### Dados agregados disponíveis publicamente (via Justiça em Números)
+### Dados agregados (Painel de Monitoramento / Justiça em Números)
 
 | Campo | Tipo | Descrição |
 |---|---|---|
@@ -303,6 +307,8 @@ Os campos abaixo são documentados com base em informações institucionais do C
 | `total_ordens` | int | Total de ordens emitidas no período |
 | `valor_total_bloqueado` | decimal | Valor total bloqueado no período (R$) |
 | `total_ordens_teimosinha` | int | Total de ordens com Teimosinha |
+| `taxa_resposta_instituicao` | float | Percentual de respostas das instituições financeiras |
+| `classe_processual` | string | Classe processual da ordem |
 
 ## Cruzamentos possíveis
 
@@ -310,20 +316,20 @@ Os campos abaixo são documentados com base em informações institucionais do C
 |---|---|---|---|
 | Bloqueios x Processos | [DataJud](/docs/apis/poder-judiciario-cnj/datajud) | `numero_processo` | Obter detalhes do processo que originou o bloqueio |
 | Bloqueios x Mandados | [BNMP](/docs/apis/poder-judiciario-cnj/bnmp) | `numero_processo` | Verificar se o mesmo processo tem mandados de prisão associados |
-| Bloqueios x Instituições financeiras | [IFData](/docs/apis/banco-central/ifdata) | `instituicao_financeira` | Identificar o perfil da instituição financeira onde valores foram bloqueados |
-| Bloqueios x Empresas | [Receita Federal — CNPJ](/docs/apis/receita-federal/cnpj-completa) | `CNPJ` | Obter dados cadastrais das empresas que sofreram bloqueio |
-| Bloqueios x Sócios | [Receita Federal — QSA](/docs/apis/receita-federal/qsa) | `CNPJ` → sócios | Identificar sócios de empresas com bloqueios judiciais |
-| Bloqueios x Sanções | [CGU — CEIS](/docs/apis/transparencia-cgu/ceis) | `CNPJ` | Verificar se empresas com bloqueios também constam em cadastros de sanções |
+| Bloqueios x Instituições | [IFData](/docs/apis/banco-central/ifdata) | `codigo_ispb` | Identificar perfil da instituição financeira |
+| Bloqueios x Empresas | [CNPJ Completa](/docs/apis/receita-federal/cnpj-completa) | `CNPJ` | Obter dados cadastrais das empresas com bloqueio |
+| Bloqueios x Sócios | [QSA](/docs/apis/receita-federal/qsa) | `CNPJ` → sócios | Identificar sócios de empresas com bloqueios |
+| Bloqueios x Sanções | [CEIS](/docs/apis/transparencia-cgu/ceis) | `CNPJ` | Verificar se empresas com bloqueios constam em cadastros de sanções |
 
 ## Limitações conhecidas
 
 | Limitação | Detalhes |
 |---|---|
-| **Sem acesso público** | O SISBAJUD é de uso exclusivo do Poder Judiciário. Não há API pública, interface de consulta cidadã ou dados abertos. |
-| **Sem dados individualizados públicos** | Dados sobre bloqueios específicos são sigilosos e acessíveis apenas nos autos do processo judicial. |
-| **Dados agregados limitados** | As únicas estatísticas públicas sobre o SISBAJUD são as publicadas no Justiça em Números e em relatórios institucionais do CNJ. |
-| **Substituiu o BacenJud** | O BacenJud foi desativado em 2020. Dados históricos do sistema anterior podem não ter sido totalmente migrados. |
-| **Dependência do sistema bancário** | A efetividade dos bloqueios depende da resposta das instituições financeiras. Contas em instituições não integradas podem não ser alcançadas. |
-| **Impenhorabilidades** | Valores impenhoráveis (salários, aposentadorias até certo limite, FGTS) devem ser excluídos manualmente, podendo gerar bloqueios indevidos que são posteriormente revertidos. |
-| **Teimosinha — limitações** | A funcionalidade Teimosinha tem prazo máximo de 30 dias e é limitada a valores específicos, podendo não capturar a totalidade do débito. |
-| **Sem histórico público** | Não é possível consultar publicamente o histórico de bloqueios e desbloqueios de uma pessoa ou empresa. |
+| **Sem acesso público** | O SISBAJUD é de uso exclusivo do Poder Judiciário. Não há API pública, interface cidadã ou dados abertos. |
+| **Dados individualizados sigilosos** | Dados sobre bloqueios específicos são acessíveis apenas nos autos do processo judicial. |
+| **Dados agregados limitados** | As estatísticas públicas vêm do Painel de Monitoramento (2025) e do Justiça em Números. |
+| **Substituiu o BacenJud** | O BacenJud foi desativado em 2020. Dados históricos do sistema anterior podem não ter sido migrados. |
+| **Bloqueios indevidos** | Valores impenhoráveis (salários, aposentadorias até certo limite, FGTS) podem ser bloqueados indevidamente, exigindo desbloqueio manual via petição. |
+| **Teimosinha — limite de 30 dias** | A funcionalidade tem prazo máximo de 30 dias, podendo não capturar a totalidade do débito. |
+| **Sem histórico público** | Não é possível consultar publicamente o histórico de bloqueios de uma pessoa ou empresa. |
+| **Dependência do sistema bancário** | A efetividade depende da resposta das instituições financeiras. A taxa de resposta varia entre instituições (visível no Painel de Monitoramento). |

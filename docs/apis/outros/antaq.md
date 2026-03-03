@@ -27,7 +27,7 @@ cruzamento_com:
   - ibge-estatisticas/pib-municipal
   - infraestrutura-transportes/antt-concessoes
   - receita-federal/cnpj-completa
-status: parcial
+status: documentado
 ---
 
 # ANTAQ Transporte Aquaviário — Portos e Navegação

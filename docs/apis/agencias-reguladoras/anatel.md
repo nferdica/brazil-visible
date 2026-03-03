@@ -27,7 +27,7 @@ cruzamento_com:
   - ibge-estatisticas/censo-demografico
   - ibge-estatisticas/pib-municipal
   - educacao/censo-escolar
-status: parcial
+status: documentado
 ---
 
 # ANATEL Telecomunicações — Banda Larga e Telefonia

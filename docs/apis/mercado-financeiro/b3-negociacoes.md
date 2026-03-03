@@ -29,7 +29,7 @@ cruzamento_com:
   - cvm-administradores
   - cvm-fatos-relevantes
   - banco-central/sgs-cambio
-status: parcial
+status: documentado
 ---
 
 # B3 Negociações — Dados de Negociação em Bolsa

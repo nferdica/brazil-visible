@@ -25,7 +25,7 @@ cruzamento_com:
   - transparencia-cgu/servidores-federais
   - diarios-oficiais/dou
   - apis-governamentais/siorg
-status: parcial
+status: documentado
 ---
 
 # SIAPE — Dados de Servidores Públicos Federais

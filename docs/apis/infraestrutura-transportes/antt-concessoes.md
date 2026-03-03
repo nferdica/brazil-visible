@@ -25,7 +25,7 @@ cruzamento_com:
   - infraestrutura-transportes/dnit-malha-rodoviaria
   - infraestrutura-transportes/denatran-renavam
   - infraestrutura-transportes/prf-acidentes
-status: parcial
+status: documentado
 ---
 
 # ANTT Concessões Rodoviárias — Frotas, Tarifas e Concessões
