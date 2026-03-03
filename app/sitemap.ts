@@ -3,7 +3,7 @@ import { getAllApiDocs, getCategories, getAllCruzamentos, getAllTags } from '@/l
 
 export const dynamic = 'force-static';
 
-const BASE = 'https://brazilvisible.com';
+const BASE = 'https://brazilvisible.org';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const categories = getCategories();

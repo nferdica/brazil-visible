@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   description:
     'Discover and explore 93+ public APIs from Brazil — government data, finance, geolocation, and more.',
-  metadataBase: new URL('https://brazilvisible.com'),
+  metadataBase: new URL('https://brazilvisible.org'),
   manifest: '/manifest.json',
   icons: {
     icon: [
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://brazilvisible.com',
-    languages: { 'pt-BR': 'https://brazilvisible.com' },
+    canonical: 'https://brazilvisible.org',
+    languages: { 'pt-BR': 'https://brazilvisible.org' },
   },
   openGraph: {
     title: 'Brazil Visible',
     description:
       'Discover and explore 93+ public APIs from Brazil — government data, finance, geolocation, and more.',
-    url: 'https://brazilvisible.com',
+    url: 'https://brazilvisible.org',
     siteName: 'Brazil Visible',
     locale: 'pt_BR',
     type: 'website',

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { title, dificuldade, fontes_utilizadas } = doc.frontmatter;
   const description = `Receita de cruzamento "${title}" (${dificuldade}): combina ${fontes_utilizadas.length} fontes de dados públicos.`;
-  const url = `https://brazilvisible.com/docs/cruzamentos/${slug}/`;
+  const url = `https://brazilvisible.org/docs/cruzamentos/${slug}/`;
 
   return {
     title,

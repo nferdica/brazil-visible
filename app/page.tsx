@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   title: 'Catálogo de Dados Públicos Brasileiros',
   description:
     'Catálogo aberto com 93+ fontes de dados públicos brasileiros para fiscalização governamental.',
-  alternates: { canonical: 'https://brazilvisible.com' },
+  alternates: { canonical: 'https://brazilvisible.org' },
 };
 
 /* ── Data ──────────────────────────────────────────────────── */
@@ -377,7 +377,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Brazil Visible',
-  url: 'https://brazilvisible.com',
+  url: 'https://brazilvisible.org',
   description:
     'Catálogo aberto com 93+ fontes de dados públicos brasileiros para fiscalização governamental.',
   inLanguage: 'pt-BR',

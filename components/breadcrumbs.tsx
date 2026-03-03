@@ -18,7 +18,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
       '@type': 'ListItem',
       position: i + 1,
       name: crumb.label,
-      ...(crumb.href ? { item: `https://brazilvisible.com${crumb.href}` } : {}),
+      ...(crumb.href ? { item: `https://brazilvisible.org${crumb.href}` } : {}),
     })),
   };
 

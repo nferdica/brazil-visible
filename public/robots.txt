@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /docs/plans/
 
-Sitemap: https://brazilvisible.com/sitemap.xml
+Sitemap: https://brazilvisible.org/sitemap.xml

@@ -8,7 +8,7 @@
 
 **Brazil Visible** é um catálogo aberto de fontes de dados públicos brasileiros para fiscalização governamental. O site documenta APIs, portais e bases de dados do governo federal com exemplos de código, receitas de cruzamento e notebooks reproduzíveis.
 
-- **URL de produção**: https://brazilvisible.com
+- **URL de produção**: https://brazilvisible.org
 - **Repositório**: https://github.com/nferdica/brazil-visible
 - **Licença**: MIT
 - **Idioma principal**: PT-BR

@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { title, orgao } = doc.frontmatter;
   const description = `Documentação da ${title} (${orgao}): acesso, endpoints e exemplos de uso.`;
-  const url = `https://brazilvisible.com/docs/apis/${category}/${slug}/`;
+  const url = `https://brazilvisible.org/docs/apis/${category}/${slug}/`;
 
   return {
     title,
@@ -77,7 +77,7 @@ export default async function ApiDocPage({ params }: Props) {
     publisher: { '@type': 'Organization', name: 'Brazil Visible' },
     keywords: doc.frontmatter.tags?.join(', ') ?? '',
     inLanguage: 'pt-BR',
-    mainEntityOfPage: `https://brazilvisible.com/docs/apis/${category}/${slug}/`,
+    mainEntityOfPage: `https://brazilvisible.org/docs/apis/${category}/${slug}/`,
   };
 
   return (

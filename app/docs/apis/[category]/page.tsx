@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!cat) return { title: 'Categoria' };
 
   const description = `${cat.docs.length} fontes de dados de ${cat.meta.label} catalogadas no Brazil Visible.`;
-  const url = `https://brazilvisible.com/docs/apis/${category}/`;
+  const url = `https://brazilvisible.org/docs/apis/${category}/`;
 
   return {
     title: cat.meta.label,
