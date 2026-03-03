@@ -51,8 +51,9 @@ Os dados agregados são disponibilizados publicamente no portal de estatísticas
 | Item | Detalhe |
 |---|---|
 | **Estatísticas MJSP** | `https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica` |
-| **Painel SINESP** | `https://app.powerbi.com/view?r=eyJrIjoiYWIxNjMzNDUtZjk3Ni00ZjlhLWExZDgtNjU` |
+| **Painel SINESP** | Acessível via [página de estatísticas do MJSP](https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica) |
 | **dados.gov.br** | `https://dados.gov.br/dados/conjuntos-dados/sistema-nacional-de-estatisticas-de-seguranca-publica` |
+| **dados.mj.gov.br** | `https://dados.mj.gov.br/dataset/sistema-nacional-de-estatisticas-de-seguranca-publica` |
 | **Fórum Brasileiro de Segurança Pública** | `https://forumseguranca.org.br/` |
 | **Autenticação** | Não requerida (dados agregados) |
 | **Formato** | CSV, XLSX |

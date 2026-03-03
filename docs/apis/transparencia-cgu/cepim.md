@@ -2,7 +2,7 @@
 title: CEPIM — Cadastro de Entidades sem Fins Lucrativos Impedidas
 slug: cepim
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -60,7 +60,8 @@ O acesso à API requer um **token (chave de API)** gratuito:
 
 | Condição | Limite |
 |----------|--------|
-| Requisições por minuto | 30 |
+| Requisições por minuto (6h-24h) | 90 |
+| Requisições por minuto (0h-6h) | 300 |
 | Requisições sem autenticação | Bloqueadas |
 
 ### URL Base
@@ -284,7 +285,7 @@ if not impedidas.empty:
 
 | Limitação | Detalhes |
 |-----------|----------|
-| **Rate limit** | 30 requisições por minuto por token. Exceder resulta em HTTP 429. |
+| **Rate limit** | 90 requisições por minuto (6h-24h) / 300 requisições por minuto (0h-6h) por token. Exceder resulta em HTTP 429. |
 | **Escopo federal** | O CEPIM registra apenas impedimentos relacionados a transferências federais. Impedimentos estaduais e municipais não são incluídos. |
 | **Motivo genérico** | O campo `motivoImpedimento` pode ser genérico (ex: "inadimplência"), sem detalhar a natureza específica da irregularidade. |
 | **Entidades extintas** | Entidades que encerraram atividades podem continuar no CEPIM se houver pendências de prestação de contas. |

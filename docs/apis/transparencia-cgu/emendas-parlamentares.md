@@ -2,7 +2,7 @@
 title: Emendas Parlamentares
 slug: emendas-parlamentares
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -55,7 +55,8 @@ O acesso à API requer um **token (chave de API)** gratuito:
 
 | Condição | Limite |
 |----------|--------|
-| Requisições por minuto | 30 |
+| Requisições por minuto (6h-24h) | 90 |
+| Requisições por minuto (0h-6h) | 300 |
 | Requisições sem autenticação | Bloqueadas |
 
 ### URL Base
@@ -291,7 +292,7 @@ if not emendas.empty:
 
 | Limitação | Detalhes |
 |-----------|----------|
-| **Rate limit** | 30 requisições por minuto por token. Exceder resulta em HTTP 429. |
+| **Rate limit** | 90 requisições por minuto (6h-24h) / 300 requisições por minuto (0h-6h) por token. Exceder resulta em HTTP 429. |
 | **Emendas de relator** | Emendas do relator-geral (RP9, "orçamento secreto") historicamente tinham menos transparência. A partir de 2023, há maior detalhamento, mas dados anteriores podem ser incompletos. |
 | **Identificação do beneficiário final** | A API informa a localidade do gasto, mas nem sempre identifica o beneficiário final (empresa ou entidade) que recebeu o recurso. |
 | **Execução financeira** | Os valores empenhados podem diferir significativamente dos valores pagos. Restos a pagar podem se acumular por anos. |

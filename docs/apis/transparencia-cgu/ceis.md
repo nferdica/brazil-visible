@@ -2,7 +2,7 @@
 title: CEIS — Cadastro de Empresas Inidôneas e Suspensas
 slug: ceis
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -38,9 +38,9 @@ O **CEIS (Cadastro Nacional de Empresas Inidôneas e Suspensas)** é um banco de
 
 O CEIS reúne informações de todos os entes federativos (federal, estadual e municipal) e é uma das ferramentas mais importantes para prevenir a contratação de empresas com histórico de irregularidades. As sanções incluem:
 
-- **Declaração de inidoneidade** (Lei 8.666/93, art. 87, IV)
-- **Suspensão temporária** de participação em licitações (Lei 8.666/93, art. 87, III)
-- **Impedimento** de licitar e contratar (Lei 10.520/02, art. 7)
+- **Declaração de inidoneidade** (Lei 8.666/93, art. 87, IV — largamente substituida pela Lei 14.133/2021, Nova Lei de Licitacoes)
+- **Suspensão temporária** de participação em licitações (Lei 8.666/93, art. 87, III — largamente substituida pela Lei 14.133/2021)
+- **Impedimento** de licitar e contratar (Lei 10.520/02, art. 7 — largamente substituida pela Lei 14.133/2021)
 
 O CEIS, junto com o CNEP, CEPIM e CEAF, forma o conjunto de **cadastros de sanções** do Portal da Transparência, essencial para detectar empresas e pessoas envolvidas em corrupção.
 
@@ -61,7 +61,8 @@ O acesso à API requer um **token (chave de API)** gratuito:
 
 | Condição | Limite |
 |----------|--------|
-| Requisições por minuto | 30 |
+| Requisições por minuto (6h-24h) | 90 |
+| Requisições por minuto (0h-6h) | 300 |
 | Requisições sem autenticação | Bloqueadas |
 
 ### URL Base
@@ -303,7 +304,7 @@ if not sancionadas.empty and not contratos.empty:
 
 | Limitação | Detalhes |
 |-----------|----------|
-| **Rate limit** | 30 requisições por minuto por token. Exceder resulta em HTTP 429. |
+| **Rate limit** | 90 requisições por minuto (6h-24h) / 300 requisições por minuto (0h-6h) por token. Exceder resulta em HTTP 429. |
 | **Sanções vigentes vs. históricas** | A API retorna tanto sanções vigentes quanto expiradas. Filtre por `dataFimSancao` para obter apenas as ativas. |
 | **Cobertura subnacional** | Embora o CEIS consolide sanções de todos os entes, a adesão de estados e municípios é voluntária; nem todos informam suas sanções regularmente. |
 | **CNPJs baixados** | Empresas sancionadas podem ter CNPJ baixado na Receita Federal, dificultando a consulta do quadro societário atual. |

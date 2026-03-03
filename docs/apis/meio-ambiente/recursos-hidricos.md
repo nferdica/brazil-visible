@@ -418,3 +418,4 @@ print(f"Outorgados afetados: {outorgas_com_desmat['cpf_cnpj'].nunique():,}")
 | **Dados de qualidade da água** | O monitoramento de qualidade da água tem frequência menor (trimestral) e cobertura espacial limitada em comparação com dados de quantidade. |
 | **Formato de download** | Alguns dados do HidroWeb são disponibilizados em formato proprietário ou CSV com estrutura complexa (múltiplos cabeçalhos), exigindo pré-processamento. |
 | **Timeout em consultas grandes** | Requisições que retornam muitos dados podem sofrer timeout. Recomenda-se consultar por período ou por estação individual. |
+| **Portal ArcGIS Hub** | O portal dadosabertos.ana.gov.br utiliza a plataforma ArcGIS Hub, não CKAN. Os endpoints CKAN documentados podem não funcionar. Utilize a interface web do portal ou a API de busca ArcGIS. |

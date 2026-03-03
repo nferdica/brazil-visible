@@ -313,3 +313,4 @@ print(mortalidade.sort_values("tmi", ascending=False).head(10))
 | **Codificação de idade** | O campo IDADE usa codificação especial (4xx=anos, 3xx=meses, etc.), exigindo tratamento antes de análises por faixa etária. |
 | **Sem geolocalização precisa** | Os dados contêm apenas código de município, sem coordenadas ou endereço do local do óbito. |
 | **Instabilidade do servidor FTP** | O servidor FTP do DATASUS pode apresentar lentidão, especialmente quando arquivos grandes são solicitados. |
+| **Protocolo FTP obsoleto em navegadores** | Navegadores modernos (Chrome, Firefox) removeram o suporte ao protocolo FTP. Para acessar os arquivos, utilize clientes FTP (FileZilla, wget, curl) ou a biblioteca PySUS. Alternativamente, acesse a página de transferência de arquivos do DATASUS em `https://datasus.saude.gov.br/transferencia-de-arquivos/`. |

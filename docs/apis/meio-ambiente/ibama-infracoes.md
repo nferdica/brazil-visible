@@ -75,10 +75,14 @@ O acesso aos dados abertos **não requer autenticação**. Os arquivos CSV estã
 Os arquivos são publicados no portal de dados abertos do governo federal e atualizados diariamente:
 
 ```bash
-# Autos de infração (o link exato pode mudar; consulte dados.gov.br)
-wget "https://dadosabertos.ibama.gov.br/dados/IBAMA-auto-infracao.csv"
+# Autos de infração (arquivo ZIP; o link exato pode mudar — consulte dados.gov.br)
+wget "https://dadosabertos.ibama.gov.br/dados/SIFISC/auto_infracao/auto_infracao/auto_infracao_csv.zip"
+unzip auto_infracao_csv.zip
 
 # Áreas embargadas
+# NOTA: o caminho de download pode variar. Consulte a página do dataset para
+# obter o link atualizado:
+# https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao
 wget "https://dadosabertos.ibama.gov.br/dados/IBAMA-areas-embargadas.csv"
 ```
 
@@ -110,13 +114,22 @@ A consulta pública de áreas embargadas permite buscar por:
 
 ```python
 import pandas as pd
+import zipfile
+import io
 
-# Baixar o arquivo CSV de autos de infração
-# O link exato deve ser verificado em dados.gov.br
-url_autos = "https://dadosabertos.ibama.gov.br/dados/IBAMA-auto-infracao.csv"
+# O arquivo de autos de infração é distribuído em formato ZIP.
+# Faça o download e descompacte antes de carregar:
+#   wget "https://dadosabertos.ibama.gov.br/dados/SIFISC/auto_infracao/auto_infracao/auto_infracao_csv.zip"
+#   unzip auto_infracao_csv.zip
+#
+# Ou descompacte diretamente no Python:
+# with zipfile.ZipFile("auto_infracao_csv.zip") as zf:
+#     csv_name = zf.namelist()[0]
+#     with zf.open(csv_name) as f:
+#         df_autos = pd.read_csv(f, sep=";", encoding="latin-1", dtype=str, low_memory=False)
 
 df_autos = pd.read_csv(
-    url_autos,
+    "auto_infracao.csv",  # arquivo descompactado
     sep=";",
     encoding="latin-1",
     dtype=str,
@@ -171,6 +184,8 @@ print(tipos_infracao.to_string())
 import pandas as pd
 
 # Carregar áreas embargadas
+# NOTA: o caminho de download pode variar. Consulte o dataset em:
+# https://dadosabertos.ibama.gov.br/dataset/fiscalizacao-auto-de-infracao
 url_embargos = "https://dadosabertos.ibama.gov.br/dados/IBAMA-areas-embargadas.csv"
 
 df_embargos = pd.read_csv(
@@ -308,9 +323,9 @@ import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 
-# 1. Carregar autos de infração do IBAMA
+# 1. Carregar autos de infração do IBAMA (arquivo descompactado do ZIP)
 df_autos = pd.read_csv(
-    "IBAMA-auto-infracao.csv",
+    "auto_infracao.csv",
     sep=";",
     encoding="latin-1",
     dtype=str,

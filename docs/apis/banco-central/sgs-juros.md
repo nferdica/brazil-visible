@@ -53,7 +53,7 @@ Estas séries são fundamentais para análises de política monetária, custo do
 | CDI | 12 | Taxa média dos CDIs (anualizada) | Diária |
 | Taxa Selic (acumulada no mês) | 4390 | Selic acumulada no mês corrente | Mensal |
 | CDI (acumulado no mês) | 4391 | CDI acumulado no mês corrente | Mensal |
-| Taxa de juros - Empréstimos PF | 20714 | Taxa média de juros - Pessoa Física | Mensal |
+| Taxa de juros - Empréstimos PF | 20714 | Taxa média de juros das operações de crédito - Total | Mensal |
 | Taxa de juros - Empréstimos PJ | 20715 | Taxa média de juros - Pessoa Jurídica | Mensal |
 | Spread bancário - PF | 20786 | Spread médio - Pessoa Física | Mensal |
 | Spread bancário - PJ | 20787 | Spread médio - Pessoa Jurídica | Mensal |
@@ -169,17 +169,22 @@ for d in dados:
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - Câmbio](sgs-cambio)** — analisar impacto dos juros sobre a taxa de câmbio (carry trade)
-- **[SGS/API BCB - Índices](sgs-indices)** — correlacionar Selic com IPCA para cálculo de juros reais
-- **[SGS/API BCB - Crédito](sgs-credito)** — avaliar impacto dos juros no volume e inadimplência do crédito
-- **[IFData](ifdata)** — cruzar taxas cobradas por instituição com dados financeiros dos bancos
-- **Tesouro Nacional** — analisar custo da dívida pública em relação à Selic
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| Câmbio | [SGS/API BCB - Câmbio](sgs-cambio) | Data (dia útil) | Analisar impacto dos juros sobre a taxa de câmbio (carry trade) |
+| Índices | [SGS/API BCB - Índices](sgs-indices) | Período (mês/ano) | Correlacionar Selic com IPCA para cálculo de juros reais |
+| Crédito | [SGS/API BCB - Crédito](sgs-credito) | Período (mês/ano) | Avaliar impacto dos juros no volume e inadimplência do crédito |
+| IFData | [IFData](ifdata) | CNPJ da instituição (8 dígitos) | Cruzar taxas cobradas por instituição com dados financeiros dos bancos |
+| Tesouro Nacional | Tesouro Nacional | Período (mês/ano) | Analisar custo da dívida pública em relação à Selic |
 
 ## Limitações conhecidas
 
-- **Taxa Selic meta vs. diária**: a série 432 (meta) reflete decisões do COPOM e pode ter o mesmo valor por semanas; a série 11 (diária) reflete a taxa efetiva apurada no mercado
-- **CDI vs. Selic**: o CDI geralmente é 0,10 p.p. abaixo da Selic meta, mas as séries SGS mostram valores anualizados que podem confundir a comparação direta
-- **Taxas por instituição (OLINDA)**: podem ter defasagem de até 5 dias úteis
-- **Séries descontinuadas**: algumas séries antigas de juros foram encerradas e substituídas por novas; verificar o status no portal do SGS
-- **Horário de atualização**: séries diárias são atualizadas geralmente até as 20h do dia útil seguinte
-- **Rate limit não documentado**: requisições excessivas podem ser bloqueadas temporariamente
+| Limitação | Detalhes |
+|---|---|
+| **Taxa Selic meta vs. diária** | A série 432 (meta) reflete decisões do COPOM e pode ter o mesmo valor por semanas; a série 11 (diária) reflete a taxa efetiva apurada no mercado |
+| **CDI vs. Selic** | O CDI geralmente é 0,10 p.p. abaixo da Selic meta, mas as séries SGS mostram valores anualizados que podem confundir a comparação direta |
+| **Taxas por instituição (OLINDA)** | Podem ter defasagem de até 5 dias úteis |
+| **Séries descontinuadas** | Algumas séries antigas de juros foram encerradas e substituídas por novas; verificar o status no portal do SGS |
+| **Horário de atualização** | Séries diárias são atualizadas geralmente até as 20h do dia útil seguinte |
+| **Limite de 10 anos por consulta** | Desde março de 2025, consultas ao SGS em formato JSON/CSV são limitadas a intervalos de no máximo 10 anos. Para séries longas, é necessário fazer múltiplas requisições com intervalos de datas diferentes, ou usar o endpoint `/dados/ultimos/{N}`. |
+| **Rate limit não documentado** | Requisições excessivas podem ser bloqueadas temporariamente |

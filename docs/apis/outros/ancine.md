@@ -2,7 +2,7 @@
 title: ANCINE/OCA — Audiovisual, Bilheteria e Produção
 slug: ancine
 orgao: ANCINE
-url_base: https://oca.ancine.gov.br/
+url_base: https://www.gov.br/ancine/pt-br/oca
 tipo_acesso: Download (CSV, XLSX) / API parcial (CRT)
 autenticacao: Não requerida
 formato_dados: [CSV, XLSX, PDF, JSON]

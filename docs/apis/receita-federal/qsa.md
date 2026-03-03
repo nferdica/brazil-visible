@@ -34,7 +34,7 @@ O **QSA (Quadro de Sócios e Administradores)** é o conjunto de dados que ident
 
 Este é um dos datasets mais poderosos para análise de **redes de relacionamento empresarial**, permitindo mapear a estrutura societária de empresas, identificar sócios em comum entre diferentes CNPJs e rastrear vínculos entre pessoas físicas (CPF) e empresas (CNPJ).
 
-**Fonte oficial:** https://dados.rfb.gov.br/CNPJ/
+**Fonte oficial:** https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/
 
 **Documentação do layout:** `layout_dados_abertos_cnpj.pdf` disponível na mesma URL base.
 
@@ -42,7 +42,7 @@ Este é um dos datasets mais poderosos para análise de **redes de relacionament
 
 | Item | Detalhe |
 |---|---|
-| **URL base** | `https://dados.rfb.gov.br/CNPJ/` |
+| **URL base** | `https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/` |
 | **Tipo de acesso** | Download direto de arquivos ZIP |
 | **Autenticação** | Não requerida |
 | **Formato** | CSV (sem cabeçalho, delimitado por `;`, encoding Latin-1/ISO-8859-1) |
@@ -59,10 +59,10 @@ Cada arquivo ZIP contém um CSV sem cabeçalho. As colunas são posicionais e se
 ### Download direto
 
 ```
-https://dados.rfb.gov.br/CNPJ/Socios0.zip
-https://dados.rfb.gov.br/CNPJ/Socios1.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Socios0.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Socios1.zip
 ...
-https://dados.rfb.gov.br/CNPJ/Socios9.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Socios9.zip
 ```
 
 ## Endpoints/recursos principais
@@ -120,7 +120,7 @@ def baixar_e_extrair(url: str, destino: Path) -> Path:
 
 
 # Baixar o primeiro arquivo de sócios (Socios0.zip)
-url = "https://dados.rfb.gov.br/CNPJ/Socios0.zip"
+url = "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Socios0.zip"
 caminho_csv = baixar_e_extrair(url, Path("./dados_rfb"))
 
 # Ler o CSV (sem cabeçalho, separador ";", encoding Latin-1)
@@ -195,7 +195,7 @@ print(empresas.head(10))
 
 ```python
 # Baixar tabela de qualificações
-url_qualif = "https://dados.rfb.gov.br/CNPJ/Qualificacoes.zip"
+url_qualif = "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Qualificacoes.zip"
 caminho_qualif = baixar_e_extrair(url_qualif, Path("./dados_rfb"))
 
 df_qualificacoes = pd.read_csv(
@@ -324,3 +324,4 @@ print(socios_em_comum.sort_values("num_empresas", ascending=False))
 | **Sem percentual de participação** | Os dados não incluem o percentual de participação societária de cada sócio. |
 | **Divisão em múltiplos arquivos** | Os dados são particionados em 10 arquivos sem critério documentado. Um sócio pode estar em qualquer partição. |
 | **Faixa etária aproximada** | A faixa etária é informada em intervalos amplos (ex: 31-40), não sendo possível determinar a idade exata. |
+| **CNPJ alfanumérico (julho 2026)** | A partir de julho de 2026, novos CNPJs poderão conter letras além de números. Scripts que validam CNPJ como campo numérico de 14 dígitos precisarão ser atualizados. |

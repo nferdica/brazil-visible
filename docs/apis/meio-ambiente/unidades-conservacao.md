@@ -74,7 +74,7 @@ Os dados geoespaciais das UCs (limites, áreas, categorias) são disponibilizado
 | Fonte | URL | Formato | Descrição |
 |-------|-----|---------|-----------|
 | **ICMBio — Dados abertos** | `https://www.gov.br/icmbio/pt-br/acesso-a-informacao/dados-abertos` | Shapefile, CSV | Limites das UCs federais |
-| **MMA — CNUC** | `https://antigo.mma.gov.br/areas-protegidas/cadastro-nacional-de-ucs.html` | Shapefile, CSV | Cadastro Nacional de UCs (federal, estadual, municipal) |
+| **MMA — CNUC** | `https://dados.mma.gov.br/dataset/unidadesdeconservacao` | Shapefile, CSV | Cadastro Nacional de UCs (federal, estadual, municipal) |
 | **i3Geo / GeoServer MMA** | `https://geoserver.mma.gov.br/` | WFS/WMS | Serviço de mapas para acesso programático |
 | **MapBiomas** | `https://mapbiomas.org/` | GeoTIFF, Shapefile | Dados complementares de uso e cobertura do solo em UCs |
 
@@ -359,7 +359,7 @@ print(resumo.head(20).to_string())
 | **Qualidade dos limites** | A precisão dos polígonos varia: UCs mais antigas podem ter limites com georreferenciamento de baixa qualidade. |
 | **Zonas de amortecimento** | Nem todas as UCs possuem zonas de amortecimento definidas e georreferenciadas nos dados disponíveis. |
 | **UCs sobrepostas** | Existem UCs de diferentes categorias e esferas que se sobrepõem parcialmente, exigindo tratamento cuidadoso em análises de área. |
-| **WFS instável** | O serviço WFS do MMA pode apresentar lentidão e timeout, especialmente para consultas grandes. Recomenda-se o download do shapefile completo. |
+| **WFS instável** | O serviço WFS do MMA (`https://geoserver.mma.gov.br/`) pode apresentar lentidão e timeout, especialmente para consultas grandes. Recomenda-se o download do shapefile completo. Note que o servico WFS pode ter migrado para `https://geoservicos.inde.gov.br/geoserver/ICMBio/ows` — verifique a disponibilidade antes de integrar. |
 | **Dados de gestão** | Informações detalhadas de gestão (orçamento, pessoal, infraestrutura) não estão disponíveis nos dados geoespaciais e requerem consulta direta ao ICMBio. |
 | **RPPNs** | As RPPNs (reservas privadas) podem ter atualização menos frequente que as UCs públicas. |
 | **Mosaicos e corredores** | Informações sobre mosaicos de UCs e corredores ecológicos podem não estar totalmente representadas nos dados padrão. |

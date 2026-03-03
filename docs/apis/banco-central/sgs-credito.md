@@ -47,8 +47,8 @@ O BCB diferencia as estatísticas entre **Pessoa Física (PF)** e **Pessoa Jurí
 
 | Série | Código | Descrição | Periodicidade |
 |---|---|---|---|
-| Inadimplência - PF | 21112 | Taxa de inadimplência - Pessoa Física (%) | Mensal |
-| Inadimplência - PJ | 21113 | Taxa de inadimplência - Pessoa Jurídica (%) | Mensal |
+| Inadimplência - Recursos livres PF | 21112 | Inadimplência - Recursos livres - Pessoa Física (%) | Mensal |
+| Inadimplência - Recursos livres PJ | 21113 | Inadimplência - Recursos livres - Pessoa Jurídica (%) | Mensal |
 | Inadimplência - Total | 21082 | Taxa de inadimplência - Total do SFN (%) | Mensal |
 | Inadimplência - Recursos livres PF | 21114 | Inadimplência - Recursos livres PF (%) | Mensal |
 | Inadimplência - Recursos livres PJ | 21115 | Inadimplência - Recursos livres PJ (%) | Mensal |
@@ -181,18 +181,23 @@ print(df.tail(12).to_string(index=False))
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - Juros](sgs-juros)** — analisar impacto da Selic sobre inadimplência e concessões de crédito
-- **[SGS/API BCB - Índices](sgs-indices)** — correlacionar crédito com atividade econômica (IBC-Br) e inflação
-- **[SGS/API BCB - PIX](sgs-pix)** — avaliar se o PIX impactou modalidades de crédito (ex: cheque especial)
-- **[IFData](ifdata)** — cruzar dados de crédito com informações financeiras por instituição
-- **Receita Federal (CNPJ)** — analisar inadimplência por setor econômico usando CNAE
-- **IBGE (PNAD)** — correlacionar endividamento com renda e emprego
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| Juros | [SGS/API BCB - Juros](sgs-juros) | Período (mês/ano) | Analisar impacto da Selic sobre inadimplência e concessões de crédito |
+| Índices | [SGS/API BCB - Índices](sgs-indices) | Período (mês/ano) | Correlacionar crédito com atividade econômica (IBC-Br) e inflação |
+| PIX | [SGS/API BCB - PIX](sgs-pix) | Período (mês/ano) | Avaliar se o PIX impactou modalidades de crédito (ex: cheque especial) |
+| IFData | [IFData](ifdata) | CNPJ da instituição | Cruzar dados de crédito com informações financeiras por instituição |
+| Receita Federal | Receita Federal (CNPJ) | CNPJ / CNAE | Analisar inadimplência por setor econômico usando CNAE |
+| PNAD | IBGE (PNAD) | Período (ano/trimestre) | Correlacionar endividamento com renda e emprego |
 
 ## Limitações conhecidas
 
-- **Dados agregados**: as séries SGS fornecem dados agregados para o Sistema Financeiro Nacional; para dados por instituição, usar o IFData ou o SCR (não público)
-- **Defasagem**: dados mensais são publicados com aproximadamente 30 dias de atraso
-- **Mudanças metodológicas**: o BCB revisou a metodologia das séries de crédito em 2013 e 2019; séries antigas podem não ser diretamente comparáveis
-- **Inadimplência subestimada**: a taxa oficial considera apenas atrasos superiores a 90 dias; operações renegociadas saem da estatística de inadimplência
-- **Séries de crédito direcionado**: incluem operações do BNDES, crédito rural e imobiliário, que têm dinâmicas próprias e podem distorcer médias
-- **Sem dados de CPF/CNPJ**: dados individuais de crédito não são públicos (protegidos pelo sigilo bancário)
+| Limitação | Detalhes |
+|---|---|
+| **Dados agregados** | As séries SGS fornecem dados agregados para o Sistema Financeiro Nacional; para dados por instituição, usar o IFData ou o SCR (não público) |
+| **Defasagem** | Dados mensais são publicados com aproximadamente 30 dias de atraso |
+| **Mudanças metodológicas** | O BCB revisou a metodologia das séries de crédito em 2013 e 2019; séries antigas podem não ser diretamente comparáveis |
+| **Inadimplência subestimada** | A taxa oficial considera apenas atrasos superiores a 90 dias; operações renegociadas saem da estatística de inadimplência |
+| **Séries de crédito direcionado** | Incluem operações do BNDES, crédito rural e imobiliário, que têm dinâmicas próprias e podem distorcer médias |
+| **Limite de 10 anos por consulta** | Desde março de 2025, consultas ao SGS em formato JSON/CSV são limitadas a intervalos de no máximo 10 anos. Para séries longas, é necessário fazer múltiplas requisições com intervalos de datas diferentes, ou usar o endpoint `/dados/ultimos/{N}`. |
+| **Sem dados de CPF/CNPJ** | Dados individuais de crédito não são públicos (protegidos pelo sigilo bancário) |

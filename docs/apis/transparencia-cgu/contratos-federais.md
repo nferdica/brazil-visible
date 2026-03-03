@@ -2,7 +2,7 @@
 title: Contratos Federais
 slug: contratos-federais
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -53,7 +53,8 @@ O acesso à API requer um **token (chave de API)** gratuito:
 
 | Condição | Limite |
 |----------|--------|
-| Requisições por minuto | 30 |
+| Requisições por minuto (6h-24h) | 90 |
+| Requisições por minuto (0h-6h) | 300 |
 | Requisições sem autenticação | Bloqueadas |
 
 ### URL Base
@@ -292,7 +293,7 @@ if not contratos.empty and not sancionadas.empty:
 
 | Limitação | Detalhes |
 |-----------|----------|
-| **Rate limit** | 30 requisições por minuto por token. Exceder resulta em HTTP 429. |
+| **Rate limit** | 90 requisições por minuto (6h-24h) / 300 requisições por minuto (0h-6h) por token. Exceder resulta em HTTP 429. |
 | **Paginação** | Resultados paginados; é necessário iterar por todas as páginas para obter o conjunto completo. |
 | **Cobertura temporal** | Dados disponíveis a partir de 2013 para a maioria dos órgãos. |
 | **Aditivos** | Aditivos contratuais podem não estar imediatamente disponíveis; há defasagem na atualização. |

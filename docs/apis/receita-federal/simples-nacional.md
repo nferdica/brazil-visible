@@ -33,7 +33,7 @@ O **Simples Nacional** é um regime tributário simplificado para micro e pequen
 
 O dataset informa quais empresas **optaram** pelo Simples Nacional e/ou pelo MEI, incluindo as **datas de opção e exclusão** de cada regime. Isso permite identificar o regime tributário de qualquer empresa brasileira e acompanhar mudanças ao longo do tempo.
 
-**Fonte oficial:** https://dados.rfb.gov.br/CNPJ/
+**Fonte oficial:** https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/
 
 **Documentação do layout:** `layout_dados_abertos_cnpj.pdf` disponível na mesma URL base.
 
@@ -41,7 +41,7 @@ O dataset informa quais empresas **optaram** pelo Simples Nacional e/ou pelo MEI
 
 | Item | Detalhe |
 |---|---|
-| **URL base** | `https://dados.rfb.gov.br/CNPJ/` |
+| **URL base** | `https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/` |
 | **Tipo de acesso** | Download direto de arquivo ZIP |
 | **Autenticação** | Não requerida |
 | **Formato** | CSV (sem cabeçalho, delimitado por `;`, encoding Latin-1/ISO-8859-1) |
@@ -50,7 +50,7 @@ O dataset informa quais empresas **optaram** pelo Simples Nacional e/ou pelo MEI
 ### Download direto
 
 ```
-https://dados.rfb.gov.br/CNPJ/Simples.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Simples.zip
 ```
 
 Diferentemente dos outros arquivos da base CNPJ, o arquivo do Simples Nacional **não é particionado** — existe apenas um único arquivo `Simples.zip` contendo todos os registros.
@@ -99,7 +99,7 @@ def baixar_e_extrair(url: str, destino: Path) -> Path:
 
 
 # Baixar arquivo do Simples Nacional
-url = "https://dados.rfb.gov.br/CNPJ/Simples.zip"
+url = "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Simples.zip"
 caminho_csv = baixar_e_extrair(url, Path("./dados_rfb"))
 
 # Ler o CSV (sem cabeçalho, separador ";", encoding Latin-1)
@@ -315,3 +315,4 @@ print(optantes_com_porte["porte_desc"].value_counts())
 | **Sem informação de faturamento** | Os dados não incluem faixas de faturamento, não sendo possível verificar se a empresa excede os limites do Simples/MEI. |
 | **Arquivo único e grande** | Diferente dos outros datasets da Receita Federal, o Simples vem em arquivo único (~200 MB compactado), o que simplifica o download mas exige memória para processamento completo. |
 | **Atraso na atualização** | A atualização mensal pode ter atraso de 30 a 60 dias em relação a mudanças reais no regime tributário das empresas. |
+| **CNPJ alfanumérico (julho 2026)** | A partir de julho de 2026, novos CNPJs poderão conter letras além de números. Scripts que validam CNPJ como campo numérico de 14 dígitos precisarão ser atualizados. |

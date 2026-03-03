@@ -174,17 +174,22 @@ for m in moedas[:5]:
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - Juros](sgs-juros)** — correlacionar taxa de câmbio com variações da Selic para análise de política monetária
-- **[SGS/API BCB - Índices](sgs-indices)** — comparar câmbio com IBC-Br e IPCA para avaliar impacto na inflação e atividade econômica
-- **[SGS/API BCB - Reservas Internacionais](sgs-reservas-internacionais)** — analisar movimentação das reservas em relação à variação cambial
-- **Tesouro Nacional (SIAFI)** — avaliar impacto cambial nas despesas com dívida externa
-- **Comércio Exterior** — calcular valores em reais de importações/exportações usando PTAX oficial
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| Juros | [SGS/API BCB - Juros](sgs-juros) | Data (dia útil) | Correlacionar taxa de câmbio com variações da Selic para análise de política monetária |
+| Índices | [SGS/API BCB - Índices](sgs-indices) | Período (mês/ano) | Comparar câmbio com IBC-Br e IPCA para avaliar impacto na inflação e atividade econômica |
+| Reservas internacionais | [SGS/API BCB - Reservas Internacionais](sgs-reservas-internacionais) | Data (dia útil) | Analisar movimentação das reservas em relação à variação cambial |
+| SIAFI | Tesouro Nacional (SIAFI) | Período (mês/ano) | Avaliar impacto cambial nas despesas com dívida externa |
+| Comércio exterior | Comércio Exterior | Data / PTAX de referência | Calcular valores em reais de importações/exportações usando PTAX oficial |
 
 ## Limitações conhecidas
 
-- **Rate limit não documentado**: o BCB não publica limites oficiais, mas requisições excessivas podem resultar em bloqueio temporário (HTTP 429)
-- **Dados retroativos**: séries mais antigas podem ter lacunas (especialmente antes de 1999, quando o regime cambial era diferente)
-- **Horário de atualização**: a PTAX de fechamento é divulgada por volta das 13h (horário de Brasília); consultas antes desse horário retornam apenas boletins parciais
-- **Formato de data**: o SGS usa formato brasileiro (`dd/MM/yyyy`), enquanto o OLINDA usa formato americano (`MM-dd-yyyy`)
-- **Moedas tipo B**: moedas com cotação em dólar (tipo B) precisam de conversão adicional para reais
-- **Sem WebSocket/streaming**: não há endpoint para cotações em tempo real; é necessário fazer polling
+| Limitação | Detalhes |
+|---|---|
+| **Rate limit não documentado** | O BCB não publica limites oficiais, mas requisições excessivas podem resultar em bloqueio temporário (HTTP 429) |
+| **Dados retroativos** | Séries mais antigas podem ter lacunas (especialmente antes de 1999, quando o regime cambial era diferente) |
+| **Horário de atualização** | A PTAX de fechamento é divulgada por volta das 13h (horário de Brasília); consultas antes desse horário retornam apenas boletins parciais |
+| **Formato de data** | O SGS usa formato brasileiro (`dd/MM/yyyy`), enquanto o OLINDA usa formato americano (`MM-dd-yyyy`) |
+| **Moedas tipo B** | Moedas com cotação em dólar (tipo B) precisam de conversão adicional para reais |
+| **Limite de 10 anos por consulta** | Desde março de 2025, consultas ao SGS em formato JSON/CSV são limitadas a intervalos de no máximo 10 anos. Para séries longas, é necessário fazer múltiplas requisições com intervalos de datas diferentes, ou usar o endpoint `/dados/ultimos/{N}`. |
+| **Sem WebSocket/streaming** | Não há endpoint para cotações em tempo real; é necessário fazer polling |

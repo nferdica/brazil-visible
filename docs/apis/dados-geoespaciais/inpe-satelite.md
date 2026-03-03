@@ -59,8 +59,11 @@ O catálogo de imagens do INPE é um dos maiores acervos públicos de dados de s
 | **PRODES** | `http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/prodes` |
 | **DETER** | `http://www.obt.inpe.br/OBT/assuntos/programas/amazonia/deter` |
 | **Queimadas** | `https://queimadas.dgi.inpe.br/queimadas/portal` |
+| **Portal BIG (INPE)** | `https://data.inpe.br/big/web/` |
 | **Autenticação** | Cadastro gratuito para download de imagens |
 | **Formatos** | GeoTIFF, HDF, JP2, Shapefile |
+
+O **Portal BIG (Base de Informacoes Georreferenciadas)** e o portal unificado de dados geoespaciais do INPE, lancado em 2024, que consolida diversos acervos de imagens e produtos de sensoriamento remoto em uma unica interface.
 
 ### Plataformas complementares
 

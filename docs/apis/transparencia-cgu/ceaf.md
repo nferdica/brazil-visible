@@ -2,7 +2,7 @@
 title: CEAF — Cadastro de Expulsões da Administração Federal
 slug: ceaf
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -65,7 +65,8 @@ O acesso à API requer um **token (chave de API)** gratuito:
 
 | Condição | Limite |
 |----------|--------|
-| Requisições por minuto | 30 |
+| Requisições por minuto (6h-24h) | 90 |
+| Requisições por minuto (0h-6h) | 300 |
 | Requisições sem autenticação | Bloqueadas |
 
 ### URL Base
@@ -296,7 +297,7 @@ if not df.empty:
 
 | Limitação | Detalhes |
 |-----------|----------|
-| **Rate limit** | 30 requisições por minuto por token. Exceder resulta em HTTP 429. |
+| **Rate limit** | 90 requisições por minuto (6h-24h) / 300 requisições por minuto (0h-6h) por token. Exceder resulta em HTTP 429. |
 | **CPF parcialmente ocultado** | CPFs são exibidos com dígitos ocultados (`***.123.456-**`), dificultando cruzamentos diretos. |
 | **Escopo federal** | Apenas expulsões da Administração Pública Federal. Servidores estaduais e municipais não estão incluídos. |
 | **Reintegrações** | Servidores reintegrados por decisão judicial podem continuar aparecendo no cadastro. Verifique o campo `reintegrado`. |

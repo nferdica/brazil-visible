@@ -95,7 +95,7 @@ print(f"Datasets disponíveis: {len(datasets)}")
 # Consultar dados de geração via datastore
 url_siga = "https://dadosabertos.aneel.gov.br/api/3/action/datastore_search"
 params = {
-    "resource_id": "b604f001-7c96-4c10-97e2-6b4bcab46649",  # ID do recurso SIGA
+    "resource_id": "11ec447d-698d-4ab8-977f-b424d5deee6a",  # ID do recurso SIGA
     "limit": 100,
 }
 

@@ -2,7 +2,7 @@
 title: Portal da Transparência
 slug: portal-transparencia
 orgao: Controladoria-Geral da União (CGU)
-url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON, CSV
@@ -44,7 +44,7 @@ O **Portal da Transparência** é a principal ferramenta de controle social do G
 A API de Dados do Portal da Transparência oferece acesso programático a esses conjuntos de dados por meio de uma API REST bem documentada, com resposta em JSON e disponibilidade de download em CSV.
 
 **Site oficial:** https://portaldatransparencia.gov.br
-**Documentação da API:** https://api.portaldatransparencia.gov.br/swagger-ui.html
+**Documentação da API:** https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 **Portal do desenvolvedor:** https://portaldatransparencia.gov.br/api-de-dados
 
 ## Como acessar

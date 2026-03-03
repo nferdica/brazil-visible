@@ -149,3 +149,4 @@ for f in filhas[:5]:
 | **Apenas Executivo Federal** | O SIORG cobre o Poder Executivo Federal. Legislativo, Judiciário, estados e municípios não são cobertos. |
 | **Defasagem nas atualizações** | Mudanças na estrutura organizacional (criação/extinção de órgãos, nomeações) podem demorar para ser refletidas no sistema. |
 | **Sem dados históricos** | O SIORG mostra a estrutura atual. Não há acesso fácil a estruturas passadas (ex: composição de um ministério em anos anteriores). |
+| **URL base da API pode ter mudado** | A API originalmente disponível em `https://estruturaorganizacional.dados.gov.br/api/` pode ter migrado para `https://api.siorg.economia.gov.br/`. Verifique a URL atual antes de integrar, pois redirecionamentos ou indisponibilidades podem ocorrer. |

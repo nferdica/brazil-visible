@@ -338,3 +338,4 @@ print(
 | **Estabelecimentos inativos** | Estabelecimentos desativados podem permanecer no cadastro por um período, inflando contagens. |
 | **Falta de geolocalização** | Os dados contêm endereço e CEP, mas não coordenadas geográficas. Geocodificação é necessária para análises espaciais. |
 | **Instabilidade do servidor FTP** | O servidor FTP do DATASUS pode apresentar lentidão ou indisponibilidade. |
+| **Protocolo FTP obsoleto em navegadores** | Navegadores modernos (Chrome, Firefox) removeram o suporte ao protocolo FTP. Para acessar os arquivos, utilize clientes FTP (FileZilla, wget, curl) ou a biblioteca PySUS. Alternativamente, acesse a página de transferência de arquivos do DATASUS em `https://datasus.saude.gov.br/transferencia-de-arquivos/`. |

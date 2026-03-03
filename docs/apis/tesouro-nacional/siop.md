@@ -1,7 +1,7 @@
 ---
 title: SIOP (Planejamento e Orçamento Federal)
 slug: siop
-orgao: Tesouro Nacional
+orgao: SOF / Ministério do Planejamento e Orçamento
 url_base: https://www.gov.br/planejamento/pt-br/assuntos/orcamento
 tipo_acesso: Web Interface
 autenticacao: Não requerida
@@ -52,7 +52,7 @@ O SIOP é essencialmente uma **interface web** com funcionalidade de consulta e 
 
 **Painel de Orçamento:** https://www.siop.planejamento.gov.br/siop/
 
-**Dados abertos (download):** https://www.gov.br/economia/pt-br/acesso-a-informacao/dados-abertos
+**Dados abertos (download):** https://www.gov.br/planejamento/pt-br/acesso-a-informacao/dados-abertos
 
 ## Como acessar
 
@@ -73,10 +73,10 @@ A SOF publica arquivos para download no Portal de Dados Abertos:
 
 | Recurso | URL | Formato |
 |---------|-----|---------|
-| LOA (projeto e lei) | https://www.gov.br/economia/pt-br/acesso-a-informacao/dados-abertos | CSV, XLSX |
+| LOA (projeto e lei) | https://www.gov.br/planejamento/pt-br/acesso-a-informacao/dados-abertos | CSV, XLSX |
 | Emendas parlamentares | https://www.siop.planejamento.gov.br/siop/ (módulo Emendas) | CSV, XLSX |
 | Créditos adicionais | https://www.siop.planejamento.gov.br/siop/ (módulo Créditos) | CSV, XLSX |
-| PPA | https://www.gov.br/economia/pt-br/acesso-a-informacao/dados-abertos | CSV, PDF |
+| PPA | https://www.gov.br/planejamento/pt-br/acesso-a-informacao/dados-abertos | CSV, PDF |
 
 ### Acesso programático via web scraping
 

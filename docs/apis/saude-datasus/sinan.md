@@ -349,3 +349,4 @@ print(incidencia[["nome", "casos", "populacao", "taxa_incidencia"]].round(1))
 | **Sigilo do paciente** | Os microdados públicos são anonimizados — não contêm nome, CPF ou endereço do paciente, apenas município de residência. |
 | **Instabilidade do servidor FTP** | O servidor FTP do DATASUS pode apresentar lentidão ou indisponibilidade. |
 | **Duplicidade de notificações** | Pode haver notificações duplicadas para o mesmo caso (mesma pessoa notificada por diferentes unidades), exigindo deduplicação cuidadosa. |
+| **Protocolo FTP obsoleto em navegadores** | Navegadores modernos (Chrome, Firefox) removeram o suporte ao protocolo FTP. Para acessar os arquivos, utilize clientes FTP (FileZilla, wget, curl) ou a biblioteca PySUS. Alternativamente, acesse a página de transferência de arquivos do DATASUS em `https://datasus.saude.gov.br/transferencia-de-arquivos/`. |

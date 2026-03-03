@@ -294,3 +294,4 @@ print(mortalidade.sort_values("taxa_neonatal", ascending=False).head(10).round(2
 | **Mudanças no formulário** | A Declaração de Nascido Vivo passou por reformulações em 1999 e 2011, alterando campos disponíveis e codificações. Análises longitudinais devem considerar essas mudanças. |
 | **Sem identificação individual** | Não há identificador único que permita vincular um nascimento a registros posteriores (internações, óbitos). Linkage probabilístico é necessário. |
 | **Instabilidade do servidor FTP** | O servidor FTP do DATASUS pode apresentar lentidão ou indisponibilidade. |
+| **Protocolo FTP obsoleto em navegadores** | Navegadores modernos (Chrome, Firefox) removeram o suporte ao protocolo FTP. Para acessar os arquivos, utilize clientes FTP (FileZilla, wget, curl) ou a biblioteca PySUS. Alternativamente, acesse a página de transferência de arquivos do DATASUS em `https://datasus.saude.gov.br/transferencia-de-arquivos/`. |

@@ -85,9 +85,9 @@ Parâmetros:
 | População residente | 4714 | População por sexo e idade |
 | Domicílios | 9605 | Domicílios por tipo e condição de ocupação |
 | Alfabetização | 9543 | Taxa de alfabetização por idade e sexo |
-| Rendimento | (em divulgação) | Renda domiciliar e per capita |
+| Rendimento | 9947 | Renda domiciliar e per capita (divulgado em 2024) |
 | Cor/raça | 9606 | População por cor ou raça |
-| Pessoas com deficiência | (em divulgação) | Tipo e grau de dificuldade |
+| Pessoas com deficiência | 9948 | Tipo e grau de dificuldade (divulgado em 2024) |
 
 ### API de Localidades
 

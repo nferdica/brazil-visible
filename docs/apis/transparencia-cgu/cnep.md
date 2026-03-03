@@ -2,7 +2,7 @@
 title: CNEP — Cadastro Nacional de Empresas Punidas
 slug: cnep
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -60,7 +60,8 @@ O acesso à API requer um **token (chave de API)** gratuito:
 
 | Condição | Limite |
 |----------|--------|
-| Requisições por minuto | 30 |
+| Requisições por minuto (6h-24h) | 90 |
+| Requisições por minuto (0h-6h) | 300 |
 | Requisições sem autenticação | Bloqueadas |
 
 ### URL Base
@@ -307,7 +308,7 @@ if not df.empty and "valorMulta" in df.columns:
 
 | Limitação | Detalhes |
 |-----------|----------|
-| **Rate limit** | 30 requisições por minuto por token. Exceder resulta em HTTP 429. |
+| **Rate limit** | 90 requisições por minuto (6h-24h) / 300 requisições por minuto (0h-6h) por token. Exceder resulta em HTTP 429. |
 | **Volume de dados** | O CNEP é um cadastro menor que o CEIS, pois a Lei Anticorrupção é relativamente recente (2013). |
 | **Acordos de leniência** | Detalhes completos de acordos de leniência nem sempre estão disponíveis na API; informações sigilosas podem ser omitidas. |
 | **Valor da multa** | Nem todas as sanções possuem o campo `valorMulta` preenchido. |

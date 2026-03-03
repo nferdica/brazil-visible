@@ -56,7 +56,7 @@ O Levantamento de Preços é um dos datasets mais utilizados, cobrindo ~27.000 p
 | **Dados abertos** | `https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos` |
 | **Levantamento de Preços** | `https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis` |
 | **Dados de Produção** | `https://www.gov.br/anp/pt-br/centrais-de-conteudo/publicacoes/boletins-anp/bmp` |
-| **dados.gov.br** | `https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-por-revenda` |
+| **dados.gov.br** | `https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp` |
 | **Autenticação** | Não requerida |
 | **Formato** | CSV, XLSX |
 | **Periodicidade** | Semanal (preços), Mensal (produção) |
@@ -80,7 +80,7 @@ O Levantamento de Preços é um dos datasets mais utilizados, cobrindo ~27.000 p
 import pandas as pd
 
 # Download da série histórica de preços
-# https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-por-revenda
+# https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp
 df = pd.read_csv(
     "precos_combustiveis_2024_01.csv",
     sep=";",

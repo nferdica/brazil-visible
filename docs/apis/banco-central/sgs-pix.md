@@ -171,17 +171,22 @@ for p in dados:
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - Meios de Pagamento](sgs-meios-pagamento)** — comparar evolução do PIX com outros meios de pagamento (cartões, boletos, cheques)
-- **[SGS/API BCB - Crédito](sgs-credito)** — analisar se a adoção do PIX impactou o volume de operações de crédito
-- **[SGS/API BCB - Base Monetária](sgs-base-monetaria)** — avaliar impacto do PIX na demanda por papel-moeda e na base monetária
-- **[IFData](ifdata)** — correlacionar participação no PIX com dados financeiros das instituições
-- **IBGE (PNAD)** — cruzar adoção do PIX com dados demográficos e de inclusão financeira
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| Meios de pagamento | [SGS/API BCB - Meios de Pagamento](sgs-meios-pagamento) | Período (mês/ano) | Comparar evolução do PIX com outros meios de pagamento (cartões, boletos, cheques) |
+| Crédito | [SGS/API BCB - Crédito](sgs-credito) | Período (mês/ano) | Analisar se a adoção do PIX impactou o volume de operações de crédito |
+| Base monetária | [SGS/API BCB - Base Monetária](sgs-base-monetaria) | Período (mês/ano) | Avaliar impacto do PIX na demanda por papel-moeda e na base monetária |
+| IFData | [IFData](ifdata) | CNPJ / ISPB da instituição | Correlacionar participação no PIX com dados financeiros das instituições |
+| PNAD | IBGE (PNAD) | Período (ano/trimestre) | Cruzar adoção do PIX com dados demográficos e de inclusão financeira |
 
 ## Limitações conhecidas
 
-- **Séries relativamente novas**: o PIX foi lançado em novembro de 2020, então as séries históricas são curtas
-- **Dados agregados**: as estatísticas públicas são agregadas; dados transacionais individuais não são disponibilizados
-- **Defasagem**: dados mensais podem ter defasagem de 30 a 45 dias
-- **Códigos de série podem variar**: o BCB pode reorganizar as séries do PIX; verificar no portal do SGS os códigos mais atualizados
-- **Sem distinção por tipo de transação**: as séries agregadas não diferenciam PIX P2P, P2B, B2B, etc.
-- **Dados de fraude**: estatísticas de fraudes e contestações do PIX não são disponibilizadas publicamente via API
+| Limitação | Detalhes |
+|---|---|
+| **Séries relativamente novas** | O PIX foi lançado em novembro de 2020, então as séries históricas são curtas |
+| **Dados agregados** | As estatísticas públicas são agregadas; dados transacionais individuais não são disponibilizados |
+| **Defasagem** | Dados mensais podem ter defasagem de 30 a 45 dias |
+| **Códigos de série podem variar** | O BCB pode reorganizar as séries do PIX; verificar no portal do SGS os códigos mais atualizados |
+| **Sem distinção por tipo de transação** | As séries agregadas não diferenciam PIX P2P, P2B, B2B, etc. |
+| **Limite de 10 anos por consulta** | Desde março de 2025, consultas ao SGS em formato JSON/CSV são limitadas a intervalos de no máximo 10 anos. Para séries longas, é necessário fazer múltiplas requisições com intervalos de datas diferentes, ou usar o endpoint `/dados/ultimos/{N}`. |
+| **Dados de fraude** | Estatísticas de fraudes e contestações do PIX não são disponibilizadas publicamente via API |

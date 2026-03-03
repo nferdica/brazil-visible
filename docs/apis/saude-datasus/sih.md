@@ -271,3 +271,4 @@ print(letalidade.round(2))
 | **Qualidade da codificação CID-10** | A precisão do código CID-10 depende da qualidade da codificação feita pelo hospital. Diagnósticos genéricos (ex: R69 — "Causa mal definida") são frequentes. |
 | **Instabilidade do FTP** | O servidor FTP do DATASUS pode apresentar lentidão ou indisponibilidade, especialmente em horários comerciais. |
 | **Mudanças na tabela de procedimentos** | A tabela SUS de procedimentos sofre atualizações periódicas, o que pode dificultar análises longitudinais sem compatibilização de códigos. |
+| **Protocolo FTP obsoleto em navegadores** | Navegadores modernos (Chrome, Firefox) removeram o suporte ao protocolo FTP. Para acessar os arquivos, utilize clientes FTP (FileZilla, wget, curl) ou a biblioteca PySUS. Alternativamente, acesse a página de transferência de arquivos do DATASUS em `https://datasus.saude.gov.br/transferencia-de-arquivos/`. |

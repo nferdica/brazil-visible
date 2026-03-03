@@ -37,7 +37,7 @@ A **Base CNPJ Completa** é o conjunto de dados cadastrais de todas as empresas 
 
 Este é um dos conjuntos de dados mais críticos de todo o ecossistema de dados abertos brasileiro. O **CNPJ** é o principal campo-ponte (*bridge field*) para cruzamento entre bases de dados governamentais — conectando informações fiscais, contratuais, eleitorais, societárias e de sanções.
 
-**Fonte oficial:** https://dados.rfb.gov.br/CNPJ/
+**Fonte oficial:** https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/
 
 **Documentação do layout:** A Receita Federal disponibiliza o arquivo `layout_dados_abertos_cnpj.pdf` na mesma URL base, que descreve o esquema completo de todos os arquivos CSV.
 
@@ -45,7 +45,7 @@ Este é um dos conjuntos de dados mais críticos de todo o ecossistema de dados 
 
 | Item | Detalhe |
 |---|---|
-| **URL base** | `https://dados.rfb.gov.br/CNPJ/` |
+| **URL base** | `https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/` |
 | **Tipo de acesso** | Download direto de arquivos ZIP |
 | **Autenticação** | Não requerida |
 | **Formato** | CSV (sem cabeçalho, delimitado por `;`, encoding Latin-1/ISO-8859-1) |
@@ -87,10 +87,10 @@ Como se trata de download de arquivos (e não de uma API REST), os "recursos" s�
 ### Download direto
 
 ```
-https://dados.rfb.gov.br/CNPJ/Empresas0.zip
-https://dados.rfb.gov.br/CNPJ/Empresas1.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Empresas0.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Empresas1.zip
 ...
-https://dados.rfb.gov.br/CNPJ/Empresas9.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Empresas9.zip
 ```
 
 ## Exemplo de uso
@@ -129,7 +129,7 @@ def baixar_e_extrair(url: str, destino: Path) -> Path:
 
 
 # Baixar o primeiro arquivo de empresas (Empresas0.zip)
-url = "https://dados.rfb.gov.br/CNPJ/Empresas0.zip"
+url = "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Empresas0.zip"
 caminho_csv = baixar_e_extrair(url, Path("./dados_rfb"))
 
 # Ler o CSV (sem cabeçalho, separador ";", encoding Latin-1)
@@ -185,7 +185,7 @@ def carregar_todas_empresas(diretorio: Path) -> pd.DataFrame:
     """
     dfs = []
     for i in range(10):
-        url = f"https://dados.rfb.gov.br/CNPJ/Empresas{i}.zip"
+        url = f"https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Empresas{i}.zip"
         caminho = baixar_e_extrair(url, diretorio)
         df_parte = pd.read_csv(
             caminho,
@@ -207,7 +207,7 @@ def carregar_todas_empresas(diretorio: Path) -> pd.DataFrame:
 
 ```python
 # Baixar e ler tabela de naturezas jurídicas
-url_naturezas = "https://dados.rfb.gov.br/CNPJ/Naturezas.zip"
+url_naturezas = "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Naturezas.zip"
 caminho_nat = baixar_e_extrair(url_naturezas, Path("./dados_rfb"))
 
 df_naturezas = pd.read_csv(
@@ -344,3 +344,4 @@ if not dados_empresa.empty and not contratos.empty:
 | **Mudanças no layout** | A Receita Federal pode alterar o layout dos dados sem aviso prévio. Sempre verifique o PDF de layout antes de processar uma nova versão. |
 | **Disponibilidade do servidor** | O servidor `dados.rfb.gov.br` pode apresentar lentidão ou indisponibilidade, especialmente nos dias imediatamente após a publicação de uma nova versão mensal. |
 | **Dados históricos limitados** | Apenas o *snapshot* mais recente é disponibilizado. Não há séries históricas — se precisar de dados anteriores, é necessário manter backups próprios. |
+| **CNPJ alfanumérico (julho 2026)** | A partir de julho de 2026, novos CNPJs poderão conter letras além de números. Scripts que validam CNPJ como campo numérico de 14 dígitos precisarão ser atualizados. |

@@ -2,10 +2,10 @@
 title: ANVISA Saúde — Registros de Medicamentos e Alimentos
 slug: anvisa
 orgao: ANVISA
-url_base: https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-vigilancia-sanitaria-anvisa
+url_base: https://www.gov.br/anvisa/pt-br/acessoainformacao/dadosabertos
 tipo_acesso: CSV Download
 autenticacao: Não requerida
-formato_dados: [CSV, JSON]
+formato_dados: [CSV, XLSX, PDF]
 frequencia_atualizacao: Mensal
 campos_chave:
   - numero_registro

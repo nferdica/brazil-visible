@@ -50,7 +50,7 @@ O BCB divulga diariamente a **posição das reservas** e mensalmente a **composi
 
 | Série | Código | Descrição | Periodicidade |
 |---|---|---|---|
-| Reservas internacionais - posição | 13621 | Posição diária das reservas internacionais (US$ milhões) | Diária |
+| Reservas internacionais - posição | 13621 | Posição diária das reservas internacionais - Conceito caixa (US$ milhões) | Diária |
 | Reservas internacionais - conceito liquidez | 3546 | Reservas no conceito de liquidez internacional (US$ milhões) | Mensal |
 
 ### Séries SGS - Composição (Mensal)
@@ -196,17 +196,22 @@ for ano, valor in resumo.items():
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - Câmbio](sgs-cambio)** — correlacionar variação das reservas com movimentos na taxa de câmbio (intervenções do BCB)
-- **[SGS/API BCB - Juros](sgs-juros)** — analisar custo de carregamento das reservas (diferencial de juros interno vs. rendimento das reservas)
-- **[SGS/API BCB - Base Monetária](sgs-base-monetaria)** — avaliar impacto das compras/vendas de reservas sobre a base monetária
-- **Tesouro Nacional** — comparar reservas com dívida pública externa
-- **IPEA** — complementar com indicadores de vulnerabilidade externa e balanço de pagamentos
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| Câmbio | [SGS/API BCB - Câmbio](sgs-cambio) | Data (dia útil) | Correlacionar variação das reservas com movimentos na taxa de câmbio (intervenções do BCB) |
+| Juros | [SGS/API BCB - Juros](sgs-juros) | Período (mês/ano) | Analisar custo de carregamento das reservas (diferencial de juros interno vs. rendimento das reservas) |
+| Base monetária | [SGS/API BCB - Base Monetária](sgs-base-monetaria) | Período (mês/ano) | Avaliar impacto das compras/vendas de reservas sobre a base monetária |
+| Tesouro Nacional | Tesouro Nacional | Período (mês/ano) | Comparar reservas com dívida pública externa |
+| IPEA | IPEA | Período (mês/ano) | Complementar com indicadores de vulnerabilidade externa e balanço de pagamentos |
 
 ## Limitações conhecidas
 
-- **Defasagem da composição**: a posição diária é atualizada com 1 dia útil de atraso; a composição detalhada tem defasagem mensal de 30 a 60 dias
-- **Denominação em dólar**: as reservas são reportadas em dólar americano; variações podem refletir oscilações cambiais entre as moedas que compõem as reservas, não necessariamente compras/vendas
-- **Efeito contábil do ouro**: o valor do ouro nas reservas varia com a cotação internacional, gerando "variações" que não são operações do BCB
-- **Rendimento não publicado em séries diárias**: o rendimento financeiro das reservas é divulgado apenas em relatórios periódicos e na série mensal
-- **Sem detalhamento por moeda**: a composição por moeda das reservas é divulgada apenas no relatório anual de gestão de reservas, não via SGS
-- **Dados consolidados**: as séries mostram o total; não é possível identificar operações individuais (swaps, intervenções spot, etc.) via SGS
+| Limitação | Detalhes |
+|---|---|
+| **Defasagem da composição** | A posição diária é atualizada com 1 dia útil de atraso; a composição detalhada tem defasagem mensal de 30 a 60 dias |
+| **Denominação em dólar** | As reservas são reportadas em dólar americano; variações podem refletir oscilações cambiais entre as moedas que compõem as reservas, não necessariamente compras/vendas |
+| **Efeito contábil do ouro** | O valor do ouro nas reservas varia com a cotação internacional, gerando "variações" que não são operações do BCB |
+| **Rendimento não publicado em séries diárias** | O rendimento financeiro das reservas é divulgado apenas em relatórios periódicos e na série mensal |
+| **Sem detalhamento por moeda** | A composição por moeda das reservas é divulgada apenas no relatório anual de gestão de reservas, não via SGS |
+| **Limite de 10 anos por consulta** | Desde março de 2025, consultas ao SGS em formato JSON/CSV são limitadas a intervalos de no máximo 10 anos. Para séries longas, é necessário fazer múltiplas requisições com intervalos de datas diferentes, ou usar o endpoint `/dados/ultimos/{N}`. |
+| **Dados consolidados** | As séries mostram o total; não é possível identificar operações individuais (swaps, intervenções spot, etc.) via SGS |

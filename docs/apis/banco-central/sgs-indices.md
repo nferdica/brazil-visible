@@ -55,8 +55,8 @@ O Boletim Focus é disponibilizado via um endpoint dedicado na plataforma OLINDA
 
 | Série | Código | Descrição | Periodicidade |
 |---|---|---|---|
-| IBC-Br | 24364 | Índice de Atividade Econômica do Banco Central | Mensal |
-| IBC-Br (dessazonalizado) | 24365 | IBC-Br com ajuste sazonal | Mensal |
+| IBC-Br (índice original) | 24363 | Índice de Atividade Econômica do Banco Central (sem ajuste sazonal) | Mensal |
+| IBC-Br (dessazonalizado) | 24364 | IBC-Br com ajuste sazonal | Mensal |
 | IPCA (variação mensal) | 433 | Índice Nacional de Preços ao Consumidor Amplo | Mensal |
 | IPCA (acumulado 12 meses) | 13522 | IPCA acumulado nos últimos 12 meses | Mensal |
 | IGP-M (variação mensal) | 189 | Índice Geral de Preços - Mercado | Mensal |
@@ -82,8 +82,8 @@ O Boletim Focus é disponibilizado via um endpoint dedicado na plataforma OLINDA
 import requests
 import pandas as pd
 
-# IBC-Br dessazonalizado - Série 24365
-url = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.24365/dados?formato=json"
+# IBC-Br dessazonalizado - Série 24364
+url = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.24364/dados?formato=json"
 params = {
     "dataInicial": "01/01/2024",
     "dataFinal": "31/12/2024"
@@ -180,17 +180,22 @@ for d in dados[:5]:
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - Câmbio](sgs-cambio)** — analisar relação entre câmbio e índices de inflação (pass-through cambial)
-- **[SGS/API BCB - Juros](sgs-juros)** — comparar trajetória da Selic com IPCA para calcular juros reais
-- **[SGS/API BCB - Crédito](sgs-credito)** — correlacionar atividade econômica (IBC-Br) com concessão de crédito
-- **IBGE (Contas Nacionais)** — comparar IBC-Br com PIB oficial trimestral do IBGE
-- **IPEA** — complementar com outros índices e indicadores de conjuntura
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| Câmbio | [SGS/API BCB - Câmbio](sgs-cambio) | Período (mês/ano) | Analisar relação entre câmbio e índices de inflação (pass-through cambial) |
+| Juros | [SGS/API BCB - Juros](sgs-juros) | Período (mês/ano) | Comparar trajetória da Selic com IPCA para calcular juros reais |
+| Crédito | [SGS/API BCB - Crédito](sgs-credito) | Período (mês/ano) | Correlacionar atividade econômica (IBC-Br) com concessão de crédito |
+| Contas Nacionais | IBGE (Contas Nacionais) | Período (trimestre/ano) | Comparar IBC-Br com PIB oficial trimestral do IBGE |
+| IPEA | IPEA | Período (mês/ano) | Complementar com outros índices e indicadores de conjuntura |
 
 ## Limitações conhecidas
 
-- **IBC-Br defasagem**: publicado com aproximadamente 45 dias de atraso em relação ao mês de referência
-- **IBC-Br vs. PIB**: o IBC-Br é uma proxy do PIB, não o PIB oficial; pode haver divergências significativas
-- **IPCA via SGS**: o IPCA no SGS do BCB é uma cópia da série do IBGE; para dados desagregados por grupo/subgrupo, é necessário consultar a SIDRA/IBGE
-- **Focus - viés institucional**: as expectativas do Focus refletem a opinião de analistas do mercado financeiro, que podem ter viés
-- **Focus - atualização**: o relatório Focus é publicado às segundas-feiras; dados consultados durante a semana refletem a última publicação
-- **Séries descontinuadas**: verificar no portal do SGS se a série está ativa antes de usar em produção
+| Limitação | Detalhes |
+|---|---|
+| **IBC-Br defasagem** | Publicado com aproximadamente 45 dias de atraso em relação ao mês de referência |
+| **IBC-Br vs. PIB** | O IBC-Br é uma proxy do PIB, não o PIB oficial; pode haver divergências significativas |
+| **IPCA via SGS** | O IPCA no SGS do BCB é uma cópia da série do IBGE; para dados desagregados por grupo/subgrupo, é necessário consultar a SIDRA/IBGE |
+| **Focus - viés institucional** | As expectativas do Focus refletem a opinião de analistas do mercado financeiro, que podem ter viés |
+| **Focus - atualização** | O relatório Focus é publicado às segundas-feiras; dados consultados durante a semana refletem a última publicação |
+| **Limite de 10 anos por consulta** | Desde março de 2025, consultas ao SGS em formato JSON/CSV são limitadas a intervalos de no máximo 10 anos. Para séries longas, é necessário fazer múltiplas requisições com intervalos de datas diferentes, ou usar o endpoint `/dados/ultimos/{N}`. |
+| **Séries descontinuadas** | Verificar no portal do SGS se a série está ativa antes de usar em produção |

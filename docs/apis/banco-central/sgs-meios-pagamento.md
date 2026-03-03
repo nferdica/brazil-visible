@@ -178,18 +178,23 @@ for _, row in df.iterrows():
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - PIX](sgs-pix)** — comparar crescimento do PIX com queda de cheques e TEDs (substituição de meios)
-- **[SGS/API BCB - Crédito](sgs-credito)** — correlacionar uso de cartão de crédito com inadimplência e concessões de crédito
-- **[SGS/API BCB - Base Monetária](sgs-base-monetaria)** — avaliar relação entre meios eletrônicos e demanda por papel-moeda
-- **[SGS/API BCB - Juros](sgs-juros)** — analisar impacto dos juros no uso do cartão de crédito (rotativo)
-- **IBGE (POF/PNAD)** — correlacionar uso de meios de pagamento com perfil socioeconômico
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| PIX | [SGS/API BCB - PIX](sgs-pix) | Período (mês/ano) | Comparar crescimento do PIX com queda de cheques e TEDs (substituição de meios) |
+| Crédito | [SGS/API BCB - Crédito](sgs-credito) | Período (mês/trimestre) | Correlacionar uso de cartão de crédito com inadimplência e concessões de crédito |
+| Base monetária | [SGS/API BCB - Base Monetária](sgs-base-monetaria) | Período (mês/ano) | Avaliar relação entre meios eletrônicos e demanda por papel-moeda |
+| Juros | [SGS/API BCB - Juros](sgs-juros) | Período (mês/ano) | Analisar impacto dos juros no uso do cartão de crédito (rotativo) |
+| POF/PNAD | IBGE (POF/PNAD) | Período (ano/trimestre) | Correlacionar uso de meios de pagamento com perfil socioeconômico |
 
 ## Limitações conhecidas
 
-- **Periodicidade variada**: séries de cartões são trimestrais, enquanto cheques e TEDs são mensais; dificulta comparação direta
-- **Defasagem**: dados trimestrais podem ser publicados com até 90 dias de atraso
-- **Séries de cartão incompletas**: dados detalhados de cartões (por bandeira, por faixa de valor) não estão disponíveis no SGS
-- **DOC descontinuado**: o DOC foi descontinuado em janeiro de 2024; séries históricas do DOC foram encerradas
-- **PIX não incluído**: estatísticas do PIX estão em séries separadas (ver [SGS/API BCB - PIX](sgs-pix))
-- **Sem dados por instituição**: as séries SGS são agregadas; dados por instituição/bandeira requerem consulta ao portal de estatísticas do BCB
-- **Cartões pré-pagos**: cartões pré-pagos podem estar parcialmente representados nas estatísticas, dependendo do período
+| Limitação | Detalhes |
+|---|---|
+| **Periodicidade variada** | Séries de cartões são trimestrais, enquanto cheques e TEDs são mensais; dificulta comparação direta |
+| **Defasagem** | Dados trimestrais podem ser publicados com até 90 dias de atraso |
+| **Séries de cartão incompletas** | Dados detalhados de cartões (por bandeira, por faixa de valor) não estão disponíveis no SGS |
+| **DOC descontinuado** | O DOC foi descontinuado em janeiro de 2024; séries históricas do DOC foram encerradas |
+| **PIX não incluído** | Estatísticas do PIX estão em séries separadas (ver [SGS/API BCB - PIX](sgs-pix)) |
+| **Sem dados por instituição** | As séries SGS são agregadas; dados por instituição/bandeira requerem consulta ao portal de estatísticas do BCB |
+| **Limite de 10 anos por consulta** | Desde março de 2025, consultas ao SGS em formato JSON/CSV são limitadas a intervalos de no máximo 10 anos. Para séries longas, é necessário fazer múltiplas requisições com intervalos de datas diferentes, ou usar o endpoint `/dados/ultimos/{N}`. |
+| **Cartões pré-pagos** | Cartões pré-pagos podem estar parcialmente representados nas estatísticas, dependendo do período |

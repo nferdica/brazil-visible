@@ -2,7 +2,7 @@
 title: Servidores Federais
 slug: servidores-federais
 orgao: CGU
-url_base: https://api.portaldatransparencia.gov.br/swagger-ui.html
+url_base: https://api.portaldatransparencia.gov.br/swagger-ui/index.html
 tipo_acesso: API REST
 autenticacao: API Key
 formato_dados: JSON
@@ -53,7 +53,8 @@ O acesso à API requer um **token (chave de API)** gratuito:
 
 | Condição | Limite |
 |----------|--------|
-| Requisições por minuto | 30 |
+| Requisições por minuto (6h-24h) | 90 |
+| Requisições por minuto (0h-6h) | 300 |
 | Requisições sem autenticação | Bloqueadas |
 
 ### URL Base
@@ -290,7 +291,7 @@ print("Próximo passo: cruzar CPFs dos servidores com QSA das empresas via Recei
 
 | Limitação | Detalhes |
 |-----------|----------|
-| **Rate limit** | 30 requisições por minuto por token. Exceder resulta em HTTP 429. |
+| **Rate limit** | 90 requisições por minuto (6h-24h) / 300 requisições por minuto (0h-6h) por token. Exceder resulta em HTTP 429. |
 | **CPF parcialmente ocultado** | Por determinação da LGPD, CPFs são retornados com dígitos ocultados (`***.123.456-**`), limitando cruzamentos diretos. |
 | **Cobertura** | Apenas servidores do Poder Executivo Federal. Não inclui servidores estaduais, municipais, do Legislativo ou do Judiciário. |
 | **Dados históricos** | Remunerações históricas podem não estar disponíveis para todos os meses; a cobertura varia por órgão. |

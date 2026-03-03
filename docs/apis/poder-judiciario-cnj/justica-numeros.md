@@ -2,7 +2,7 @@
 title: Justiça em Números
 slug: justica-numeros
 orgao: CNJ
-url_base: https://paineis.cnj.jus.br/QvAJAXZfc/opendoc.htm
+url_base: https://justica-em-numeros.cnj.jus.br/
 tipo_acesso: Download / Painel interativo
 autenticacao: Não requerida
 formato_dados: [CSV, XLSX, PDF]
@@ -56,7 +56,8 @@ Os dados estão disponíveis em painéis interativos (QlikView/QlikSense) no por
 
 | Item | Detalhe |
 |---|---|
-| **URL** | `https://paineis.cnj.jus.br/QvAJAXZfc/opendoc.htm` |
+| **URL** | `https://justica-em-numeros.cnj.jus.br/` |
+| **Painéis QlikView (legado)** | `https://paineis.cnj.jus.br/QvAJAXZfc/opendoc.htm` |
 | **Tecnologia** | QlikView / QlikSense |
 | **Autenticação** | Não requerida |
 | **Interatividade** | Filtros por tribunal, ano, indicador |

@@ -62,10 +62,10 @@ O satélite de **referência** para a série histórica é o **AQUA** (sensor MO
 
 | Fonte | URL | Formato | Descrição |
 |-------|-----|---------|-----------|
-| **BDQUEIMADAS** | `https://queimadas.dgi.inpe.br/queimadas/bdqueimadas` | CSV, Shapefile | Portal principal de consulta e download |
-| **API BDQUEIMADAS** | `https://queimadas.dgi.inpe.br/queimadas/bdqueimadas/api/` | JSON, CSV | API para consultas programáticas |
+| **BDQUEIMADAS** | `https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas` | CSV, Shapefile | Portal principal de consulta e download |
+| **API BDQUEIMADAS** | `https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/api/` | JSON, CSV | API para consultas programáticas |
 | **Dados abertos** | `https://dataserver-coids.inpe.br/queimadas/` | CSV | Servidor de dados para download direto |
-| **Painel de monitoramento** | `https://queimadas.dgi.inpe.br/queimadas/portal` | HTML | Dashboard interativo com mapas e gráficos |
+| **Painel de monitoramento** | `https://terrabrasilis.dpi.inpe.br/queimadas/portal` | HTML | Dashboard interativo com mapas e gráficos |
 | **FIRMS/NASA** | `https://firms.modaps.eosdis.nasa.gov/` | CSV, SHP | Dados globais (inclui Brasil) — alternativa internacional |
 
 ### Autenticação
@@ -184,7 +184,7 @@ print(serie_mensal.to_string())
 import requests
 import pandas as pd
 
-BASE_URL = "https://queimadas.dgi.inpe.br/queimadas/bdqueimadas/api"
+BASE_URL = "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas/api"
 
 
 def consultar_focos(

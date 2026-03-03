@@ -37,7 +37,7 @@ Enquanto o arquivo de [Empresas](/docs/apis/receita-federal/cnpj-completa) cont�
 
 Este dataset e o maior em volume da base CNPJ, sendo essencial para **geolocalização de empresas**, análise de distribuição geográfica de atividades econômicas e obtenção de dados de contato (telefone e e-mail).
 
-**Fonte oficial:** https://dados.rfb.gov.br/CNPJ/
+**Fonte oficial:** https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/
 
 **Documentação do layout:** `layout_dados_abertos_cnpj.pdf` disponível na mesma URL base.
 
@@ -45,7 +45,7 @@ Este dataset e o maior em volume da base CNPJ, sendo essencial para **geolocaliz
 
 | Item | Detalhe |
 |---|---|
-| **URL base** | `https://dados.rfb.gov.br/CNPJ/` |
+| **URL base** | `https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/` |
 | **Tipo de acesso** | Download direto de arquivos ZIP |
 | **Autenticação** | Não requerida |
 | **Formato** | CSV (sem cabeçalho, delimitado por `;`, encoding Latin-1/ISO-8859-1) |
@@ -62,10 +62,10 @@ Cada arquivo ZIP contém um CSV sem cabeçalho. As colunas são posicionais e se
 ### Download direto
 
 ```
-https://dados.rfb.gov.br/CNPJ/Estabelecimentos0.zip
-https://dados.rfb.gov.br/CNPJ/Estabelecimentos1.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Estabelecimentos0.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Estabelecimentos1.zip
 ...
-https://dados.rfb.gov.br/CNPJ/Estabelecimentos9.zip
+https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Estabelecimentos9.zip
 ```
 
 ## Endpoints/recursos principais
@@ -145,7 +145,7 @@ def baixar_e_extrair(url: str, destino: Path) -> Path:
 
 
 # Baixar o primeiro arquivo de estabelecimentos
-url = "https://dados.rfb.gov.br/CNPJ/Estabelecimentos0.zip"
+url = "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Estabelecimentos0.zip"
 caminho_csv = baixar_e_extrair(url, Path("./dados_rfb"))
 
 # Ler o CSV (sem cabeçalho, separador ";", encoding Latin-1)
@@ -247,7 +247,7 @@ print(ativos["tipo"].value_counts())
 
 ```python
 # Baixar e ler tabela de CNAEs
-url_cnaes = "https://dados.rfb.gov.br/CNPJ/Cnaes.zip"
+url_cnaes = "https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Cnaes.zip"
 caminho_cnaes = baixar_e_extrair(url_cnaes, Path("./dados_rfb"))
 
 df_cnaes = pd.read_csv(
@@ -439,3 +439,4 @@ print(matrizes_enriquecidas[[
 | **Atraso na atualização** | Atualização mensal com possível atraso de 30 a 60 dias em relação a alterações cadastrais. |
 | **Dados históricos limitados** | Apenas o snapshot mais recente é disponibilizado. Para análise temporal, é necessário manter backups próprios de cada mês. |
 | **Situação cadastral desatualizada** | Alguns estabelecimentos podem aparecer como "Ativo" mesmo já tendo encerrado atividades, caso o titular não tenha comunicado a Receita Federal. |
+| **CNPJ alfanumérico (julho 2026)** | A partir de julho de 2026, novos CNPJs poderão conter letras além de números. Scripts que validam CNPJ como campo numérico de 14 dígitos precisarão ser atualizados. |

@@ -191,17 +191,22 @@ print(f"\nMédia no período: {df['valor'].mean():.2f}%")
 
 ## Cruzamentos possíveis
 
-- **[SGS/API BCB - Juros](sgs-juros)** — analisar relação entre Selic e expansão/contração monetária
-- **[SGS/API BCB - Índices](sgs-indices)** — correlacionar crescimento dos agregados monetários com inflação (IPCA)
-- **[SGS/API BCB - Câmbio](sgs-cambio)** — avaliar impacto da liquidez doméstica sobre a taxa de câmbio
-- **[SGS/API BCB - Meios de Pagamento](sgs-meios-pagamento)** — comparar evolução dos agregados com uso de meios de pagamento eletrônicos
-- **Tesouro Nacional** — cruzar M4 (que inclui títulos públicos) com dados de dívida pública
+| Cruzamento | Fonte relacionada | Chave de ligação | Finalidade |
+|---|---|---|---|
+| Juros | [SGS/API BCB - Juros](sgs-juros) | Período (mês/ano) | Analisar relação entre Selic e expansão/contração monetária |
+| Índices | [SGS/API BCB - Índices](sgs-indices) | Período (mês/ano) | Correlacionar crescimento dos agregados monetários com inflação (IPCA) |
+| Câmbio | [SGS/API BCB - Câmbio](sgs-cambio) | Período (mês/ano) | Avaliar impacto da liquidez doméstica sobre a taxa de câmbio |
+| Meios de pagamento | [SGS/API BCB - Meios de Pagamento](sgs-meios-pagamento) | Período (mês/ano) | Comparar evolução dos agregados com uso de meios de pagamento eletrônicos |
+| Tesouro Nacional | Tesouro Nacional | Período (mês/ano) | Cruzar M4 (que inclui títulos públicos) com dados de dívida pública |
 
 ## Limitações conhecidas
 
-- **Defasagem**: dados mensais são publicados com aproximadamente 30 dias de atraso
-- **Revisões**: séries de agregados monetários podem ser revisadas retroativamente pelo BCB
-- **Mudanças metodológicas**: a definição dos agregados (especialmente M2, M3 e M4) foi alterada ao longo do tempo; séries anteriores a 2001 podem usar definições diferentes
-- **Sazonalidade**: os agregados monetários apresentam forte sazonalidade (especialmente em dezembro/janeiro), o que dificulta comparações mês a mês
-- **Séries não dessazonalizadas**: o BCB não publica versões dessazonalizadas dos agregados; o ajuste sazonal deve ser feito pelo usuário
-- **Granularidade limitada**: as séries são agregadas para todo o sistema financeiro; não há quebra por região, tipo de instituição ou segmento
+| Limitação | Detalhes |
+|---|---|
+| **Defasagem** | Dados mensais são publicados com aproximadamente 30 dias de atraso |
+| **Revisões** | Séries de agregados monetários podem ser revisadas retroativamente pelo BCB |
+| **Mudanças metodológicas** | A definição dos agregados (especialmente M2, M3 e M4) foi alterada ao longo do tempo; séries anteriores a 2001 podem usar definições diferentes |
+| **Sazonalidade** | Os agregados monetários apresentam forte sazonalidade (especialmente em dezembro/janeiro), o que dificulta comparações mês a mês |
+| **Séries não dessazonalizadas** | O BCB não publica versões dessazonalizadas dos agregados; o ajuste sazonal deve ser feito pelo usuário |
+| **Limite de 10 anos por consulta** | Desde março de 2025, consultas ao SGS em formato JSON/CSV são limitadas a intervalos de no máximo 10 anos. Para séries longas, é necessário fazer múltiplas requisições com intervalos de datas diferentes, ou usar o endpoint `/dados/ultimos/{N}`. |
+| **Granularidade limitada** | As séries são agregadas para todo o sistema financeiro; não há quebra por região, tipo de instituição ou segmento |

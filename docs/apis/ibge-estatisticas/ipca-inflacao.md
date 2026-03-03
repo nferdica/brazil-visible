@@ -174,7 +174,7 @@ for _, row in dados.iterrows():
 | Variação mensal | 63 | Variação percentual no mês (%) |
 | Variação acumulada no ano | 66 | Variação acumulada de janeiro ao mês (%) |
 | Variação acumulada 12 meses | 2265 | Variação acumulada em 12 meses (%) |
-| Peso mensal | 66 | Peso do grupo no índice (%) |
+| Peso mensal | 357 | Peso do grupo no índice (%) |
 | Número-índice | 2266 | Número-índice (dez/1993=100) |
 
 ### Grupos do IPCA

@@ -2,7 +2,7 @@
 title: ANATEL Telecomunicações — Banda Larga e Telefonia
 slug: anatel
 orgao: ANATEL
-url_base: https://informacoes.anatel.gov.br/paineis/acessos
+url_base: https://www.anatel.gov.br/paineis/acessos
 tipo_acesso: CSV Download
 autenticacao: Não requerida
 formato_dados: [CSV]
@@ -50,7 +50,7 @@ Os dados são publicados em painéis interativos e em formato de microdados CSV 
 | Item | Detalhe |
 |---|---|
 | **Painéis ANATEL** | `https://informacoes.anatel.gov.br/paineis/acessos` |
-| **Dados abertos** | `https://www.anatel.gov.br/dados/` |
+| **Dados abertos** | `https://www.gov.br/anatel/pt-br/dados/dados-abertos` |
 | **dados.gov.br** | `https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-telecomunicacoes-anatel` |
 | **Autenticação** | Não requerida |
 | **Formato** | CSV |
