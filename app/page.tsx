@@ -38,6 +38,7 @@ import {
 } from 'lucide-react';
 
 import { ScrollReveal } from '@/components/scroll-reveal';
+import { CopyCommand } from '@/components/copy-command';
 import { getSidebar } from '@/lib/content';
 
 /* ── SEO ──────────────────────────────────────────────────── */
@@ -95,51 +96,13 @@ function getCategories(): Category[] {
   }));
 }
 
-const recipes = [
-  {
-    title: 'Parlamentar x Empresas x Emendas',
-    slug: 'parlamentar-empresas-emendas',
-    difficulty: 'avançado',
-    description: 'Cruze dados de deputados, sócios de empresas e emendas parlamentares para identificar conflitos de interesse.',
-  },
-  {
-    title: 'Rede CPF/CNPJ',
-    slug: 'cpf-cnpj-nexus',
-    difficulty: 'intermediário',
-    description: 'Construa grafos de relacionamento entre pessoas físicas e jurídicas usando dados da Receita Federal.',
-  },
-  {
-    title: 'Servidor Público x Empresas',
-    slug: 'servidor-publico-empresas',
-    difficulty: 'intermediário',
-    description: 'Identifique servidores públicos que são sócios de empresas fornecedoras do governo.',
-  },
-  {
-    title: 'Licitações x Sanções',
-    slug: 'licitacoes-sancoes',
-    difficulty: 'básico',
-    description: 'Verifique se empresas sancionadas continuam vencendo licitações públicas.',
-  },
-  {
-    title: 'Desmatamento x CAR x Embargos',
-    slug: 'desmatamento-car-embargos',
-    difficulty: 'avançado',
-    description: 'Cruze alertas de desmatamento com o Cadastro Ambiental Rural e áreas embargadas pelo IBAMA.',
-  },
-];
-
-const difficultyColors: Record<string, string> = {
-  'básico': 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
-  'intermediário': 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
-  'avançado': 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
-};
 
 /* ── Hero ──────────────────────────────────────────────────── */
 
 function HeroSection(): ReactNode {
   return (
-    <header className="relative flex h-[calc(100dvh-4rem)] items-center overflow-hidden bg-white dark:bg-dark-bg">
-      <div className="relative z-10 mx-auto max-w-[900px] px-6">
+    <header className="relative flex min-h-dvh items-center overflow-hidden bg-white dark:bg-dark-bg">
+      <div className="relative z-10 mx-auto max-w-[900px] px-6 text-center">
         <h1 className="text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] font-bold leading-[1.08] tracking-tight text-neutral-900 dark:text-white mb-6">
           Dados públicos{' '}
           <span className="text-brazil-blue dark:text-brazil-blue-light">
@@ -150,16 +113,16 @@ function HeroSection(): ReactNode {
             fiscaliza
           </span>
         </h1>
-        <p className="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-[560px] leading-relaxed mb-10">
+        <p className="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 max-w-[560px] mx-auto leading-relaxed mb-10">
           Catálogo aberto com 93+ APIs e bases de dados do governo federal,
           organizadas por órgão, com exemplos de código e receitas de cruzamento.
         </p>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/docs/"
             className="inline-flex items-center gap-2 rounded-full bg-neutral-900 dark:bg-white px-7 py-3.5 text-base font-semibold text-white dark:text-neutral-900 no-underline transition-all hover:no-underline hover:text-white dark:hover:text-neutral-900 hover:shadow-lg hover:-translate-y-0.5"
           >
-            Explorar o catálogo
+            Começar agora
             <ArrowRight size={18} />
           </Link>
           <Link
@@ -168,6 +131,10 @@ function HeroSection(): ReactNode {
           >
             Ver cruzamentos
           </Link>
+        </div>
+
+        <div className="mt-8">
+          <CopyCommand />
         </div>
       </div>
 
@@ -189,8 +156,8 @@ const features = [
   },
   {
     icon: Code,
-    title: 'Exemplos em Python',
-    description: 'Código pronto para usar com requests, pandas e basedosdados.',
+    title: 'SDK TypeScript',
+    description: 'Acesse todas as fontes via código com npm i @brazilvisible/sdk.',
   },
   {
     icon: GitFork,
@@ -315,64 +282,6 @@ function CategoriesSection(): ReactNode {
           {cats.map((cat) => (
             <CategoryCard key={cat.slug} category={cat} />
           ))}
-        </div>
-      </ScrollReveal>
-    </section>
-  );
-}
-
-/* ── Cross-References ──────────────────────────────────────── */
-
-function CrossRefSection(): ReactNode {
-  return (
-    <section className="bg-neutral-50 dark:bg-dark-surface py-20 px-6" aria-label="Receitas de cruzamento">
-      <ScrollReveal>
-        <div className="max-w-[1100px] mx-auto">
-          <div className="text-center mb-10">
-            <span className="text-xs font-medium uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-5 block">
-              Destaque
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Receitas de Cruzamento
-            </h2>
-            <p className="text-base md:text-lg text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-[600px] mx-auto">
-              O verdadeiro poder dos dados abertos aparece quando cruzamos fontes
-              diferentes. Cada receita mostra passo a passo como combinar bases
-              para investigações concretas.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
-            {recipes.map((r) => (
-              <Link
-                key={r.slug}
-                href={`/docs/cruzamentos/${r.slug}/`}
-                className="group rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-dark-bg p-5 no-underline transition-[border-color,box-shadow] hover:no-underline hover:border-brazil-blue dark:hover:border-brazil-blue hover:shadow-sm"
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <h3 className="text-sm font-semibold text-neutral-900 dark:text-white group-hover:text-brazil-blue transition-colors">
-                    {r.title}
-                  </h3>
-                  <span className={`ml-auto shrink-0 rounded-full px-2.5 py-0.5 text-xs font-medium ${difficultyColors[r.difficulty] ?? ''}`}>
-                    {r.difficulty}
-                  </span>
-                </div>
-                <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
-                  {r.description}
-                </p>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Link
-              href="/docs/cruzamentos/"
-              className="inline-flex items-center gap-2 rounded-full bg-brazil-blue hover:bg-brazil-blue-dark px-7 py-3 text-base font-semibold text-white no-underline transition-all hover:no-underline hover:text-white hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              Ver todas as receitas
-              <ArrowRight size={18} />
-            </Link>
-          </div>
         </div>
       </ScrollReveal>
     </section>
@@ -518,7 +427,6 @@ export default function Home(): ReactNode {
       <main>
         <AboutSection />
         <CategoriesSection />
-        <CrossRefSection />
         <ContributeSection />
       </main>
     </>

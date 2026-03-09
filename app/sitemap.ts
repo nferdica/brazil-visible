@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/docs/`, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${BASE}/docs/apis/`, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${BASE}/docs/cruzamentos/`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${BASE}/docs/sdk/`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE}/docs/como-contribuir/`, changeFrequency: 'monthly', priority: 0.5 },
   ];
 

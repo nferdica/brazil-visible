@@ -7,8 +7,9 @@ import { useTheme } from 'next-themes';
 import { Sun, Moon, Menu, X, ExternalLink } from 'lucide-react';
 
 const navLinks = [
-  { href: '/docs/apis/', label: 'APIs' },
+  { href: '/docs/apis/', label: 'Documentação' },
   { href: '/docs/cruzamentos/', label: 'Cruzamentos' },
+  { href: '/docs/sdk/', label: 'SDK' },
   { href: '/docs/como-contribuir/', label: 'Como Contribuir' },
 ];
 
@@ -55,7 +56,7 @@ export function Navbar() {
   const isActive = (href: string) => pathname === href || pathname === href.replace(/\/$/, '');
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+    <header className="sticky top-0 z-50 bg-white/80 dark:bg-dark-bg/80 backdrop-blur-md">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center" aria-label="Brazil Visible — Início">
