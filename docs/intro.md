@@ -23,4 +23,5 @@ Um repositório de documentação que cataloga APIs e bases de dados públicas d
 
 - **[APIs e Fontes de Dados](/docs/apis)** — documentação detalhada de cada fonte
 - **[Receitas de Cruzamento](/docs/cruzamentos)** — guias práticos para cruzar dados entre bases
+- **[SDK TypeScript](/docs/sdk)** — acesse todas as fontes via código com `npm install @brazilvisible/sdk`
 - **[Como Contribuir](/docs/como-contribuir)** — ajude a melhorar a documentação

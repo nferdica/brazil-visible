@@ -6,7 +6,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
   const sidebar = getSidebar();
 
   return (
-    <div className="mx-auto max-w-[1400px] px-4 pt-16 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
       <div className="flex gap-8 py-8">
         {/* Desktop sidebar */}
         <aside className="hidden lg:block w-64 shrink-0">

@@ -4,13 +4,15 @@ import { ExternalLink } from 'lucide-react';
 
 const documentacao = [
   { href: '/docs/', label: 'Início' },
-  { href: '/docs/apis/', label: 'APIs' },
+  { href: '/docs/apis/', label: 'Documentação' },
   { href: '/docs/cruzamentos/', label: 'Cruzamentos' },
+  { href: '/docs/sdk/', label: 'SDK' },
   { href: '/docs/como-contribuir/', label: 'Como Contribuir' },
 ];
 
 const comunidade = [
   { href: 'https://github.com/nferdica/brazil-visible', label: 'GitHub' },
+  { href: 'https://github.com/nferdica/brazil-visible-sdk', label: 'SDK no GitHub' },
   { href: 'https://github.com/nferdica/brazil-visible/issues', label: 'GitHub Issues' },
 ];
 

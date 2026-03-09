@@ -7,7 +7,7 @@ title: Como Contribuir
 
 Obrigado pelo interesse em contribuir com o **Brazil Visible**! Este projeto é um catálogo colaborativo de APIs e fontes de dados públicos brasileiros, voltado para fiscalização governamental e transparência.
 
-Toda contribuição é bem-vinda, seja adicionando novas fontes de dados, criando receitas de cruzamento, melhorando a documentação existente ou reportando problemas.
+Toda contribuição é bem-vinda, seja adicionando novas fontes de dados, criando receitas de cruzamento, melhorando a documentação existente, contribuindo com o [SDK TypeScript](/docs/sdk) ou reportando problemas.
 
 ## Sumário
 
