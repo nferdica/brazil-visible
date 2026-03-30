@@ -34,18 +34,21 @@ O **QSA (Quadro de Sócios e Administradores)** é o conjunto de dados que ident
 
 Este é um dos datasets mais poderosos para análise de **redes de relacionamento empresarial**, permitindo mapear a estrutura societária de empresas, identificar sócios em comum entre diferentes CNPJs e rastrear vínculos entre pessoas físicas (CPF) e empresas (CNPJ).
 
-**Fonte oficial:** https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/
+**Fonte oficial (origem):** https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/
 
-**Documentação do layout:** `layout_dados_abertos_cnpj.pdf` disponível na mesma URL base.
+**Espelho comunitário (acesso prático):** https://brasil.io/dataset/socios-brasil/files/
+
+**Documentação do layout:** `layout_dados_abertos_cnpj.pdf` disponível na URL de origem da Receita Federal.
 
 ## Como acessar
 
 | Item | Detalhe |
 |---|---|
-| **URL base** | `https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/` |
+| **URL base (origem oficial)** | `https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/` |
+| **URL alternativa (espelho)** | `https://brasil.io/dataset/socios-brasil/files/` |
 | **Tipo de acesso** | Download direto de arquivos ZIP |
 | **Autenticação** | Não requerida |
-| **Formato** | CSV (sem cabeçalho, delimitado por `;`, encoding Latin-1/ISO-8859-1) |
+| **Formato** | Na origem oficial: CSV sem cabeçalho em ZIP (`;`, Latin-1). No espelho: arquivos `.csv.gz` |
 | **Tamanho** | ~500 MB compactado (~2,5 GB descompactado, dividido em múltiplos arquivos) |
 
 ### Arquivos disponíveis
@@ -63,13 +66,26 @@ https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Socios0.zip
 https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Socios1.zip
 ...
 https://arquivos.receitafederal.gov.br/dados/cnpj/dados_abertos_cnpj/Socios9.zip
+
+# alternativa prática (espelho)
+https://data.brasil.io/dataset/socios-brasil/socios.csv.gz
 ```
+
+### Alternativa prática (Brasil.IO)
+
+Se os links oficiais estiverem fora do ar ou instáveis, o dataset `socios-brasil` do Brasil.IO tem sido uma alternativa funcional para download:
+
+- `https://brasil.io/dataset/socios-brasil/files/`
+- arquivo principal de sócios: `https://data.brasil.io/dataset/socios-brasil/socios.csv.gz`
+
+Antes de usar em produção, confira a **data de captura** exibida na página do dataset para validar a recência dos dados.
 
 ## Endpoints/recursos principais
 
 | Arquivo | Conteúdo | Tamanho aprox. |
 |---|---|---|
 | `Socios0.zip` a `Socios9.zip` | Dados dos sócios/administradores de todas as empresas | ~50-80 MB cada |
+| `socios.csv.gz` (Brasil.IO) | Espelho consolidado de sócios para download único | ~700 MB |
 | `Qualificacoes.zip` | Tabela auxiliar de qualificações de sócios | ~1 KB |
 | `Paises.zip` | Tabela auxiliar de países (para sócios estrangeiros) | ~5 KB |
 
@@ -136,6 +152,27 @@ df_socios = pd.read_csv(
 print(f"Registros carregados: {len(df_socios):,}")
 print(df_socios.head())
 ```
+
+### Leitura rápida do espelho `socios.csv.gz` (Brasil.IO)
+
+```python
+import pandas as pd
+
+url = "https://data.brasil.io/dataset/socios-brasil/socios.csv.gz"
+
+df_socios = pd.read_csv(
+    url,
+    compression="gzip",
+    dtype=str,
+    low_memory=False,
+)
+
+print(f"Registros carregados: {len(df_socios):,}")
+print(df_socios.columns.tolist())
+print(df_socios.head())
+```
+
+> Atenção: no espelho do Brasil.IO os nomes de colunas podem diferir do layout bruto da Receita. Sempre valide `df_socios.columns` antes de reaproveitar scripts.
 
 ### Consultar sócios de uma empresa
 
@@ -324,4 +361,5 @@ print(socios_em_comum.sort_values("num_empresas", ascending=False))
 | **Sem percentual de participação** | Os dados não incluem o percentual de participação societária de cada sócio. |
 | **Divisão em múltiplos arquivos** | Os dados são particionados em 10 arquivos sem critério documentado. Um sócio pode estar em qualquer partição. |
 | **Faixa etária aproximada** | A faixa etária é informada em intervalos amplos (ex: 31-40), não sendo possível determinar a idade exata. |
+| **Espelho com possível defasagem** | O dataset `socios-brasil` do Brasil.IO pode não refletir a versão mais recente da Receita. Verifique a data de captura antes de análises sensíveis à recência. |
 | **CNPJ alfanumérico (julho 2026)** | A partir de julho de 2026, novos CNPJs poderão conter letras além de números. Scripts que validam CNPJ como campo numérico de 14 dígitos precisarão ser atualizados. |
