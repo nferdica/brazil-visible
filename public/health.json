@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T12:18:08.734Z",
+  "updatedAt": "2026-10-10T21:28:41.153Z",
   "results": {
     "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES": {
       "status": "ftp",
@@ -7,7 +7,7 @@
       "slugs": [
         "cnes"
       ],
-      "checkedAt": "2026-10-10T12:18:08.734Z"
+      "checkedAt": "2026-10-10T21:28:41.153Z"
     },
     "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS": {
       "status": "ftp",
@@ -15,7 +15,7 @@
       "slugs": [
         "sih"
       ],
-      "checkedAt": "2026-10-10T12:18:08.734Z"
+      "checkedAt": "2026-10-10T21:28:41.153Z"
     },
     "ftp://ftp.datasus.gov.br/dissemin/publicos/SIM": {
       "status": "ftp",
@@ -23,7 +23,7 @@
       "slugs": [
         "sim"
       ],
-      "checkedAt": "2026-10-10T12:18:08.734Z"
+      "checkedAt": "2026-10-10T21:28:41.153Z"
     },
     "ftp://ftp.datasus.gov.br/dissemin/publicos/SINAN": {
       "status": "ftp",
@@ -31,7 +31,7 @@
       "slugs": [
         "sinan"
       ],
-      "checkedAt": "2026-10-10T12:18:08.734Z"
+      "checkedAt": "2026-10-10T21:28:41.153Z"
     },
     "ftp://ftp.datasus.gov.br/dissemin/publicos/SINASC": {
       "status": "ftp",
@@ -39,15 +39,7 @@
       "slugs": [
         "sinasc"
       ],
-      "checkedAt": "2026-10-10T12:18:08.734Z"
-    },
-    "https://www.anatel.gov.br/paineis/acessos": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "anatel"
-      ],
-      "checkedAt": "2026-10-10T12:18:09.831Z"
+      "checkedAt": "2026-10-10T21:28:41.153Z"
     },
     "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos": {
       "status": "online",
@@ -55,7 +47,15 @@
       "slugs": [
         "anp"
       ],
-      "checkedAt": "2026-10-10T12:18:09.850Z"
+      "checkedAt": "2026-10-10T21:28:41.927Z"
+    },
+    "https://www.anatel.gov.br/paineis/acessos": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "anatel"
+      ],
+      "checkedAt": "2026-10-10T21:28:41.944Z"
     },
     "https://dadosabertos.aneel.gov.br": {
       "status": "online",
@@ -63,7 +63,7 @@
       "slugs": [
         "aneel"
       ],
-      "checkedAt": "2026-10-10T12:18:09.904Z"
+      "checkedAt": "2026-10-10T21:28:42.048Z"
     },
     "https://www.gov.br/anvisa/pt-br/acessoainformacao/dadosabertos": {
       "status": "online",
@@ -71,15 +71,7 @@
       "slugs": [
         "anvisa"
       ],
-      "checkedAt": "2026-10-10T12:18:10.155Z"
-    },
-    "https://www.gov.br/conecta/catalogo": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "siape"
-      ],
-      "checkedAt": "2026-10-10T12:18:10.819Z"
+      "checkedAt": "2026-10-10T21:28:42.171Z"
     },
     "https://www3.bcb.gov.br/ifdata": {
       "status": "offline",
@@ -87,15 +79,15 @@
       "slugs": [
         "ifdata"
       ],
-      "checkedAt": "2026-10-10T12:18:11.060Z"
+      "checkedAt": "2026-10-10T21:28:42.507Z"
     },
-    "https://siorg.gov.br": {
+    "https://www.gov.br/conecta/catalogo": {
       "status": "online",
       "code": 200,
       "slugs": [
-        "siorg"
+        "siape"
       ],
-      "checkedAt": "2026-10-10T12:18:11.152Z"
+      "checkedAt": "2026-10-10T21:28:42.682Z"
     },
     "https://cadin.pgfn.gov.br": {
       "status": "online",
@@ -103,7 +95,79 @@
       "slugs": [
         "cadin"
       ],
-      "checkedAt": "2026-10-10T12:18:11.516Z"
+      "checkedAt": "2026-10-10T21:28:42.907Z"
+    },
+    "https://siorg.gov.br": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "siorg"
+      ],
+      "checkedAt": "2026-10-10T21:28:42.934Z"
+    },
+    "https://geosgb.sgb.gov.br": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "cprm-geologia"
+      ],
+      "checkedAt": "2026-10-10T21:28:43.256Z"
+    },
+    "https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "ibge-geociencias"
+      ],
+      "checkedAt": "2026-10-10T21:28:43.309Z"
+    },
+    "https://visualizador.inde.gov.br": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "inde"
+      ],
+      "checkedAt": "2026-10-10T21:28:43.952Z"
+    },
+    "https://queridodiario.ok.org.br": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "does-estaduais"
+      ],
+      "checkedAt": "2026-10-10T21:28:44.064Z"
+    },
+    "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "censo-educacao-superior"
+      ],
+      "checkedAt": "2026-10-10T21:28:44.208Z"
+    },
+    "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "censo-escolar"
+      ],
+      "checkedAt": "2026-10-10T21:28:44.352Z"
+    },
+    "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "enem"
+      ],
+      "checkedAt": "2026-10-10T21:28:44.491Z"
+    },
+    "http://www.dgi.inpe.br/catalogo": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "inpe-satelite"
+      ],
+      "checkedAt": "2026-10-10T21:28:45.139Z"
     },
     "https://dadosabertos.bcb.gov.br": {
       "status": "online",
@@ -118,63 +182,7 @@
         "sgs-pix",
         "sgs-reservas-internacionais"
       ],
-      "checkedAt": "2026-10-10T12:18:11.794Z"
-    },
-    "https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "ibge-geociencias"
-      ],
-      "checkedAt": "2026-10-10T12:18:11.924Z"
-    },
-    "https://geosgb.sgb.gov.br": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "cprm-geologia"
-      ],
-      "checkedAt": "2026-10-10T12:18:12.373Z"
-    },
-    "https://queridodiario.ok.org.br": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "does-estaduais"
-      ],
-      "checkedAt": "2026-10-10T12:18:13.117Z"
-    },
-    "https://visualizador.inde.gov.br": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "inde"
-      ],
-      "checkedAt": "2026-10-10T12:18:13.135Z"
-    },
-    "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "censo-educacao-superior"
-      ],
-      "checkedAt": "2026-10-10T12:18:13.321Z"
-    },
-    "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-escolar": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "censo-escolar"
-      ],
-      "checkedAt": "2026-10-10T12:18:13.337Z"
-    },
-    "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "enem"
-      ],
-      "checkedAt": "2026-10-10T12:18:13.523Z"
+      "checkedAt": "2026-10-10T21:28:45.269Z"
     },
     "https://servicodados.ibge.gov.br/api/v3/agregados": {
       "status": "online",
@@ -185,7 +193,7 @@
         "pib-municipal",
         "pnad-continua"
       ],
-      "checkedAt": "2026-10-10T12:18:13.697Z"
+      "checkedAt": "2026-10-10T21:28:45.274Z"
     },
     "https://www.gov.br/anac/pt-br/assuntos/dados-e-estatisticas": {
       "status": "online",
@@ -193,7 +201,7 @@
       "slugs": [
         "anac-aviacao"
       ],
-      "checkedAt": "2026-10-10T12:18:13.887Z"
+      "checkedAt": "2026-10-10T21:28:45.400Z"
     },
     "https://www.in.gov.br": {
       "status": "online",
@@ -201,7 +209,7 @@
       "slugs": [
         "dou"
       ],
-      "checkedAt": "2026-10-10T12:18:14.376Z"
+      "checkedAt": "2026-10-10T21:28:45.452Z"
     },
     "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran": {
       "status": "online",
@@ -209,15 +217,7 @@
       "slugs": [
         "denatran-renavam"
       ],
-      "checkedAt": "2026-10-10T12:18:14.577Z"
-    },
-    "http://www.dgi.inpe.br/catalogo": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "inpe-satelite"
-      ],
-      "checkedAt": "2026-10-10T12:18:14.969Z"
+      "checkedAt": "2026-10-10T21:28:45.539Z"
     },
     "https://www.fnde.gov.br/dadosabertos/dataset": {
       "status": "online",
@@ -225,7 +225,7 @@
       "slugs": [
         "fnde-repasses"
       ],
-      "checkedAt": "2026-10-10T12:18:15.085Z"
+      "checkedAt": "2026-10-10T21:28:45.806Z"
     },
     "https://dados.gov.br/dados/conjuntos-dados/acidentes-de-transito-nas-rodovias-federais": {
       "status": "online",
@@ -233,7 +233,7 @@
       "slugs": [
         "prf-acidentes"
       ],
-      "checkedAt": "2026-10-10T12:18:15.499Z"
+      "checkedAt": "2026-10-10T21:28:45.998Z"
     },
     "https://dadosabertos.tse.jus.br": {
       "status": "online",
@@ -247,15 +247,7 @@
         "prestacao-contas",
         "resultados-eleitorais"
       ],
-      "checkedAt": "2026-10-10T12:18:15.790Z"
-    },
-    "https://dados.antt.gov.br": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "antt-concessoes"
-      ],
-      "checkedAt": "2026-10-10T12:18:15.993Z"
+      "checkedAt": "2026-10-10T21:28:46.267Z"
     },
     "https://www.car.gov.br": {
       "status": "online",
@@ -263,7 +255,7 @@
       "slugs": [
         "car"
       ],
-      "checkedAt": "2026-10-10T12:18:16.684Z"
+      "checkedAt": "2026-10-10T21:28:46.891Z"
     },
     "http://www.ipeadata.gov.br/api": {
       "status": "online",
@@ -271,7 +263,7 @@
       "slugs": [
         "ipeadata"
       ],
-      "checkedAt": "2026-10-10T12:18:17.136Z"
+      "checkedAt": "2026-10-10T21:28:47.528Z"
     },
     "http://terrabrasilis.dpi.inpe.br": {
       "status": "online",
@@ -280,15 +272,7 @@
         "deter",
         "prodes"
       ],
-      "checkedAt": "2026-10-10T12:18:17.839Z"
-    },
-    "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "focos-calor"
-      ],
-      "checkedAt": "2026-10-10T12:18:17.974Z"
+      "checkedAt": "2026-10-10T21:28:49.236Z"
     },
     "https://servicos.ibama.gov.br": {
       "status": "online",
@@ -296,7 +280,7 @@
       "slugs": [
         "ibama-infracoes"
       ],
-      "checkedAt": "2026-10-10T12:18:18.159Z"
+      "checkedAt": "2026-10-10T21:28:49.918Z"
     },
     "https://dadosabertos.ana.gov.br": {
       "status": "online",
@@ -304,7 +288,7 @@
       "slugs": [
         "recursos-hidricos"
       ],
-      "checkedAt": "2026-10-10T12:18:18.302Z"
+      "checkedAt": "2026-10-10T21:28:50.102Z"
     },
     "https://www.gov.br/icmbio": {
       "status": "online",
@@ -312,7 +296,15 @@
       "slugs": [
         "unidades-conservacao"
       ],
-      "checkedAt": "2026-10-10T12:18:18.369Z"
+      "checkedAt": "2026-10-10T21:28:50.921Z"
+    },
+    "https://terrabrasilis.dpi.inpe.br/queimadas/bdqueimadas": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "focos-calor"
+      ],
+      "checkedAt": "2026-10-10T21:28:50.984Z"
     },
     "https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data": {
       "status": "online",
@@ -320,7 +312,7 @@
       "slugs": [
         "b3-negociacoes"
       ],
-      "checkedAt": "2026-10-10T12:18:18.950Z"
+      "checkedAt": "2026-10-10T21:28:51.466Z"
     },
     "https://dados.cvm.gov.br/dataset/cia_aberta-doc-fre": {
       "status": "online",
@@ -328,7 +320,7 @@
       "slugs": [
         "cvm-administradores"
       ],
-      "checkedAt": "2026-10-10T12:18:19.143Z"
+      "checkedAt": "2026-10-10T21:28:51.597Z"
     },
     "https://dados.cvm.gov.br": {
       "status": "online",
@@ -336,15 +328,7 @@
       "slugs": [
         "cvm-dfp-itr"
       ],
-      "checkedAt": "2026-10-10T12:18:19.222Z"
-    },
-    "https://www.gov.br/ancine/pt-br/oca": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "ancine"
-      ],
-      "checkedAt": "2026-10-10T12:18:19.417Z"
+      "checkedAt": "2026-10-10T21:28:51.926Z"
     },
     "https://dados.cvm.gov.br/dataset/cia_aberta-doc-fato_relevante": {
       "status": "offline",
@@ -352,7 +336,23 @@
       "slugs": [
         "cvm-fatos-relevantes"
       ],
-      "checkedAt": "2026-10-10T12:18:19.535Z"
+      "checkedAt": "2026-10-10T21:28:51.991Z"
+    },
+    "https://www.gov.br/ancine/pt-br/oca": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "ancine"
+      ],
+      "checkedAt": "2026-10-10T21:28:52.166Z"
+    },
+    "https://dados.antt.gov.br": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "antt-concessoes"
+      ],
+      "checkedAt": "2026-10-10T21:28:52.189Z"
     },
     "https://web3.antaq.gov.br/ea/sense": {
       "status": "offline",
@@ -360,7 +360,7 @@
       "slugs": [
         "antaq"
       ],
-      "checkedAt": "2026-10-10T12:18:20.199Z"
+      "checkedAt": "2026-10-10T21:28:52.578Z"
     },
     "https://dadosabertos.ans.gov.br": {
       "status": "online",
@@ -368,7 +368,7 @@
       "slugs": [
         "ans"
       ],
-      "checkedAt": "2026-10-10T12:18:20.548Z"
+      "checkedAt": "2026-10-10T21:28:52.789Z"
     },
     "https://datajud-wiki.cnj.jus.br": {
       "status": "online",
@@ -376,7 +376,7 @@
       "slugs": [
         "datajud"
       ],
-      "checkedAt": "2026-10-10T12:18:21.102Z"
+      "checkedAt": "2026-10-10T21:28:53.281Z"
     },
     "https://justica-em-numeros.cnj.jus.br": {
       "status": "online",
@@ -384,7 +384,7 @@
       "slugs": [
         "justica-numeros"
       ],
-      "checkedAt": "2026-10-10T12:18:21.497Z"
+      "checkedAt": "2026-10-10T21:28:53.614Z"
     },
     "https://portalbnmp.cnj.jus.br": {
       "status": "offline",
@@ -392,7 +392,7 @@
       "slugs": [
         "bnmp"
       ],
-      "checkedAt": "2026-10-10T12:18:21.732Z"
+      "checkedAt": "2026-10-10T21:28:53.970Z"
     },
     "https://basedosdados.org": {
       "status": "online",
@@ -400,15 +400,7 @@
       "slugs": [
         "base-dos-dados"
       ],
-      "checkedAt": "2026-10-10T12:18:21.966Z"
-    },
-    "https://dados.gov.br/swagger-ui/index.html": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "portal-dados-abertos"
-      ],
-      "checkedAt": "2026-10-10T12:18:22.265Z"
+      "checkedAt": "2026-10-10T21:28:54.027Z"
     },
     "https://api.portaldatransparencia.gov.br/swagger-ui/index.html": {
       "status": "online",
@@ -424,23 +416,15 @@
         "servidores-federais",
         "viagens-servico"
       ],
-      "checkedAt": "2026-10-10T12:18:22.683Z"
+      "checkedAt": "2026-10-10T21:28:54.396Z"
     },
-    "https://dados.gov.br/dados/conjuntos-dados/inss-beneficios-concedidos": {
+    "https://dados.gov.br/swagger-ui/index.html": {
       "status": "online",
       "code": 200,
       "slugs": [
-        "beneficios-inss"
+        "portal-dados-abertos"
       ],
-      "checkedAt": "2026-10-10T12:18:22.870Z"
-    },
-    "https://www.gov.br/previc/pt-br/acesso-a-informacao/dados-abertos": {
-      "status": "offline",
-      "code": 401,
-      "slugs": [
-        "previc"
-      ],
-      "checkedAt": "2026-10-10T12:18:23.157Z"
+      "checkedAt": "2026-10-10T21:28:54.435Z"
     },
     "https://sisbajud.cnj.jus.br": {
       "status": "offline",
@@ -448,7 +432,23 @@
       "slugs": [
         "sisbajud"
       ],
-      "checkedAt": "2026-10-10T12:18:23.250Z"
+      "checkedAt": "2026-10-10T21:28:54.797Z"
+    },
+    "https://dados.gov.br/dados/conjuntos-dados/inss-beneficios-concedidos": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "beneficios-inss"
+      ],
+      "checkedAt": "2026-10-10T21:28:54.881Z"
+    },
+    "https://www.gov.br/previc/pt-br/acesso-a-informacao/dados-abertos": {
+      "status": "offline",
+      "code": 401,
+      "slugs": [
+        "previc"
+      ],
+      "checkedAt": "2026-10-10T21:28:55.010Z"
     },
     "https://www.gov.br/receitafederal/dados": {
       "status": "online",
@@ -459,7 +459,7 @@
         "qsa",
         "simples-nacional"
       ],
-      "checkedAt": "2026-10-10T12:18:23.357Z"
+      "checkedAt": "2026-10-10T21:28:55.021Z"
     },
     "https://apidatalake.tesouro.gov.br/docs/sadipem": {
       "status": "online",
@@ -468,7 +468,7 @@
         "tesouro-transparente",
         "siafi"
       ],
-      "checkedAt": "2026-10-10T12:18:23.471Z"
+      "checkedAt": "2026-10-10T21:28:55.104Z"
     },
     "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/entes": {
       "status": "online",
@@ -476,15 +476,7 @@
       "slugs": [
         "siconfi"
       ],
-      "checkedAt": "2026-10-10T12:18:23.507Z"
-    },
-    "https://www.gov.br/planejamento/pt-br/assuntos/orcamento": {
-      "status": "online",
-      "code": 200,
-      "slugs": [
-        "siop"
-      ],
-      "checkedAt": "2026-10-10T12:18:23.765Z"
+      "checkedAt": "2026-10-10T21:28:55.125Z"
     },
     "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica": {
       "status": "online",
@@ -492,7 +484,15 @@
       "slugs": [
         "sinesp"
       ],
-      "checkedAt": "2026-10-10T12:18:23.941Z"
+      "checkedAt": "2026-10-10T21:28:55.160Z"
+    },
+    "https://www.gov.br/planejamento/pt-br/assuntos/orcamento": {
+      "status": "online",
+      "code": 200,
+      "slugs": [
+        "siop"
+      ],
+      "checkedAt": "2026-10-10T21:28:55.330Z"
     },
     "http://tabnet.datasus.gov.br": {
       "status": "online",
@@ -500,7 +500,7 @@
       "slugs": [
         "tabnet"
       ],
-      "checkedAt": "2026-10-10T12:18:24.378Z"
+      "checkedAt": "2026-10-10T21:28:55.901Z"
     },
     "https://bi.mte.gov.br/bgcaged": {
       "status": "online",
@@ -509,7 +509,7 @@
         "caged",
         "rais"
       ],
-      "checkedAt": "2026-10-10T12:18:26.596Z"
+      "checkedAt": "2026-10-10T21:28:57.621Z"
     },
     "https://acervofundiario.incra.gov.br": {
       "status": "offline",
@@ -517,7 +517,7 @@
       "slugs": [
         "incra-fundiario"
       ],
-      "checkedAt": "2026-10-10T12:18:41.155Z"
+      "checkedAt": "2026-10-10T21:29:12.907Z"
     },
     "https://servicos.dnit.gov.br/dadosabertos": {
       "status": "offline",
@@ -525,7 +525,7 @@
       "slugs": [
         "dnit-malha-rodoviaria"
       ],
-      "checkedAt": "2026-10-10T12:18:44.580Z"
+      "checkedAt": "2026-10-10T21:29:15.454Z"
     }
   }
 }
